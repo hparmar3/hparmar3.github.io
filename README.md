@@ -7,6 +7,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
 - Web development using `HTML`, `CSS`, and `JavaScript`
 
 ## Projects
+### Big M Method
 
 ## Contact 
 Feel free to reach out!
