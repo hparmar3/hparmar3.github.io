@@ -33,14 +33,40 @@ A = [
 b = [-2000; -275; -50; 78; 300; 2300];
 ```
 
-## Features
-- Feature 1
-- Feature 2
-
-## Getting Started
-
-### Installation
-
+## Part of the Experiment
+### Part B: Baseline Optimization
+Solve the LP problem using original prices and constraints.
 ```bash
-pip install -r requirements.txt
+x = linprog(c, A, b, [], [], zeros(5,1), []);
+```
+
+### Part C: Coke Price Shock
+Stimulate a drastic price increase for Coke to $500 and resolve the LP.
+```bash
+c(5) = 500;
+x_expensive_coke = linprog(c, A, b, [], [], zeros(5,1), []);
+```
+
+### Part D: Modified Nutritional Requirements
+Adjust constraints to simulate different dietary needs.
+```bash
+b_adjusted = b;
+b_adjusted(4) = 135;  % Increase Vitamin C upper limit
+b_adjusted(5) = 100;  % Decrease Calcium upper limit
+b_adjusted(6) = 5000; % Increase Sodium upper limit
+x_adjusted = linprog(c, A, b_adjusted, [], [], zeros(5,1), []);
+```
+
+## Output
+Each LP solution (`x`) provides the quantities of each food item to consume. The optimal cost is computed via:
+```bash
+optimal_cost = c' * x;
+```
+
+## Requirements
+- MATLAB
+- Optimization Toolbox
+
+## Purpose
+This exercise demonstrates real-world application of <b> Linear Programming </b> to diet planning and cost optimization.
 
