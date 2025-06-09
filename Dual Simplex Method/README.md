@@ -28,4 +28,33 @@ Using the <b> Dual Simplex Method, </b> particularly useful when the right-hand 
 ## Algorithm Highlights
 - Converts problem to <b> standard form </b> by introducing slack variables
 - Constucts an initial tableau with slack variables and objective row
-- 
+- Iteratively applies <b> dual simplex pivotsz: </b>
+  - Selects the <b> most negative RHS </b> row (violating feasibility)
+  - Uses a ratio test to identify the <b> entering variable </b>
+  - Updates the tableau via pivoting
+- Continues until all RHS entries are non-negative (primal feasibility)
+- Extracts the <b> primal solution, dual prices, </b> and <b> objective value </b>
+
+## Sample Output
+```bash
+Initial Tableau:
+...
+Updated Tableau:
+...
+Optimal Solution: x =
+[ 3.2
+  0
+  5.6 ]
+Optimal Value: z = 127.4
+Optimal Dual Solution: y =
+[ 2.1
+ -0.3 ]
+```
+
+## Requirements
+- MATLAB (any recent version)
+
+## Notes
+- Slack variables are automatically appended to convert constraints into equalities
+- This implementation assumes `A`, `b`, and `c` are properly sized and the problem is bounded and feasible
+- Numerical stability may require adding a small tolerance to feasibility tests in more complex applications
