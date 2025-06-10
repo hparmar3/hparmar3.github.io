@@ -18,8 +18,39 @@ This implementation uses <b> Bland's Rule </b> for pivot selection to avoid cycl
   - `simplex_method_given_basis`: Phase 2 continuation
   - `pivot`: performs pivot operation
  
-  ## Files
-  `two_phase_simplex.m`: main function to solve LPs using the two_phase_simplex method
-  `simplex_method.m`: implements simplex iterations for Phase 1
-  `simplex_method_given_basis.m`: continues simplex iterations for Phase 2
-  `pivot.m`: helper function to perform tableau pivoting
+## Files
+`two_phase_simplex.m`: main function to solve LPs using the two_phase_simplex method
+  
+`simplex_method.m`: implements simplex iterations for Phase 1
+  
+`simplex_method_given_basis.m`: continues simplex iterations for Phase 2
+  
+`pivot.m`: helper function to perform tableau pivoting
+
+## How It Works
+1. <b> Preprocessing: </b> if any RHS entry in `b` is negative, corresponding row in `A` and `b` is flipped
+2. <b> Phase 1: </b>
+- Introduces artifical variables to find a feasible starting solution
+- Minimizes the sum of artifical variables
+- If the result is non-zero, the original LP is <b> infeasible </b>
+3. <b> Phase 2: </b>
+- Begins from feasible basis obtained in Phase 1
+- Solves original objective using standard simplex with current basis
+
+## Overview
+### Example Usage in MATLAB
+```bash
+A = [1, 2; 4, 0; 0, 4];
+b = [8; 16; 12];
+c = [-3; -5];
+
+[x_opt, z_opt] = two_phase_simplex(A, b, c);
+```
+
+### Output
+The program will print the simplex tableau for each iteration and return:
+- x_opt: Optimal solution vector
+- z_opt: Optimal objective vector
+
+## Requirements
+- MATLAB
