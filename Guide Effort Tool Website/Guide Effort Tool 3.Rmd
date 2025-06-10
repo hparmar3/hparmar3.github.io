@@ -40,36 +40,12 @@ guide_log <- guide_log[, !names(guide_log) %in% c("...7", "...8", "...9")]
 ### READ IN REDCAP API EXPORT FUNCTION (this contains source for redcap config file)
 source('/Users/hennaparmar/Desktop/Guide Effort Tool 2/repcap_api_export.R')
 
-### EXPORT REDCAP DATA FROM CPCR TRIALS
-redcap_to_csv <- function(redcap_url, study_token){
-  # API request to pull all records from REDCap
-  response <- POST(
-    url = redcap_url,
-    body = list(
-      token = study_token,
-      content = "record",
-      format = "csv",   
-      type = "flat"
-    ),
-    encode = "form"
-  )
-  
-  # Check if API request was successful (HTTP status 200)
-  # Convert raw CSV text into a data frame
-  if (status_code(response) == 200) {
-    data <- content(response, "text", encoding = "UTF-8")
-    data <- read.csv(text = data, stringsAsFactors = FALSE)
-    print(data)
-  } else {  
-    print(paste("Error:", status_code(response)))
-  }
-}
-
+### EXPORT REDCAP DATA FROM TRIALS
 ### CODE DEPENDENT ON STUDIES
-bipod <- redcap_to_csv(redcap_url, token_bipod)
-ptsd <- redcap_to_csv(redcap_url, token_ptsd)
-mddaud <- redcap_to_csv(redcap_url, token_mddaud)
-clbpd <- redcap_to_csv(redcap_url, token_clbpd)
+study_1 <- redcap_to_csv(redcap_url, token_study_1)
+study_2 <- redcap_to_csv(redcap_url, token_study_2)
+study_3 <- redcap_to_csv(redcap_url, token_study_3)
+study_4 <- redcap_to_csv(redcap_url, token_study_4)
 ```
 
 ```{r clean_imported_surveys, include = FALSE}
@@ -81,12 +57,12 @@ get_mode <- function(x) {
 }
 
 ###CODE DEPENDENT ON STUDIES
-### =====BIPOD STUDY=====
-bipod_clean <- bipod %>%
+### =====STUDY_1 STUDY=====
+study_1_clean <- study_1 %>%
   mutate(
     fvf_visitdate = as.Date(fvf_visitdate), # Convert visit date to Date format
     date = ymd(fvf_visitdate),  # Convert to date format
-    study_name = "BIPOD",      # Add study name
+    study_name = "STUDY_1",      # Add study name
     vol_id = as.numeric(vol_id), # Fixes vol_id numbers
     study_phase = case_when(    # Assign study phase based on redcap_event_name
       grepl("screen|baseline|prep", redcap_event_name, ignore.case = TRUE) ~ "Prep",
@@ -121,12 +97,12 @@ bipod_clean <- bipod %>%
   ungroup()
 
 
-### =====PTSD Study=====
-ptsd_clean <- ptsd %>%
+### =====STUDY_2 Study=====
+study_2_clean <- study_2 %>%
   mutate(
     fvf_visitdate = as.Date(fvf_visitdate), # Convert visit date to Date format
     date = ymd(fvf_visitdate),  # Convert to date format
-    study_name = "BIPOD",      # Add study name
+    study_name = "STUDY_2",      # Add study name
     vol_id = as.numeric(vol_id),
     study_phase = case_when(    # Assign study phase based on redcap_event_name
       grepl("screen|baseline|prep", redcap_event_name, ignore.case = TRUE) ~ "Prep",
@@ -161,12 +137,12 @@ ptsd_clean <- ptsd %>%
   ungroup()
 
 
-### =====CLBP+D STUDY=====
-clbpd_clean <- clbpd %>%
+### =====STUDY_4 STUDY=====
+study_4_clean <- study_4 %>%
   mutate(
     fvf_visitdate = as.Date(fvf_visitdate), # Convert visit date to Date format
     date = ymd(fvf_visitdate),  # Convert to date format
-    study_name = "BIPOD",      # Add study name
+    study_name = "STUDY_4",      # Add study name
     vol_id = as.numeric(sub(".*-", "", vol_id)), # Fixes vol_id numbers
     study_phase = case_when(    # Assign study phase based on redcap_event_name
       grepl("screen|baseline|prep", redcap_event_name, ignore.case = TRUE) ~ "Prep",
@@ -200,14 +176,14 @@ clbpd_clean <- clbpd %>%
   ) %>%
   ungroup()
 
-### =====MDD-AUD STUDY=====
-mddaud$visit <- mddaud$studyvisit_2004 
+### =====STUDY_3 STUDY=====
+study_3$visit <- study_3$studyvisit_2004 
 
-mddaud_clean <- mddaud %>%
+study_3_clean <- study_3 %>%
   mutate(
     fvf_visitdate = as.Date(fvf_visitdate), # Convert visit date to Date format
     date = ymd(fvf_visitdate),  # Convert to date format
-    study_name = "BIPOD",      # Add study name
+    study_name = "STUDY_3",      # Add study name
     vol_id = as.numeric(sub(".*-", "", vol_id)),
     study_phase = case_when(    # Assign study phase based on redcap_event_name
       grepl("screen|baseline|prep", redcap_event_name, ignore.case = TRUE) ~ "Prep",
@@ -287,15 +263,15 @@ guide_log <- guide_log %>%
     `End Date (last integration before follow-up)` = as.Date(`End Date (last integration before follow-up)`, format = "%Y-%m-%d")
   ) %>%
   rename(
-    `Study` = `Study (MDD/AUD)`,
+    `Study` = `Study (STUDY_3)`,
     `Start Date (First Prep)` = `Start Date (first prep)`
   )
 
 
-write.csv(ptsd_clean, 'ptsd_facilitatordata.csv', row.names = F)
-write.csv(bipod_clean, 'bipod_facilitatordata.csv', row.names = F)
-write.csv(clbpd_clean, 'clbpd_facilitatordata.csv', row.names = F)
-write.csv(mddaud_clean, 'mddaud_facilitatordata.csv', row.names = F)
+write.csv(study_2_clean, 'study_2_facilitatordata.csv', row.names = F)
+write.csv(study_1_clean, 'study_1_facilitatordata.csv', row.names = F)
+write.csv(study_4_clean, 'study_4_facilitatordata.csv', row.names = F)
+write.csv(study_3_clean, 'study_3_facilitatordata.csv', row.names = F)
 ```
 
 ```{r combine_studies, include = FALSE}
@@ -314,14 +290,14 @@ guideeffort_bystudy <- function(data, study_name){
 }
 
 ### APPLY FUNCTION TO EACH DATA SET // CODE DEPENDENT ON STUDIES
-bipod_guide_data <- guideeffort_bystudy(bipod_clean, study_name = 'BIPOD')
-ptsd_guide_data <- guideeffort_bystudy(ptsd_clean, study_name = 'PTSD')
-clbpd_guide_data <- guideeffort_bystudy(clbpd_clean, study_name = 'CLBP+D')
-mddaud_guide_data <- guideeffort_bystudy(mddaud_clean, study_name = 'MDD/AUD')
+study_1_guide_data <- guideeffort_bystudy(study_1_clean, study_name = 'STUDY_1')
+study_2_guide_data <- guideeffort_bystudy(study_2_clean, study_name = 'STUDY_2')
+study_4_guide_data <- guideeffort_bystudy(study_4_clean, study_name = 'STUDY_4')
+study_3_guide_data <- guideeffort_bystudy(study_3_clean, study_name = 'STUDY_3')
 
 
 ### CREATE COMBINED DATA FRAME WITH GUIDE DATA FROM ALL STUDIES // CODE DEPENDENT ON STUDIES
-all_guide_data <- bind_rows(bipod_guide_data, ptsd_guide_data, clbpd_guide_data, mddaud_guide_data)
+all_guide_data <- bind_rows(study_1_guide_data, study_2_guide_data, study_4_guide_data, study_3_guide_data)
 
 ### RENAME COLUMNS
 all_guide_data <- all_guide_data %>%
@@ -406,7 +382,7 @@ guide_effort_table <- guide_effort_table %>%
   # CODE DEPENDENT ON STUDIES
   mutate(
     `Visit Progress` = ifelse(
-      Study == "MDD/AUD" & (is.na(`Visit Progress`) | is.infinite(`Visit Progress`)), unname(event_to_visit[`Visit Name`]),
+      Study == "STUDY_3" & (is.na(`Visit Progress`) | is.infinite(`Visit Progress`)), unname(event_to_visit[`Visit Name`]),
       `Visit Progress`
     )
   ) %>%
@@ -432,10 +408,10 @@ guide_effort_table <- guide_effort_table %>%
   # Format Visit Progress based on the study type // CODE DEPENDENT ON STUDIES
     mutate(
       `Visit Progress` = case_when(
-      `Study` == "BIPOD" ~ paste((`Visit Progress` + 1), "/16", sep = ""),
-      `Study` == "PTSD" ~ paste((`Visit Progress` + 1), "/20", sep = ""),
-      `Study` == "MDD/AUD" ~ paste(`Visit Progress`, "/28", sep = ""),
-      `Study` == "CLBP+D" ~ paste(`Visit Progress`, "/10", sep = ""),
+      `Study` == "STUDY_1" ~ paste((`Visit Progress` + 1), "/16", sep = ""),
+      `Study` == "STUDY_2" ~ paste((`Visit Progress` + 1), "/20", sep = ""),
+      `Study` == "STUDY_3" ~ paste(`Visit Progress`, "/28", sep = ""),
+      `Study` == "STUDY_4" ~ paste(`Visit Progress`, "/10", sep = ""),
       TRUE ~ as.character(`Visit Progress`)
     )
   )
@@ -444,13 +420,13 @@ guide_effort_table <- guide_effort_table %>%
 guide_effort_table <- guide_effort_table %>%
   mutate(
     'End Date (last integration before follow-up)' = case_when(
-      `Study` == 'PTSD' ~ as.Date(`Start Date (First Prep)`) + 12*7,
-      `Study` == 'BIPOD' ~ as.Date(`Start Date (First Prep)`) + 8*7,
+      `Study` == 'STUDY_2' ~ as.Date(`Start Date (First Prep)`) + 12*7,
+      `Study` == 'STUDY_1' ~ as.Date(`Start Date (First Prep)`) + 8*7,
       TRUE ~ NA_Date_
     ),
     'End Date (LTFU)' = case_when(
-      `Study` == 'PTSD' ~ as.Date(`Start Date (First Prep)`) + 65*7,
-      `Study` == 'BIPOD' ~ as.Date(`Start Date (First Prep)`) + 52*7,
+      `Study` == 'STUDY_2' ~ as.Date(`Start Date (First Prep)`) + 65*7,
+      `Study` == 'STUDY_1' ~ as.Date(`Start Date (First Prep)`) + 52*7,
       TRUE ~ NA_Date_
     )
   )
@@ -550,12 +526,6 @@ standardize_name <- function(name_vector) {
       }
     }
   }
-  
-  # Manual name map // CODE DEPENDENT ON STUDIES
-  manual_map <- c(
-    "ELENA K" = "ELENA KILBY",
-    "MATT KAHN" = "MATTHEW AHN"
-  )
   
   name_vector <- sapply(name_vector, function(name) {
     parts <- trimws(unlist(strsplit(name, "/")))
