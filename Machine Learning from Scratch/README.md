@@ -11,3 +11,40 @@ This project demonstrates:
 - Learning the math behind these algorithms and coding them manually to gain a deeper understanding
 
 ## Algorithms Implemented
+### Logistics Regression
+- Sigmoid function & corss-entropy loss
+- Gradient descent optimization
+- Decision boundary visualization on a toy dataset
+
+<b> Math Recap: </b>
+ 
+$\ \hat{y} = \sigma ({\omega}^T x + b), \sigma (z) = \frac{1}{1 + e^{-z}} \$
+
+
+<b> Loss: </b>
+
+$\ L = -\frac{1}{m} \sum [y log(\hat{y}) + (1-y) log (1 - \hat{y})] \$
+​	
+
+<b> Gradient Descent Updates: </b>
+
+$\ w := w - alpha \frac{dL}{dw}, b:= b - \alpha \frac{dL}{db} \$
+
+### K-Means Clustering
+- Random centroid initialization
+- Iterative assignment and centroid recomputation
+- Cluster visualization on synthetic data (`make_blobs`)
+
+## Results
+### Logistic Regression Decision Boundary
+- Plots the learned decision boundary separating two classes
+
+### K-Means Clustering
+- Plots synthetic data with color-coded clusters and centroid markers
+
+### Requirements
+- Python >= 3.7
+- NumPy
+- Matplotlib
+- Scikit-learn (optional - for generating synthetic data)
+
