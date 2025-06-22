@@ -16,3 +16,17 @@ The R Markdown files is organized into several sections:
 |<b> guide_effort_table </b>| Maps event names to visit numbers, aggregates guide data by participant and study, estimates key study dates, merges with the guide log, and standardizes guide names.|
 |<b> guide_summary </b>| Creates two summary table: one (`guide_summary_part1`) that aggregates visits and total hours per guide, and one (`guide_summary_part2`) that summarizes participant progress and compeletion rates per guide.|
 |<b> display </b>| Creates the Shiny app UI and server logic. Filters options on the left, displays data tables and summary statistics on the right. Dynamically updates based on user inputs.|
+
+## Adding or Updating Studies
+This code contains sections marked with `***"CODE DEPENDENT ON STUDIES"***`.
+
+If new studies are added:
+- Search for `"CODE DEPENDENT ON STUDIES"` in the file
+- Modify the listed study identifiers and associated mappings accordingly
+
+## Built With
+- R
+- Shiny
+- Flexdashboard
+- Tidyverse
+- DT
