@@ -14,4 +14,5 @@ The R Markdown files is organized into several sections:
 |<b> clean_imported_surveys </b>| Cleans and standardizes data. Formats dates, assigns study phases, filters incomplete records, harmonizes variables, and exports cleaned datasets as CSVs.|
 |<b> combines_studies </b>| Defines a helper function to extract and label relevant guide data from multiple cleaned studies and combines them into one unified data set for further analysis.|
 |<b> guide_effort_table </b>| Maps event names to visit numbers, aggregates guide data by participant and study, estimates key study dates, merges with the guide log, and standardizes guide names.|
-|<b> guide_summary </b>| Creates two summary table: one|
+|<b> guide_summary </b>| Creates two summary table: one (`guide_summary_part1`) that aggregates visits and total hours per guide, and one (`guide_summary_part2`) that summarizes participant progress and compeletion rates per guide.|
+|<b> display </b>| Creates the Shiny app UI and server logic. Filters options on the left, displays data tables and summary statistics on the right. Dynamically updates based on user inputs.|
