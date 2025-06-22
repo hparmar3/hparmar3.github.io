@@ -28,7 +28,7 @@ $\ L = -\frac{1}{m} \sum [y log(\hat{y}) + (1-y) log (1 - \hat{y})] \$
 
 <b> Gradient Descent Updates: </b>
 
-$\ w := w - alpha \frac{dL}{dw}, b:= b - \alpha \frac{dL}{db} \$
+$\ w := w - \alpha \frac{dL}{dw}, b:= b - \alpha \frac{dL}{db} \$
 
 ### K-Means Clustering
 - Random centroid initialization
