@@ -9,6 +9,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
 ## Projects
 ### Machine Learning & Data Science
 - **[Machine Learning from Scratch](Machine%20Learning%20from%20Scratch/)** - Logistic Regression and K-Means Clustering implemented from scratch using NumPy
++ A hands-on
 - **[Diabetes Data Visualization](Diabetes%20Data%20Visualization/)** - Linear regression analysis and comprehensive data visualization pipeline
 - **[Logisitic Regression](Logisitic%20Regression/)** - Advanced classification model with gradient descent optimization
 
@@ -20,6 +21,17 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
 - **[Food Optimization in Python](Food%20Optimization%20in%20Python/)** - Dietary planning with nutritional constraints
 - **[McDonald's Diet Optimization](Linear%20Programming%20for%20McDonald's%20Diet/)** - Linear programming for diet planning
 - **[Steepest Descent Method](Steepest%20Descent%20Method/)** - Gradient-based optimization
+
+### Simulation & Statistical Modeling
+- **[Monte Carlo Simulation](Monte%20Carlo%20Simulation/)** - Statistical simulation for uncertainty modeling
+- **[Markov Chain](Markov%20Chain/)** - Markov chain-based text generation
+- **[Moving Average](Moving%20Average/)** - Time series analysis and forecasting
+
+### Web Development & Software Enginnering
+- **[Technical Documentation Page](Technical%20Documentation/)** - Responsive documentation website
+- **[Guide Effort Tool Website](Guide%20Effort%20Tool%20Website/)** - R-based web application
+- **[Maritime Signal Flags Visualizer](Project%201/)** - Interactive Java GUI application
+
 
 ## Contact 
 Feel free to reach out!
