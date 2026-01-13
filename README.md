@@ -65,6 +65,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - **Technologies:** R, quantmod, TTR, keras
   - **Key Features:** Time series analysis, technical indicators, deep learning for trading
 - **[Probability Problem Solutions](Probability%20Problem%20Solutions/)**
+- **[Computational Math](Computational%20Math/)**
 
 ### Web Development & Software Enginnering
 - **[Technical Documentation Page](Technical%20Documentation/)**
