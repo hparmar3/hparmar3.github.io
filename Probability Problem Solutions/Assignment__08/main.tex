@@ -1,0 +1,828 @@
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{array}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment 08}
+
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+
+    ALL IS WELL IN THE NEWELL FAMILY
+
+    \hfill
+
+    \begin{tabular}{c|c|c}
+         \textbf{WORD} & \textbf{LENGTH (X)} & \textbf{NUMBER OF L's (Y)} \\
+          ALL & 3 & 2 \\
+          IS & 2 & 0 \\
+          WELL & 4 & 2 \\
+          IN & 2 & 0 \\
+          THE & 3 & 0 \\
+          NEWELL & 6 & 2 \\
+          FAMILY & 6 & 1 \\      
+    \end{tabular}
+
+    \hfill
+
+    \textbf{(a)} probability of selecting any word: $P(W) = \frac{1}{7}$
+
+    \hfill
+
+    Joint PMF $P(X=x,Y=y)$:
+
+    \begin{tabular}{c|c|c}
+        \textbf{$X=x$} & \textbf{$Y=y$} & \textbf{$P(X=x,Y=y)$} \\
+         3 & 2 & 1/7 \\
+         2 & 0 & 2/7 \\
+         4 & 2 & 1/7 \\
+         3 & 0 & 1/7 \\
+         6 & 2 & 1/7 \\
+         6 & 1 & 1/7
+    \end{tabular}
+
+    \hfill
+
+    Marginal PDF of $X$:
+    
+    \begin{tabular}{c|c}
+        \textbf{$X=x$} & \textbf{$P(X=x)$} \\
+         2 & 2/7 \\
+         3 & 2/7 \\
+         4 & 1/7 \\
+         6 & 2/7
+    \end{tabular}
+
+    \hfill
+
+    Marginal PDF of $Y$:
+
+    \begin{tabular}{c|c}
+        $Y=y$ & $P(Y=y)$ \\
+        0 & 3/7 \\
+        1 & 1/7 \\
+        2 & 3/7
+    \end{tabular}
+
+    \hfill
+
+    \textbf{(b)}
+    \begin{itemize}
+        \item pay \$1 dollar for each letter in a word
+        \item get \$4 dollars for each L in a word
+
+        $R(X,Y) = 4Y - X$
+    \end{itemize}
+
+    $R(X,Y) \geq 0 \xrightarrow{} 4Y - X \geq 0 \xrightarrow{} 4Y \geq X \xrightarrow{} Y \geq \frac{X}{4}$
+
+    \hfill
+
+    \begin{tabular}{c|c|c}
+        $X=x$ & $Y=y$ & $4Y - X \geq 0$ \\
+        3 & 2 & $5 \geq 0$ - yes \\
+        2 & 0 & $-2 \geq 0$ - no \\
+        4 & 2 & $0 \geq 0$ - yes \\
+        2 & 0 & $-2 \geq 0$ - no \\
+        3 & 0 & $-3 \geq 0$ - no \\
+        6 & 2 & $2 \geq 0$ - yes \\
+        6 & 1 & $-2 \geq 0$ - no \\       
+    \end{tabular}
+
+    \hfill
+
+    $P(break even) = P(X=3, Y=2) + P(X=4, Y=2) + P(X=6,Y=2)$
+    
+    $= \frac{1}{7} + \frac{1}{7} + \frac{1}{7}$
+
+    $= \frac{3}{7}$
+
+    \hfill
+
+    \textbf{(c)}
+    "at least one L", $Y \geq 1$, i.e. $Y=1, Y=2$
+
+    \begin{itemize}
+        \item "ALL" (3,2)
+        \item "WELL" (4,2)
+        \item "NEWELL" (6,2)
+        \item "FAMILY" (6,1)
+    \end{itemize}
+
+    $P(Y \geq 1) = P(X=3, Y=2) + P(X=4, Y=2) + P(X=6, Y=2) + P(X=6, Y=1)$
+
+    $= \frac{1}{7} + \frac{1}{7} + \frac{1}{7} + \frac{1}{7}$
+
+    $= \frac{4}{7}$
+
+    $P(breakeven \, and \, Y \geq 1) = \frac{3}{7}$, (6,1) doesn't break even
+
+    $P(break|Y \geq 1) = \frac{P(break even \, and \, Y \leq 1)}{P(Y \geq 1)} = \frac{\frac{3}{7}}{\frac{4}{7}} = \frac{3}{4}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{2}
+    \hfill
+    
+    \textbf{(a)} $\Omega = 16$
+    \begin{itemize}
+        \item X = max(first die, second die), Y = min(first die, second die)
+        \item values of X and Y can be 1-4
+    \end{itemize}
+
+    \hfill
+
+    \textbf{X=1}
+    
+    $P(X=1, Y=1) = \frac{1}{16}$
+
+    \textbf{X=2}
+
+    $P(X=2, Y=1) = \frac{2}{16}$
+
+    $P(X=2, Y=2) = \frac{1}{16}$
+
+    \textbf{X=3}
+
+    $P(X=3, Y=1) = \frac{2}{16}$
+
+    $P(X=3, Y=2) = \frac{2}{16}$
+
+    $P(X=3, Y=3) = \frac{1}{16}$
+
+    \textbf{X=4}
+
+    $P(X=4, Y=1) = \frac{2}{16}$
+
+    $P(X=4, Y=2) = \frac{2}{16}$
+
+    $P(X=4, Y=3) = \frac{2}{16}$
+
+    $P(X=4, Y=4) = \frac{1}{16}$
+
+    \hfill
+
+    \begin{tabular}{c|c|c|c|c}
+        \textbf{Y/X} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\
+         \textbf{1} & 1/16 & 2/16 & 2/16 & 2/16 \\
+         \textbf{2} & 0 & 1/16 & 2/16 & 2/16 \\
+         \textbf{3} & 0 & 0 & 1/16 & 2/16 \\
+         \textbf{4} & 0 & 0 & 0 & 1/16 \\
+    \end{tabular}
+
+    \hfill
+
+    Marginal PDF of $X$:
+
+    \begin{tabular}{c|c}
+        $X=x$ & $P(X=x)$  \\
+        1 & 1/16 \\
+        2 & 3/16 \\
+        3 & 5/16 \\
+        4 & 7/16
+    \end{tabular}
+
+    \hfill
+
+    Marginal PDF of $Y$:
+
+    \begin{tabular}{c|c}
+         $Y=y$ & $P(Y=y)$  \\
+         1 & 7/16 \\
+         2 & 5 /16 \\
+         3 & 3/16 \\
+         4 & 1/16 \\
+    \end{tabular}
+
+    \hfill
+
+    \textbf{(b)}
+
+    $E(X) = \sum_{x=1}^{4} x P(X=x) = 1 \times \frac{1}{16} + 2 \times \frac{3}{16} + 3 \times \frac{5}{16} + 4 \times \frac{7}{16}$
+
+    $E(X) = \frac{1}{16} + \frac{6}{16} + \frac{15}{16} + \frac{28}{16}$
+
+    $E(X) = \frac{50}{16}$
+
+    \hfill
+
+    $E(Y) = \sum_{y=1}^{4} y P(Y=y) = 1 \times \frac{7}{16} + 2 \times \frac{5}{16} + 3 \times \frac{3}{16} + 4 \times \frac{1}{16}$
+
+    $E(Y) = \frac{7}{16} + \frac{10}{16} + \frac{9}{16} + \frac{4}{16}$
+
+    $E(Y) = \frac{30}{16}$
+
+    \hfill
+
+    \textbf{(c)} $U = \frac{X}{Y}$
+
+    \hfill
+
+    \begin{tabular}{c|c|c|c}
+        $X=x$ &  $Y=y$ & $U=u$ & $P(U=u)$ \\
+         1 & 1 & 1/1 = 1 & 1/16 \\
+         2 & 1 & 2/1 = 2 & 2/16 \\
+         2 & 2 & 2/2 = 1 & 1/16 \\
+         3 & 1 & 3/1 = 3 & 2/16 \\
+         3 & 2 & 3/2 = 1.5 & 2/16 \\
+         3 & 3 & 3/3 = 1 & 1/16 \\
+         4 & 1 & 4/1 = 4 & 2/16 \\
+         4 & 2 & 4/2 = 2 & 2/16 \\
+         4 & 3 & 4/3 = 1.3 & 2/16 \\
+         4 & 4 & 4/4 = 1 & 1/16
+    \end{tabular}
+
+    \hfill
+
+    PMF of $U$:
+
+    \begin{tabular}{c|c}
+        $U$ & $P(U=u)$ \\
+        1 & 4/16 \\
+        1.33 & 2/16 \\
+        1.5 & 2/16 \\
+        2 & 4/16 \\
+        3 & 2/16 \\
+        4 & 2/16
+    \end{tabular}
+
+    \hfill
+
+    \textbf{(d)}
+    $E(\frac{X}{Y}) = 1 \times \frac{4}{16} + 1.33 \times \frac{2}{16} + 1.5 \times \frac{2}{16} + 2 \times \frac{4}{16} + 3 \times \frac{2}{16} + 4 \times \frac{2}{16}$
+
+    $E(\frac{X}{Y}) = \frac{4}{16} + \frac{1}{6} + \frac{3}{16} + \frac{8}{16} + \frac{6}{16} + \frac{8}{16}$
+
+    $E(\frac{X}{Y}) = \frac{95}{48} = 1.979166667$
+
+    \hfill
+
+    $\frac{E(X)}{E(Y)} = \frac{\frac{50}{16}}{\frac{30}{16}} = \frac{50}{30} = 1.6666666667$
+
+    \hfill
+
+    Therefore, $E(\frac{X}{Y}) \neq \frac{E(X)}{E(Y)}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    Two random variables are independent if:
+
+    $P(X \leq x, Y \leq y) = P(X=x)P(Y=y)$
+
+    \hfill
+
+    $F_X(x) = P(X \leq x)$
+
+    $F_Y(x) = P(Y \leq y)$
+
+    \hfill
+
+    $F_{X,Y}(x,y) = F_X(x) F_Y(y)$
+
+    \hfill
+
+    $f(x,y) = \frac{d^2}{dxdy}F_{X,Y}(x,y)$
+
+    $f(x,y) = \frac{d^2}{dxdy}(F_X(x) F_Y(y))$
+
+    $f(x,y) = \frac{d}{dx}F_X(x) \frac{d}{dy}F_Y(y)$
+
+    \hfill
+
+    Marginal PDF $X$: $f_X(x) = \frac{d}{dx} F_X(x)$
+
+    Marginal PDF $Y$: $f_Y(x) = \frac{d}{dy} F_Y(y)$
+
+    \hfill
+
+    $f(x,y) = f_X(x) f_Y(y)$
+
+    \hfill
+
+    We have shown $X$ and $Y$ are independent, the joint PDF factors as $f(x,y) = f_X(x) f_Y(y)$, which is of the form $f(x,y) = g(x)h(y)$, where $g(x) = f_X(x)$ and $h(y) = f_Y(y)$
+
+    \hfill
+
+    $f(x,y) = g(x)h(y)$
+
+    \hfill
+
+    $f_X(x) = \int_{-\infty}^{\infty} f(x,y) \, dy$
+
+    $= \int_{-\infty}^{\infty} g(x)h(y) \, dy$
+
+    $= g(x) \int_{-\infty}^{\infty} h(y) \, dy$
+
+    Let $c_1 = \int_{-\infty}^{\infty} h(y) \, dy$, is a constant. Thus, the marginal PDF $f_X(x)$ is: $f_X(x) = g(x) c_1$
+
+    \hfill
+
+    $f_Y(y) = \int_{-\infty}^{\infty} f(x,y) \, dx$
+
+    $= \int_{-\infty}^{\infty} g(x) h(y) \, dx$
+
+    $= h(y) \int_{-\infty}^{\infty} g(x) \, dx$
+
+    Let $c_2 = \int_{-\infty}^{\infty} g(x) \, dx$, is a constant. Thus, the marginal PDF $f_Y(y)$ is: $f_Y(y) = h(y) c_2$
+
+    \hfill
+
+    $F_{X,Y}(x,y) = \int_{-\infty}^{x} \int_{-\infty}^{y} f(u,v) \, dv \, du$
+
+    $= \int_{-\infty}^{x} g(u) du \int_{-\infty}^{y} h(v) \,dv$
+
+    The first integral is the marginal CDF $F_X(x)$, and the second integral is the marginal CDF $F_Y(y)$:
+
+    $F_{X,Y}(x,y) = F_X(x) F_Y(y)$
+
+    \hfill
+
+    Since the joint CDF factors as $F_{X,Y}(x,y) = F_X(x) F_Y(y)$, by the definition of independence, $X$ and $Y$ are independent.
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{4}
+    \hfill
+
+    $f_{X,Y}(x,y) = \begin{cases}
+        \frac{1}{2} (x+y) e^{-(x+y)}, x>0, y>0 \\
+        0, elsewhere       
+    \end{cases}$
+
+    For $F_{X,Y}(x,y)$ to be a valid joint probability density function (PDF), it must satisfy two conditions:
+    \begin{enumerate}
+        \item \textbf{Non-negativity:} $f_{X,Y}(x,y) \geq 0$ for all $x$ and $y$
+        \item \textbf{Normalization:} The total probability over the entire space must be 1
+
+        $\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dx \, dy = 1$
+    \end{enumerate}
+
+    \hfill
+
+    \begin{enumerate}
+        \item \textbf{Non-negativity}
+
+        $f_{X,Y}(x,y) = \frac{1}{2}(x+y)e^{-(x+y)}$ is non-negative for $x > 0$ and $y > 0$ because:
+        \begin{itemize}
+            \item the term x+y is positive for $x>0$ and $y>0$
+            \item the exponential function $e^{-(x+y)}$ is always positive
+        \end{itemize}
+        Therefore, $f_{X,Y}(x,y) \geq 0$ for $x>0$ and $y>0$, and $f_{X,Y}(x,y) = 0$ elsewhere.
+
+        \item \textbf{Normalization:}
+
+        $= \int_{0}^{\infty} \int_{0}^{\infty} \frac{1}{2}(x+y) e^{-(x+y)} \, dx \, dy$
+
+        $= \frac{1}{2}[\int_{0}^{\infty} \int_{0}^{\infty} x e^{-(x+y)} \, dx \, dy + \int_{0}^{\infty} \int_{0}^{\infty} y e^{-(x+y)} \, dx \, dy]$
+
+        $= \frac{1}{2}[\int_{0}^{\infty} e^{-y} \int_{0}^{\infty} xe^{-x} \, dx \, dy + \int_{0}^{\infty} ye^{-y} \int_{0}^{\infty} e^{-x} \, dx \, dy]$
+
+        $= \frac{1}{2}[\int_{0}^{\infty} e^{-y} (1^2 \Gamma(2) \, dy + \int_{0}^{\infty} ye^{-y} \times 1 \, dy]$
+
+        $= \frac{1}{2}[\int_{0}^{\infty} e^{-y} \times 1 \, dy + \int_{0}^{\infty} ye^{-y} \, dy]$
+
+        $= \frac{1}{2}[\int_{0}^{\infty} e^{-y} \times 1 + \int_{0}^{\infty} ye^{-y} \, dy]$
+
+        $= \frac{1}{2}(1 + (1^2 \Gamma(2))$
+
+        $= \frac{1}{2}(1+1)$
+
+        $= \frac{1}{2} \times 2$
+
+        $= 1$
+    \end{enumerate}
+
+    \textbf{Marginal PDF of X:}
+
+    $f_X(x) = \int_0^{\infty} \frac{1}{2} (x+y) e^{-(x+y)} \, dy$
+
+    $f_Y(x) = \frac{1}{2}[\int_{0}^{\infty} x e^{-(x+y)} \, dy + \int_{0}^{\infty}y e^{-(x+y)} \, dy]$
+
+    $= \frac{1}{2} e^{-x} [\int_{0}^{\infty} xe^{-y} \, dy + \int_{0}^{-y}ye^{-y} \, dy]$
+
+    $= \frac{1}{2} e^{-x} [x \int_{0}^{\infty} e^{-y} \, dy + \int_{0}^{-y}ye^{-y} \, dy]$
+
+    $f_X(x) = \frac{1}{2}e^{-x}(x+1)$
+
+    \hfill
+
+    \textbf{Marginal PDF of Y:}
+
+    By symmetry, the marginal PDF is:
+
+    $f_Y(y) = \frac{1}{2} e^{-y}(y+1)$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{5}
+    \hfill
+
+    $f_{X,Y}(x,y) = \begin{cases}
+        k e^{-(x+y)}, \, x \geq 0, \, y \geq 0 \\
+        0, \, otherwise
+    \end{cases}$
+
+    \textbf{(a)} 
+    \begin{enumerate}
+        \item \textbf{Non-negativity}
+
+        The given function $f_{X,Y}(x,y) = k e^{-(x+y)}$ is non-negative for all $x \geq 0$ and $y \geq 0$ because:
+        \begin{itemize}
+            \item the constant x is non-negative
+            \item the exponential function $e^{-(x+y)}$ is always positive for $x \geq 0$ and $y \geq 0$. Therefore, the non-negativity condition is satisfied.
+        \end{itemize}
+
+        \item \textbf{Normalization}
+
+        $\int_{0}^{\infty} k e^{-(x+y)} \, dx \, dy = 1$
+
+        $k \int_{0}^{\infty} e^{-y} \int_{0}^{\infty} e^{-x} \, dx \, dy = 1$
+
+        $k \int_{0}^{\infty} e^{-y} \times 1 \, dy = 1$
+
+        $k \times 1 = 1$
+
+        $k = 1$
+
+        \hfill
+
+        To satisfy the normalization condition $k=1$, therefore, the joint PDF is:
+        $f_{X,Y}(x,y) = e^{-(x+y)}$ for $x \geq 0$ and $y \geq 0$
+    \end{enumerate}
+
+    \hfill
+
+    \textbf{(b)} $P(X<1$ and $Y<1) = \int_{0}^{1} \int_{0}^{1} f_{X,Y}(x,y) \, dx \, dy$
+
+    $= \int_{0}^{1} \int_{0}^{1} e^{-(x+y)} \, dx \, dy$
+
+    $= \int_{0}^{1} e^{-y} \, dy \int_{0}^{1} e^{-x} \, dx$
+
+    $= [-e^{-y} |_{0}^{1}][-e^{-x} |_{0}^{1}]$
+
+    $= [-e^{-1} + 1][-e^{-1} + 1]$
+
+    $= (1 - \frac{1}{e})^2$
+
+    \hfill
+
+    \textbf{(c)} $P(X+Y >3)$
+
+    $P(X+Y>3) = 1 - P(X+Y \leq 3)$
+
+    $P(X+Y \leq 3) = \int \int_{x+y \leq 3} f_{X,Y}(x,y) \, dx \, dy$
+
+    $= \int \int_{x+y \leq 3} e^{-(x+y)} \, dx \, dy$
+
+    \hfill
+
+    $P(X+Y \leq 3) = \int_{0}^{3} \int_{0}^{u} e^{-u} \, dv \, du$
+
+    $= \int_{0}^{3} [ve^{-u} |_{0}^{u}] \, du$
+
+    $= \int_{0}^{3} u e^{-u} \, du$
+
+    $$a = u, db = e^{-u} du$$
+    $$da = du, b= -e^{-u}$$
+
+    $= -ue^{-u} + \int_{0}^{3} e^{-u} \, du$
+
+    $= -ue^{-u} - e^{u} |_{0}^{3}$
+
+    $=-(u+1)e^{-u} |_{0}^{3}$
+
+    $= -4e^{-3} + e^0$
+
+    $1 - 4e^{-3}$
+
+    \hfill
+
+    $P(X+Y>3) = 1 - (1-4e^{-3})$
+
+    $= 4e^{-3}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    Let $X$ be the time it takes Alana to solve problems, and $Y$ be the time it takes Beatrice to solve the problem. Both $X$ and $Y$ are independent and exponentially distributed with parameter $\lambda$.
+
+    $f_X(x) = \lambda e^{-\lambda x}$ for $x \geq 0$
+
+    $f_Y(x) = \lambda e^{-\lambda y}$ for $y \geq 0$
+
+    \hfill
+
+    $P(X \geq 2Y) = \int_{0}^{\infty} \lambda e^{- \lambda y} \int_{2y}^{\infty} \lambda e^{-\lambda x} \, dx \, dy$
+
+    $ = {\lambda}^2 \int_{0}^{\infty} e^{- \lambda y} \int_{2y}^{\infty}  e^{-\lambda x} \, dx \, dy$
+
+    $ = {\lambda}^2 \int_{0}^{\infty} e^{- \lambda y} [-\frac{1}{\lambda}e^{-\lambda y} |_{2y}^{\infty}] \, dy$
+
+    $ = {\lambda}^2 \int_{0}^{\infty} e^{- \lambda y} [\frac{1}{\lambda}e^{-\lambda 2y} + 0] \, dy$
+
+    $ = \lambda \int_{0}^{\infty} e^{-3 \lambda y} \, dy$
+
+    $$u = 3 \lambda y$$
+    $$du = 3 \lambda dy$$
+
+    $= \frac{1}{3} \int_{0}^{\infty} e^{-u} \, du$
+
+    $= \frac{1}{3} \times 1$
+
+    $= \frac{1}{3}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{7}
+    \hfill
+
+    $X - Exp(\frac{3}{2})$
+
+    $Y - N(0,1)$
+
+    \hfill
+
+    $P(X > Y^2) = \int_{\infty}^{-\infty} P(X>Y^2 |Y=y) f_Y(y) \, dy$
+
+    $$X - Exp(\frac{3}{2}): f_X(x) = \frac{3}{2} e^{-\frac{3}{2}x}, x \geq 0$$
+    $$P(X>Y^2|Y=y) = \int_{y^2}^{\infty} \frac{3}{2}e^{-\frac{3}{2}x} \, dx = -e^{-\frac{3}{2}x} |_{y^2}^{\infty} = e^{-\frac{3}{2}y^2}$$
+
+    $P(X>Y^2) = \int_{-\infty}^{\infty} e^{-\frac{3}{2}y^2} \times \frac{1}{\sqrt{2 \pi}} e^{-\frac{y^2}{2}} \, dy$
+
+    $= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-2y^2} \, dy$
+
+    $= \frac{1}{\sqrt{2 \pi}}\sqrt{\frac{\pi}{2}}$
+
+    $= \frac{\sqrt{\pi}}{\sqrt{2}\sqrt{\pi}\sqrt{2}}$
+
+    $= \frac{1}{2}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{8}
+    \hfill
+    
+    $X - unif(0,1)$
+
+    $Y - unif(0,1)$
+
+    \hfill
+
+    $P(|X-Y| \leq 0.25)$
+
+    $-0.25 \leq X-Y \leq 0.25$
+
+    Since $X$ and $Y$ are uniformly distributed on the interval $(0,1)$, their joint distribution over the unit square $[0,1] \times [0,1]$ has a constant joint density of 1 in this region. Therefore, the probability $P(|X-Y| \leq 0.25)$ can be calculated as the area of the region within $[0,1] \times [0,1]$ where $[X-Y] \leq 0.25$
+
+    $\begin{cases}
+        X-Y = -0.25 \\
+        X-Y = 0.25
+    \end{cases}$
+
+    $\begin{cases}
+        X = -0.25 + Y \\
+        X = 0.25 + Y
+    \end{cases}$
+
+    $\begin{cases}
+        Y = X + 0.25 \\
+        Y = X - 0.25
+    \end{cases}$
+
+    \hfill
+
+    \textbf{Y = X + 0.25}
+    
+    (0, 0.25) and (0.75, 1)
+
+    \textbf{Y = X - 0.25}
+
+    (0.25, 0) and (1, 0.75)
+
+    \hfill
+
+    Area = $1 - \frac{1}{2}((0.75-0)(1-0.25)) - \frac{1}{2}((0.75-0)(1-0.25))$
+
+    $= 1 - \frac{1}{2}(0.75 \times 0.75) - \frac{1}{2}(0.75 \times 0.75)$
+
+    $= 1 - \frac{1}{2} \times 0.5625 - \frac{1}{2} \times 0.5625$
+
+    $= 1 - 0.28125 - 0.28125$
+
+    $= 0.4375$
+
+    
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{9}
+    \hfill
+
+    $P(X>Y) = \int \int_{(x,y):x>y} f(x) f(y) \, dx \, dy$
+
+    $P(X>Y) = \int_{-\infty}^{\infty} \int_{-\infty}^{y} f(x) f(y) \, dx \, dy$
+
+    $P(X>Y) = \int_{-\infty}^{\infty} f(y) \int_{-\infty}^{y} f(x) \, dx \, dy$
+
+    $P(X>Y) = \int_{-\infty}^{\infty} f(y)(1-F(y)) \, dy$ or $P(X>Y) = \int_{-\infty}^{\infty} f(y) F(y) \,dy$
+
+    $P(X>Y) = \int_{-\infty}^{\infty} f(y) \, dy - \int_{-\infty}^{\infty} f(y) F(y) \, dy = \int_{-\infty}^{\infty} \, dy$
+
+    $P(X>Y) = 1 - \int_{-\infty}^{\infty} f(y) F(y) \, dy = \int_{-\infty}^{\infty} f(y) F(y) \, dy$
+
+    $1 = 2 \int_{-\infty}^{\infty} f(y) F(y) \, dy$
+
+    $\frac{1}{2} = \int_{-\infty}^{\infty} f(y) F(y) \, dy$
+
+    $P(X>Y) = 1 - \frac{1}{2} = \frac{1}{2}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    $X-Gamma(2,1)$
+
+    $Y-Unif(0,1)$
+
+    \hfill
+
+    $f_X(x) = xe^{-x}$
+
+    $f_Y(y) = 1$
+
+    \hfill
+
+    $P(XY \leq u) = P(Y \leq \frac{u}{x}) = \int_{0}^{1} P(X \leq \frac{u}{y}) f_Y(y) \, dy$
+
+    $= \int_{0}^{1} F_x(\frac{u}{y}) \times 1 \, dy$
+
+    $$F_X(\frac{u}{y}) = \int_{0}^{\frac{u}{y}} x e^{-x} \, dx$$
+
+    $$u=x, dv=e^{-x}$$
+    $$du = 1, v=-e^{-x}$$
+
+    $$F_X(\frac{u}{y}) = -xe^{-x} + \int_{0}^{\frac{u}{y}} e^{-x} \, dx$$
+
+    $$F_X(\frac{u}{y}) = [-xe^{-x} - e^{-x} |_{0}^{\frac{u}{y}}]$$
+
+    $$F_X(\frac{u}{y}) = -\frac{u}{y} e^{-\frac{u}{y}} - e^{-\frac{u}{y}}$$
+
+    $= \int_{0}^{1} -\frac{u}{y}e^{-\frac{u}{y}} - e^{-\frac{u}{y}} \, dy$
+
+    $= \frac{d}{du}(\int_{0}^{1} -\frac{u}{y}e^{-\frac{u}{y}} - e^{-\frac{u}{y}} \, dy)$
+
+    $= \int_{0}^{1}(\frac{d}{du} -\frac{u}{y} e^{-\frac{u}{y}} - e^{-\frac{u}{y}}) \, dy$
+
+    $= \int_{0}^{1} (-\frac{1}{y} e^{-\frac{u}{y}} - \frac{u}{y^2} e^{-\frac{u}{y}} + \frac{1}{y}e^{-\frac{u}{y}}) \, dy$
+
+    $= \int_{0}^{1} - \frac{u}{y^2} e^{-\frac{u}{y}} \, dy$
+
+    $$v = \frac{u}{y}, y = \frac{u}{v}, dy = -\frac{u}{v^2} dv$$
+
+    $= -u \int_{\infty}^{u} \frac{1}{(\frac{u}{v})^2}e^{-v} \times (-\frac{u}{v^2}) \, dv$
+
+    $= u \int_{u}^{\infty} \frac{v^2}{u^2} \times \frac{u}{v^2} e^{-v} \, dv$
+
+    $= u \int_{u}^{\infty} \frac{1}{u} e^{-v} \, dv$
+
+    $= \int_{u}^{\infty} e^{-v} \, dv$
+
+    $= e^{-v} |_{u}^{\infty}$
+
+    $= e^{-u}, u \geq 0$
+
+    Therefore,
+    $U=XY-Exp(1)$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    \begin{itemize}
+        \item $X$ is selected uniformly at random from $(0,\frac{L}{2})$
+        \item $Y$ is selected uniformly at random from $(\frac{L}{2}, L)$
+    \end{itemize}
+    $P(|Y-X|>\frac{L}{3})=$
+
+    \hfill
+
+    $X$ is uniformly distributed over $(0, \frac{L}{2})$, so its PDF is:
+    $f_X(x) = \frac{1}{\frac{L}{2}-0} = \frac{1}{\frac{L}{2}} = \frac{2}{L}$ for $x \in (0, \frac{L}{2})$
+
+    \hfill
+
+    $Y$ is uniformly distributed over $(\frac{L}{2}, L)$, so its PDF is:
+    $f_Y(y) = \frac{1}{L - \frac{L}{2}} = \frac{1}{\frac{L}{2}} = \frac{2}{L}$ for $y \in (\frac{L}{2}, L)$
+
+    \hfill
+
+    $P(Y-X > \frac{L}{3}) = \int_{0}^{\frac{L}{6}} \int_{\frac{L}{2}}^{L} f_X(x) f_Y(y) \, dy \, dx + \int_{\frac{L}{6}}^{\frac{L}{3}} \int_{x+\frac{1}{3}}^{L} f_X(x) f_Y(y) \, dy \, dx$
+
+    $= \int_{0}^{\frac{L}{6}} \int_{\frac{L}{2}}^{L} \frac{2}{L} \times \frac{2}{L} \, dy \, dx + \int_{\frac{L}{6}}^{\frac{L}{2}} \int_{x+\frac{1}{3}}^{L} \frac{2}{L} \times \frac{2}{L} \, dy \, dx$
+
+    $= \frac{4}{L^2} [\int_{0}^{\frac{L}{6}} \int_{\frac{L}{2}}^{L} \, dy \, dx +\int_{\frac{L}{6}}^{\frac{L}{2}} \int_{x+\frac{1}{3}}^{L} \, dy \, dx]$
+
+    $= \frac{4}{L^2} [\int_{0}^{\frac{L}{6}} [y |_{\frac{L}{2}}^{L}] \, dx + \int_{\frac{L}{6}}^{\frac{L}{2}} [y |_{x+\frac{L}{3}}^{L}] \, dx]$
+
+    $= \frac{4}{L^2} [\int_{0}^{\frac{L}{6}} \frac{L}{2} \, dx + \int_{\frac{L}{6}}^{\frac{L}{2}} \frac{2L}{3} - x \, dx]$
+
+    $ = \frac{4}{L^2}([\frac{L}{2}x |_{0}^{\frac{L}{6}}] + [\frac{2L}{3}x - \frac{1}{2}x^2 |_{\frac{L}{6}}^{\frac{L}{2}}])$
+
+    $= \frac{4}{L^2}([\frac{L^2}{12}] + [\frac{2L^2}{6} - \frac{L^2}{8} - \frac{2L^2}{18} + \frac{L^2}{72}])$
+
+    $= \frac{4}{L^2}(\frac{L^2}{12} + \frac{L^2}{9})$
+
+    $= \frac{4}{L^2}(\frac{7L^2}{36})$
+
+    $= \frac{7}{9}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{12}
+    \hfill
+
+    $U - f_U(u) = \begin{cases}
+        \frac{u}{2}, 0 < u < 2 \\
+        0, otherwise
+    \end{cases}$
+
+    $V- f_V(u) = \begin{cases}
+        2v, 0<v<1 \\
+        0, otherwise
+    \end{cases}$
+
+    \hfill
+
+    $tan(\theta) = \frac{U}{V}$
+
+    \hfill
+
+    $P(tan(\theta) < tan(\frac{\pi}{4}) = P(\frac{U}{V} < 1) = P(U<V)$
+
+    $P(U<V) = \int_{0}^{1} \int_{0}^{v} f_U(u) f_V(v) \, du \, dv$
+
+    $= \int_{0}^{1} \int_{0}^{v} 2v \times \frac{u}{2} \, du \, dv$
+
+    $= \int_{0}^{1} v [\frac{1}{2}u^2 |_{0}^{v}] \, dv$
+
+    $=  \frac{1}{2} \int_{0}^{1} v \times v^2 \, dv$
+
+    $= \frac{1}{2} \int_{0}^{1} v^3 \, dv$
+
+    $= \frac{1}{8}v^4 |_{0}^{1}$
+
+    $= \frac{1}{8}$
+    
+    \hfill    
+    \end{exercise}
+
+  
+\end{document}
