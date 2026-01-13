@@ -1,1 +1,1 @@
-##Markov Chain Text Generator
+Markov Chain Text Generator
