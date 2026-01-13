@@ -1,0 +1,564 @@
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment }
+
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+
+    \begin{itemize}
+        \item 4 pockets - not distinct
+        \item 5 books - not distinct
+        \item 5 books = 5 stars
+        
+        4 pockets = 4 - 1 = 3 bars
+
+        $\begin{pmatrix}
+            5 + 3 \\
+            3
+        \end{pmatrix} = \begin{pmatrix}
+            8 \\
+            3
+        \end{pmatrix} = \frac{8!}{3!5!} = \frac{40,320}{6 \times 120} = \frac{40,320}{720} = 56$
+    \end{itemize}  
+    \end{exercise}
+
+
+
+    \begin{exercise}{2}
+    \hfill
+
+    \begin{itemize}
+        \item 10 stars and 3 bars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        10 + 3 \\
+        3
+    \end{pmatrix} = \begin{pmatrix}
+        13 \\
+        3
+    \end{pmatrix} = \frac{13!}{3!10!} = 286$
+
+    286 terms
+
+    \hfill
+
+    $= \begin{pmatrix}
+        10 \\
+        a, b, c, d
+    \end{pmatrix}x^a y^b z^c w^d$
+
+    $= \begin{pmatrix}
+        10 \\
+        0, 2, 7, 1
+    \end{pmatrix}x^0 y^2 z^7 w^1$
+
+    $= \frac{10!}{0!2!7!1!} y^2 z^7 w$
+
+    $= \frac{2,628,800}{1 \times 2 \times 5,040 \times 1} y^2 z^7 w$
+
+    $= \frac{3,628,800}{10,080} y^2 z^7 w$
+
+    $= 360 y^2 z^7 w$
+
+    COEFFICIENT: 360
+    \end{exercise}
+
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    \begin{itemize}
+        \item 5 distinct piles = 5 - 1 = 4 bars
+    \end{itemize}
+
+    \textbf{(a)} 
+    \begin{itemize}
+        \item 20 bricks = 20 stars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        20 + 4 \\
+        4
+    \end{pmatrix} = \begin{pmatrix}
+        24 \\
+        4
+    \end{pmatrix} = \frac{24!}{20!4!} = 10,626$
+
+    \textbf{(b)}
+    \begin{itemize}
+        \item pile 1 has at least 1 brick
+        \item 19 stars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        19 + 4 \\
+        4
+    \end{pmatrix} = \begin{pmatrix}
+        23 \\
+        4
+    \end{pmatrix} = \frac{23!}{4!19!} = 8,855$
+
+    \textbf{(c)}
+    \begin{itemize}
+        \item pile 1 having exactly 1 brick
+        \item 3 bars now
+    \end{itemize}
+
+    $\begin{pmatrix}
+        19 + 3 \\
+        3
+    \end{pmatrix} = \begin{pmatrix}
+        22 \\
+        3
+    \end{pmatrix} = \frac{22!}{3!19!} = 1,540$
+
+    \textbf{(d)}
+    \begin{itemize}
+        \item bricks all distinct
+    \end{itemize}
+
+    $\begin{pmatrix}
+        20 \\
+        4, 4, 4, 4, 4
+    \end{pmatrix} = \frac{20!}{(4!)^5} = 305,540,235,000$    
+    \end{exercise}
+
+
+
+    \begin{exercise}{4}
+    \hfill
+
+    \begin{itemize}
+        \item 6 chips labeled 1, 2, 3, 4, 5, 6
+        \item 4 people called A, B, C, D
+    \end{itemize}
+
+    \textbf{(a)} $6^4 = 1,296$
+
+    \textbf{(b)} $\begin{pmatrix}
+        6 \\
+        4
+    \end{pmatrix} = \frac{6!}{4!2!} = 15$
+
+    \textbf{(c)}
+    \begin{itemize}
+        \item 6 chips: 6 - 1 = 5 bars
+        \item 4 people = 4 stars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        5 + 4 \\
+        5
+    \end{pmatrix} = \begin{pmatrix}
+        9 \\
+        5
+    \end{pmatrix} = \frac{9!}{5!4!} = 126$        
+    \end{exercise}
+
+
+
+    \begin{exercise}{5}
+    \hfill
+
+    \begin{itemize}
+        \item marbles: 5 red, 3 blue, and 2 green
+        \item 5 distinct boxes labeled 1-5
+    \end{itemize}
+
+    \textbf{red:} 
+    \begin{itemize}
+        \item 5 red marbles = 5 stars
+        \item 5 distinct boxes = 5 - 1 = 4 bars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        5 + 4 \\
+        4
+    \end{pmatrix} = \begin{pmatrix}
+        9 \\
+        4
+    \end{pmatrix} = \frac{9!}{4!5!} = 126$
+
+    \textbf{blue:}
+    \begin{itemize}
+        \item 3 blue marbles = 3 stars
+        \item 5 distinct boxes = 5 - 1 = 4 bars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        3 + 4 \\
+        4
+    \end{pmatrix} = \begin{pmatrix}
+        7 \\
+        4
+    \end{pmatrix} = \frac{7!}{4!3!} = 35$
+
+    \textbf{green:}
+    \begin{itemize}
+        \item 2 green marbles = 2 stars
+        \item 5 distinct boxes = 5 - 1 = 4 bars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        2 + 4 \\
+        4
+    \end{pmatrix} = \begin{pmatrix}
+        6 \\
+        4
+    \end{pmatrix} \frac{6!}{4!2!} = 15$
+
+    ways marbles can be distributed in boxes = $126 \times 35 \times 15 = 66,150$
+    \end{exercise}
+
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    \textbf{(a)}
+    \begin{itemize}
+        \item non-negative integers: 0+
+        \item 125 stars
+        \item 3 - 1 = 2 bars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        125 + 2 \\
+        2
+    \end{pmatrix} = \begin{pmatrix}
+        127 \\
+        2
+    \end{pmatrix} = \frac{127!}{2!125!} = \frac{127 \times 126}{2} = 8,001$
+
+    \textbf{(b)}
+    \begin{itemize}
+        \item 0 not included
+        \item 1 - 125: 125
+        \item 124 stars
+        \item  3 - 1 = 2 bars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        124 + 2 \\
+        2
+    \end{pmatrix} = \begin{pmatrix}
+        126 \\
+        2
+    \end{pmatrix} = \frac{126!}{2!124!} = \frac{126 \times 125}{2} = 7,875$
+
+    \textbf{(c)}
+    \begin{itemize}
+        \item 125 - 101 = 24
+        \item $x_1 + x_2 + x_3 = 24$
+        \item 24 stars
+        \item 2 bars
+    \end{itemize}
+
+    $\begin{pmatrix}
+        127 \\
+        2
+    \end{pmatrix} - 3 \begin{pmatrix}
+        24 + 2 \\
+        2
+    \end{pmatrix} = \begin{pmatrix}
+        127 \\
+        2
+    \end{pmatrix} - 3 \begin{pmatrix}
+        26 \\
+        2
+    \end{pmatrix} = 8,001 - 3 \frac{26!}{2!24!} = 8,001 - 3 \frac{26 \times 25}{2} = 8,001 - 975 = 7,026$  
+    \end{exercise}
+
+
+
+    \begin{exercise}{7}
+    \hfill
+
+    \textbf{(a) n = 6} 
+
+    $\begin{pmatrix}
+        6 \\
+        2, 4
+    \end{pmatrix} = \frac{6!}{2!4!} = 15$
+
+    $\begin{pmatrix}
+        6 \\
+        3, 3
+    \end{pmatrix} = \frac{6!}{3!3!} = 20$
+
+    Because the jobs are not distinguishable
+
+    $\frac{20}{2!} = 10$
+
+    Therefore,
+
+    $15 + 20 = 25$
+
+    \textbf{(b) n =7}
+
+    $\begin{pmatrix}
+        7 \\
+        2, 5
+    \end{pmatrix} = \frac{7!}{2!5!} = 21$
+
+    $\begin{pmatrix}
+        7 \\
+        3, 4
+    \end{pmatrix} = \frac{7!}{3!4!} = 35$
+
+    $= 21 + 35 = 56$
+
+    \textbf{(c)} $\begin{pmatrix}
+        6 \\
+        2, 4
+    \end{pmatrix} = \frac{6!}{2!4!} = 15$
+
+    $\begin{pmatrix}
+        6 \\
+        3, 3
+    \end{pmatrix} = \frac{6!}{3!3!} = 20$
+
+    $= 15 + 20 = 35$
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{8}
+    \hfill
+
+    $| \Omega | = 6^6 = 46,656$
+
+    $P(|A|)$ = 1st 4 rolls even
+
+    $= (\frac{1}{2})^4 = \frac{1}{16}$
+
+    $P(|B|)$ = last 3 rolls divisible by 3
+
+    $= 1 \times (\frac{1}{3})^3 = \frac{1}{27}$
+
+    $P(|A \cap B|) = (\frac{1}{2})(\frac{1}{6})^3 = \frac{1}{432}$
+
+    $P(|A \cup B|) = \frac{1}{16} + \frac{1}{27} - \frac{1}{432} = \frac{7}{72}$
+    \end{exercise}
+
+    \begin{exercise}{9}
+    \hfill
+
+    \begin{itemize}
+        \item 8 people enter an elevator
+        \item stops at 4 floors
+        \item picks floors uniformly at random
+        \item $| \Omega | = 4^8 = 65,536$ 
+    \end{itemize}
+
+    \textbf{At least one floor is not selected}
+
+    $ = 4 \times 3^8 - \begin{pmatrix}
+        4 \\
+        2
+    \end{pmatrix} 2^8 + \begin{pmatrix}
+        4 \\
+        3
+    \end{pmatrix} 1^8$
+
+    $= 26,244 - \frac{4!}{2!2!} 2^8 + \frac{4!}{3!1!} 1^8$
+
+    $= 26,244 - 1,536 + 4$
+
+    $= 24,712$
+
+    $=> \frac{24,712}{65,536} \approx 0.3771$
+
+    \textbf{Every floor is selected}
+
+    $= 65,536 - 24,712 = 40,824$
+
+    $=> \frac{40,824}{65,536} \approx 0.6229$
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    \textbf{(a)}
+    \begin{itemize}
+        \item total hands: $\begin{pmatrix}
+            52 \\
+            5
+        \end{pmatrix} = \frac{52!}{5!47!} = 2,598,968$
+        
+        \item number of hands void in one specific suit: $\begin{pmatrix}
+            39 \\
+            5
+        \end{pmatrix} = 575,757$
+
+        \item single suit void: $P(V_1) = \frac{\binom{39}{5}}{\binom{52}{5}} = \frac{575,757}{2,598,968} \approx 0.2216$
+
+        \item two suits void: $P(V_1 \cap V_2) = \frac{\binom{26}{5}}{\binom{52}{5}} = \frac{65,780}{2,598,968} \approx 0.0253$
+
+        \item three suits void: $P(V_1 \cap V_2 \cap V_3) = \frac{\binom{13}{5}}{\binom{52}{5}} = \frac{1,287}{2,598,968} \approx 0.0005$
+
+        \item fours suits void: $P(V_1 \cap V_2 \cap V_3 \cap V_4) = 0$
+    \end{itemize}
+
+    $P(V_1 \cup V_2 \cup V_3 \cup V_4) \approx \binom{4}{3} 0.2216 - \binom{4}{2} 0.0253 + \binom{4}{1} 0.0005$
+
+    $\approx 4 \times 0.2216 - 6 \times 0.0253 + 4 \times 0.0005$
+
+    $\approx 0.8864 - 0.1518 + 0.002$
+
+    $\approx 0.7366$
+
+    \textbf{(b)}
+    \begin{itemize}
+        \item total hands: $\binom{52}{13} = \frac{52!}{13!39!} = 635,013,559,600$
+
+        \item single suit void: $P(V_1) = \frac{\binom{39}{13}}{\binom{52}{13}} = \frac{8,122,425,444}{635,013,559,600} \approx 0.0128$
+
+        \item two suits void: $P(V_1 \cap V_2) = \frac{\binom{26}{13}}{\binom{52}{13}} = \frac{10,400,600}{635,013,559,600} \approx 0.00002$
+
+        \item three suits void: $P(V_1 \cap V_2 \cap V_3) = \frac{\binom{13}{13}}{\binom{52}{13}} = \frac{1}{635,013,559,600} = 1.57476952 \times 10^{-12} \approx 0$
+
+        \item four suits void: $P(V_1 \cap V_2 \cap V_3 \cap V_4) = 0$
+    \end{itemize}
+
+    $P(V_1 \cup V_2 \cup V_3 \cup V_4) \approx \binom{4}{3} 0.0128 - \binom{4}{2} 0.0002 + \binom{4}{3} 0$
+
+    $\approx 4 \times 0.0128 - 6 \times 0.0002 + 4 \times 0$
+
+    $\approx 0.0512 - 0.0012 + 0$
+
+    $\approx 0.05$
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    \begin{itemize}
+        \item toss a fair coin until we observe a head for the first time
+        \item $| \Omega | = {1, 2, 3, 4, ...}$
+        \item $p_i = P({i}) = (\frac{1}{2})^i$ for i = 1, 2, 3, 4, ...
+    \end{itemize}
+
+    \textbf{(a) first head occurs on or before the 3rd toss}
+    \begin{itemize}
+        \item occurs on 1st toss: $\frac{1}{2}$
+        \item occurs on 2nd toss: $(\frac{1}{2})^2 = \frac{1}{4}$
+        \item occurs on 3rd toss: $(\frac{1}{2})^3  = \frac{1}{8}$
+        \item first head occurs on or before the 3rd toss: $\frac{1}{2} + \frac{1}{4} + \frac{1}{8} = \frac{7}{8}$
+    \end{itemize}
+
+    \textbf{(b) first head happens after the 5th toss}
+    \begin{itemize}
+        \item occurs on 4th toss: $(\frac{1}{2})^4 = \frac{1}{16}$
+        \item occurs on 5th toss: $(\frac{1}{2})^5 = \frac{1}{32}$
+        \item first head occurs on or before the 5th toss: $\frac{7}{8} + \frac{1}{16} + \frac{1}{32} = \frac{31}{32}$
+        \item first head happens after the 5th toss: $1 - \frac{31}{32} = \frac{1}{32}$
+    \end{itemize}
+
+    \textbf{(c) first head happens on a toss which is divisible by 3}
+    \begin{itemize}
+        \item 3, 6, 9, 12, 15, ...
+        \item $\sum_{n=1}^{\infty} (\frac{1}{2})^3 = (\frac{1}{2})^3 + (\frac{1}{2})^6 + (\frac{1}{2})^9 + ...$
+
+        $\frac{\frac{1}{8}}{1 - \frac{1}{8}} = \frac{\frac{1}{8}}{\frac{7}{8}} = \frac{1}{8} \times \frac{8}{7} = \frac{1}{7}$
+    \end{itemize}
+
+    \textbf{(d)} $P(|A|)$ = P(first occurs on or before the 3rd toss) = $\frac{7}{8}$
+
+    $P(|B|)$ = P(first head is divisible by 3) = $\frac{1}{7}$
+
+    $P(|A \cap B| = \frac{1}{8}$
+
+    $P(A|B) = \frac{\frac{1}{8}}{\frac{1}{7}} = \frac{1}{8} \times \frac{7}{1} = \frac{7}{8}$    
+    \end{exercise}
+
+
+
+    \begin{exercise}{12}
+    \hfill
+
+    \begin{itemize}
+        \item $P(A \cup B) = 0.7$
+        \item $P(A \cap B^c) = 0.2$
+        \item $P(A^c \cap B) = 0.1$
+
+        $|A \cup B| = |A| + |B| - |A \cup B|$
+
+        \item $P(A \cup B)$ - A and B
+        \item $P(A \cap B^c)$ - just A
+        \item $P(A^c \cap B)$ - just B
+
+        \item $P(A) = P(A \cup B) - P(A^c \cap B) = 0.7 - 0.1 = 0.6$
+        \item $P(B) = P(A \cup B) - P(A \cap B^c) = 0.7 - 0.2 = 0.5$
+        \item $P(A \cap B) = |A| + |B| - |A \cup B| = 0.6 + 0.5 - 0.7 = 1.1-0.7 = 0.4$
+    \end{itemize}
+
+    \textbf{(a)} $P(A | A \cup B)| = \frac{|A \cap (A \cup B)|}{|A \cup B|} = \frac{|A|}{|A \cup B|} = \frac{0.6}{0.7} = \frac{6}{7}$
+
+    \textbf{(b)} $P(B | A \cup B|) = \frac{|B \cap (A \cup B)|}{|A \cup B|} = \frac{|B|}{|A \cup B|} = \frac{0.5}{0.7} = \frac{5}{7}$
+
+    \textbf{(c)} $P(A \cap B| A \cup B) = \frac{|(A \cap B) \cap (A \cup B)|}{|A \cup B|} = \frac{|A \cap B|}{|A \cup B|} = \frac{0.4}{0.7} = \frac{4}{7}$
+
+    \textbf{(d)} $P(A | B) = \frac{|A \cap B|}{|B|} = \frac{0.4}{0.5} = \frac{4}{5}$
+
+    \textbf{(e)} $P(B | A) = \frac{|A \cap B|}{|A|} = \frac{0.4}{0.6} = \frac{2}{3}$
+    \end{exercise}
+
+
+
+    \begin{exercise}{13}
+    \hfill
+
+    \begin{itemize}
+        \item sequence has 3 of each digit: $\binom{9}{3, 3, 3} = \frac{9!}{3!3!3!} = 1,680$
+
+        \item consecutive 1's: $\binom{7}{3, 3, 1} = 140$
+        \item consecutive 2's: $\binom{7}{3, 3, 1} = 140$
+        \item consecutive 3's: $\binom{7}{3, 3, 1} = 140$
+
+        \item consecutive 1's and 2's: $\binom{5}{3, 1, 1} = 20$
+        \item consecutive 2's and 3's: $\binom{5}{3, 1, 1} = 20$ 
+        \item consecutive 1's and 3's: $\binom{5}{3, 1, 1} = 20$
+
+        \item double counting cases: 3! = 6
+
+        111222333
+
+        111333222
+
+        222111333
+
+        222333111
+
+        333111222
+
+        333222111
+
+        $=>$ 3 total
+
+        \item probability that there is at least one digit where all of that digit are consecutive given that a sequence has 3 of each digit = $\frac{3 \times 140 - 3 \times 20 + 6}{1,680} = \frac{366}{1,680} = \frac{61}{280} \approx 0.2179$
+    \end{itemize}
+        
+    \end{exercise}
+ 
+\end{document}
