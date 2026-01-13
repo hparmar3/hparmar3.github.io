@@ -1,0 +1,770 @@
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment 11}
+
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+
+    \begin{itemize}
+        \item bin contains stuff animals: 1 bear, 1 raccoon, 2 penguins, and 6 rabbits
+        \item person randomly grabs 3
+        \item $Y$ number of different types of stuffed animals in selection
+    \end{itemize}
+
+    \hfill
+
+    $X_1$ = 1 bear
+
+    $X_2$ = 1 raccoon
+
+    $X_3$ = 2 penguins
+
+    $X_4$ = 6 rabbits
+
+    \hfill
+
+    $Y = X_1 + X_2 +X_3 + X_4$
+
+    $E(Y) = E(X_1) + E(X_2) + E(X_3) + E(X_4)$
+
+    $E(Y) = P(X_1 = 1) + P(X_2 = 1) + P(X_3 = 1) + P(X_4 = 1)$
+
+    $1 - P(X_1 = 0) + 1 - P(X_2 = 0) + 1 - P(X_3 = 0) + 1 - P(X_4 = 0)$
+
+    $= 1 - \frac{\binom{9}{3}}{\binom{10}{3}} + 1  - \frac{\binom{9}{3}}{\binom{10}{3}} + 1 - \frac{\binom{8}{3}}{\binom{10}{3}} + 1 - \frac{\binom{4}{3}}{\binom{10}{3}}$
+
+    $= 4 - \frac{9!}{3!6!} \times \frac{3!7!}{10!} - \frac{9!}{3!6!} \times \frac{3!7!}{10!} - \frac{8!}{3!5!} \times \frac{3!7!}{10!} - \frac{4!}{3!} \times \frac{3!7!}{10!}$
+
+    $= 4 - \frac{7}{10} - \frac{7}{10} - \frac{7 \times 6}{10 \times 9} - \frac{4!7!}{10!}$
+
+    $= 4 - \frac{7}{10} - \frac{7}{10} - \frac{7}{15} - \frac{1}{30}$
+
+    $= \frac{21}{10}$
+    
+    $= 2.1$
+
+    \hfill   
+    \end{exercise}
+
+
+    \begin{exercise}{2}
+    \hfill
+
+    \begin{itemize}
+        \item 4 pairs of shoes are lined up at random
+    \end{itemize}
+
+    \hfill
+
+    $E(X) =$ number of shoes next to each other
+
+    $\Omega = 8! = 40,320$
+
+    $E(X_i) = \begin{cases}
+        1, probability \, of \, any \, pair \, (1,2,3,4) \\
+        0, probability \, of \, no \, pair
+    \end{cases}$
+
+    $P(X=0) = \binom{4}{0}8!  = 40,320 \xrightarrow{} \frac{40,320}{40,320} = 1$
+
+    $P(X=1) = \binom{4}{1}7!2 = 40,320 - 17,280 = 23,040 \xrightarrow{} \frac{17,280}{40,320} = \frac{4}{7}$
+
+    $P(X=2) = \binom{4}{2}6!2^2 = 17,280 - 3,840 = 13,440 \xrightarrow{} \frac{13,440}{40,320} = \frac{1}{3}$
+
+    $P(X=3) = \binom{4}{3}5!2^3 = 3,840 - 384 = 3,456 \xrightarrow{} \frac{3,456}{40,320} = \frac{3}{35}$
+
+    $P(X=4) = \binom{4}{4}4!2^4 = 384 \xrightarrow{} \frac{384}{40,320} = \frac{1}{105}$
+
+    \hfill
+
+    P(Prob of any pair) $ = \frac{4}{7} + \frac{1}{3} + \frac{3}{35} + \frac{1}{105} = 1$
+
+    P(Prob of no pair) = 1
+
+    \hfill
+
+    $E(X) = 0 \times 1 + 1 \times 1 = 1$
+
+    \hfill
+
+    P(Prob of any pair) = $\frac{\binom{4}{1}7!2}{8!} = \frac{8 times 7!}{8!} = 1$
+
+    Generalization:
+
+    P(Prob of any pair) = $\frac{\binom{n}{1}(2n-1)!2}{(2n)!} = \frac{\frac{n!}{1!(n-1)!}(2n-1)!2}{(2n)!} = \frac{2n(2n-1)!}{(2n)!} = \frac{(2n)!}{(2n)!} = 1$
+
+    P(Prob of no pair) = $\frac{\binom{n}{0}(2n)!}{(2n)!} = \frac{(2n)!}{(2n)!} = 1$
+
+    $E(X) =  1 \times 0 + 1 \times 1$
+
+    Therefore $E(X)$ always equals 1 no matter the number of shoes
+
+    \hfill    
+    \end{exercise}
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    \textbf{(a)}
+    $E(X) = \begin{cases}
+        1, if \, has \, rank \, i \\
+        0, if \, does \, have \, rank \ i
+    \end{cases}$
+
+    13 ranks, 4 cards each
+
+    $X = \sum_{i=1}^{13} X_i$
+
+    $E(X) = E(\sum_{i=1}^{13} X_i)$
+
+    P(Doesn't have rank i) = $\frac{\binom{48}{10}}{\binom{52}{10}}$
+
+    P(has rank i) = $1 - \frac{\binom{48}{10}}{\binom{52}{10}}$
+
+    $E(X) = P(X=1) + P(X=2) + ... + P(X=13)$
+
+    $E(X) = 13 P(X=i)$
+
+    $E(X) = 13 (1 - \frac{\binom{48}{10}}{\binom{52}{10}})$
+
+    \hfill
+
+    \textbf{(b)}
+    $E(X) = \begin{cases}
+        1, if \, has \, rank \, i \\
+        0, if \, doesn't \, have \, rank \, i
+    \end{cases}$
+
+    $E(X) = [13 \times (ranks \, with \, 4 \, cards) + 1(rank \, with \, 2 \, cards)] \times 1 + 0 \times P(doesn't \, have \, rank \, i, \, i= 1, ..., 13, 14)]$
+
+    $E(X) = 13(1 - \frac{\binom{50}{10}}{\binom{54}{10}}) + (1 - \frac{\binom{52}{10}}{\binom{54}{10}})$
+
+    \hfill    
+    \end{exercise}
+
+
+    \begin{exercise}{4}
+    \hfill
+
+    $X_1$ = 1st toy $\xrightarrow{}$ comes from the 1st draw
+
+    $X_2$ = 2nd toy $\xrightarrow{}$ number of draw until 2nd toy, geometric(3/4)
+
+    $X_3$ = 3rd toy $\xrightarrow{}$ geometric(1/2)
+
+    $X_4$ = 4th toy $\xrightarrow{}$ geometric (1/4)
+
+    \hfill
+
+    $X = X_1 + X_2 + X_3 + X_4$
+
+    $E(X) = E(X_1) + E(X_2) + E(X_3) + E(X_4)$
+
+    $E(X) = 1 + \frac{1}{3/4} + \frac{1}{1/2} + \frac{1}{1/4}$
+
+    $E(X) = 1 + \frac{4}{3} + 2 + 4$
+
+    $E(X) = \frac{25}{3}$
+
+    \hfill    
+    \end{exercise}
+
+
+    \begin{exercise}{5}
+    \hfill
+
+    \textbf{(a)} P(person 4 has the winning bid) = $\frac{1}{4}$
+
+    because everyone is equally likely
+
+    \hfill
+
+    \textbf{(b)} $P(X_1 > X_2 > X_3) = \frac{1}{3} \times \frac{1}{2} \times 1 = \frac{1}{6}$
+
+    \hfill
+
+    \textbf{(c)} $P(X_1 > X_2 > X_3 \, and \, person \, 4 \, has \, the \, winning \, bid) = \frac{1}{4} \times \frac{1}{3} \times \frac{1}{2} \times 1 = \frac{1}{24}$
+
+    \hfill
+
+    \textbf{(d)} $P(X_1 > X_2 > X_3 \, and \, person \, 4 \, does \, not \, have \, the \, winning \, bid)$ 
+    
+    = $P(X_1 > X_2 > X_3) - P(X_1 > X_2 > X_3 \, and \, person \, 4 \, does \, not \, have \, the \, winning \, bid)$
+    
+    $= \frac{1}{6} - \frac{1}{24} = \frac{1}{8}$
+
+    \hfill
+
+    \textbf{(e)} P(person 4 has the winning bid and person 1's bid is not the lowest bid)
+
+    = P(person 4 has the winning bid) - $(P(X_4 > X_3 > X_2 > X_1) + P(X_4 > X_2 > X_3 > X_1))$
+
+    $= \frac{1}{4} - (\frac{1}{24} + \frac{1}{24}) = \frac{1}{4} - \frac{1}{12} = \frac{1}{6}$
+
+    \hfill
+
+    \textbf{(f)} There is not information to answer
+
+    \hfill    
+    \end{exercise}
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    \begin{itemize}
+        \item a box starts with 2 balls: 1 black, 1 white
+        \item $X_i = 1$ if we draw a white ball on trial $i$
+    \end{itemize}
+
+    \hfill
+
+    \textbf{(a)} $P(X_2 = 1) = \frac{1}{2}$
+
+    $P(X_4 = 1) = \frac{1}{2}$
+
+    \hfill
+
+    \textbf{(b)} $P(X_2 = 1|X_4 = 1) = \frac{P(X_2 = 1, X_4 = 1)}{P(X_2 = 1)} = \frac{P(X_1 = 1, X_2 = 1)}{P(X_1 = 1)} = \frac{\frac{1}{2} \times \frac{2}{3}}{\frac{1}{2}} = \frac{\frac{1}{3}}{\frac{1}{2}} = \frac{1}{3} \times 2 = \frac{2}{3}$
+
+    \hfill
+
+    \textbf{(c)} $P(X_1 = 1, X_2 = 1, X_3 = 1) = $
+
+    $(W \times W \times W \times W) + (W \times W \times W \times B) + (B \times W \times W \times W)$
+
+    $= (\frac{1}{2} \times \frac{2}{3} \times \frac{3}{4} \times \frac{4}{5})  + (\frac{1}{2} + \frac{2}{3} + \frac{3}{4} + \frac{1}{5}) + (\frac{1}{2} + \frac{1}{3} + \frac{2}{4} + \frac{3}{5})$
+
+    $= \frac{24}{120} + \frac{6}{120} + \frac{6}{120}$
+
+    $= \frac{36}{120}$
+
+    $= \frac{3}{10}$
+
+    \hfill
+
+    \textbf{(d)} Expected value of the number of white balls in 4 trials = $E(Y)$
+
+    $Y = X_0 + X_1 + X_2 + X_3 + X_4$
+
+    $E(Y) = E(X_0) + E(X_1) + E(X_2) + E(X_3) + E(X_4)$
+
+    $X_i = \begin{cases}
+        1, \, if \, its \, white \\
+        0, \, otherwise
+    \end{cases}$
+
+    $E(Y) = 0 + (\frac{1}{2}) + (\frac{1}{2}) + (\frac{1}{2}) + (\frac{1}{2})$
+
+    $E(Y) = 2$
+
+    \hfill
+
+    \textbf{(e)} $Y = X_1 + X_2 + X_3 + X_4$
+
+    $Var(Y) = Var(X_1 + X_2 + X_3 + X_4)$
+
+    $Var(Y) = E[(X_1 + X_2 + X_3 + X_4 - E[X_1 + X_2 + X_3 + X_4])^2]$
+
+    $Var(Y) = E[((X_1 - E[X_1]) + (X_2 - E[X_2]) + (X_3 + E[X_3]) + (X_4 + E[X_4]))^2]$
+
+    $Var(Y) = E[(X_1 - E[X])^2 + 2(X_1 - E[X_1])(X_2 - E[X_2]) + (X_2 - E[X_2])^2 + (X_3 - E[X_3])^2 + (X_4 - E[X_4])^2 + 2(X_1 - E[X_1])(X_3 - E[X_3]) + 2(X_2 - E[X_2])(X_3 - E[X_3]) + 2(X_1 - E[X_1])(X_4 - E[X_4]) + 2(X_2 - E[X_2])(X_4 - E[X_4]) + 2(X_3 - E[X_3])(X_4 - E[X_4])$
+
+    $Var(Y) = Var(X_1) + 2Cov(X_1, X_2) + Var(X_2) + Var(X_3) + Var(X_4) + 2 Var(X_1, X_3) + 2Var(X_2, X_3) + 2Var(X_1, X_4) + 2Var(X_2, X_4) + 2Var(X_3, X_4)$
+
+    $Var(Y) = \frac{1}{4} + \frac{1}{6} + \frac{1}{4} + \frac{1}{4} + \frac{1}{4} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6}$
+
+    $Var(Y) = 1 + 1$
+
+    $Var(Y) = 2$
+
+    \hfill
+    \end{exercise}
+    
+
+    \begin{exercise}{7}
+    \hfill
+
+    $Z_1, Z_2, Z_3, Z_4 - IID \xrightarrow{} N(0,1)$
+
+    \hfill
+
+    \textbf{(a)} $P(Z_4 > Z_1, Z_4 > Z_2, Z_4 > Z_3) = \frac{1}{4}$
+
+    \hfill
+
+    \textbf{(b)} $P(Z_4 > Z_1, Z_4 > Z_2) = P(Z_4, Z_2, Z_1, Z_3) \times 3! + P(Z_3 > Z_4 > Z_2, Z_1) \times 2!$
+
+    $P(Z_4 > Z_1, Z_4 > Z_2) = \frac{1}{24} \times 6 + \frac{1}{24} \times 2$
+
+    $P(Z_4 > Z_1, Z_4 > Z_2) = \frac{8}{24}$
+
+    $P(Z_4 > Z_1, Z_4 > Z_2) = \frac{1}{3}$
+
+    \hfill
+
+    \textbf{(c)} $P(Z_4 > Z_1 | Z_1 = max\{Z_1, Z_2, Z_3\}) = \frac{P(Z_4 > Z_1, Z_1 = max\{Z_1, Z_2, Z_3\})}{P(Z_1 = max\{Z_1, Z_2, Z_3 \})} = \frac{\frac{1}{4}\times \frac{1}{3}}{\frac{1}{3}} = \frac{1/12}{1/3} = \frac{1}{12} \times 3 = \frac{1}{4}$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{8}
+    \hfill
+
+    $Cov(a, X) = E(a - E(a)) E(X-E(X))$
+    
+    $= E(a-a)E(X-E(X))$
+
+    $= E(0) E(X-E(X))$
+
+    $= 0 \times E(X-E(X))$
+
+    $=0$
+
+    \hfill
+
+    $Cov(a,X) = E(a-E(a))E(X-E(X))$
+
+    $= (E(X-E(X))E(a-E(a))$
+
+    $= Cov(X,a)$
+
+    \hfill
+
+    $Cov(X,a) = E(X-E(X))E(a-E(a))$
+
+    $= E(X- E(X))E(a-a)$
+
+    $= E(X - E(X)) E(0)$
+
+    $= E(X-E(X)) \times 0$
+
+    $= 0$
+    
+    \hfill    
+    \end{exercise}
+
+
+    \begin{exercise}{9}
+    \hfill
+
+    \begin{itemize}
+        \item 2 satellites measure the distance an object travels
+        \item satellite $i$ return the measurement $D_i = d + \epsilon_i$
+        \item d = actual distance
+        \item $\epsilon_i$ = random error made by satellite $i$
+        \item $D_1$ and $D_2$ are independent
+        \item we will measure the distance $= c D_1 + (1-c)D_2 = d$
+        \item find constant $c$ such that $0 \leq c \leq 1$ and $Var(cD_1 + (1-c)D_2)$ is minimized
+        \item $Var(D_1) = \sigma_1^2$ and $Var(D_2) = \sigma_2^2$ are both finite positive
+    \end{itemize}
+
+    \hfill
+
+    $D_i = d + \epsilon_i$
+
+    $D_i = cD_1 + (1-c)D_2 + \epsilon_i$
+
+    $Var(D_i) = Var(cD_1 + (1-c)D_2 + \epsilon_i)$
+
+    $= Var(cD_1 + (1-c)D_2)$
+
+    $= Var(cD_1) + Var((1-c)D_2) + 2Cov(cD_1, (1-c)D_2)$
+
+    $= c^2 Var(D_1) + (1-c)^2 Var(D_2) + 2c(1-c)Cov(D_1, D_2)$
+
+    $= c^2 Var(D_1) + (1-c)^2 Var(D_2) + (2c-2c^2) [Cov(D_1, D_2) = 0]$ since independent 
+
+    $= c^2 \sigma_1^2 + (1-2c+c^2) \sigma_2^2$
+
+    \hfill
+
+    $\frac{d}{dc}(c^2 \sigma_1^2 + (1-2c+c^2) \sigma_2^2) = 0$
+
+    $\frac{d}{dc}(c^2 \sigma_1^2 + \sigma_2^2 - 2c \sigma_2^2 + c^2 \sigma_2^2) = 0$
+
+    $2c \sigma_1^2 - 2 \sigma_2^2 + 2c \sigma_2^2 = 0$
+
+    $2c \sigma_1^2 + 2c \sigma_2^2 = 2 \sigma_2^2$
+
+    $c(\sigma_1^2 + \sigma_2^2) = \sigma_2^2$
+
+    $c = \frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}$
+
+    \hfill
+
+    $= Var(\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}D_1, (1-\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})D_2)$
+
+    $= Var(\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2} D_1) + Var((1- \frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})D_2) + 2 Cov(\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}D_1, (1 - \frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}) D_2)$
+
+    $= (\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})^2 Var(D_1) + (1 - \frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})^2 Var(D_2) + 2 (\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})(1 - \frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}) Cov(D_1, D_2)$
+
+    $= (\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})^2 \sigma_1^2 + (1 - \frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})^2 \sigma_2^2 + 2(\frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2})(1 - \frac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}) \times 0$
+
+    $= \frac{\sigma_2^4}{(\sigma_1^2 + \sigma_2^2)^2} \sigma_1^2 + (\frac{\sigma_1^2 + \sigma_2^2 - \sigma_2^2}{\sigma_1^2 + \sigma_2^2})^2 \sigma_2^2$
+
+    $= \frac{\sigma_2^4 \sigma_1^2}{(\sigma_1^2 + \sigma_2^2)^2} + (\frac{\sigma_1^2}{\sigma_1^2 + \sigma_2^2})^2 \sigma_2^2$
+
+    $= \frac{\sigma_2^4 \sigma_1^2}{(\sigma_1^2 + \sigma_2^2)^2} + \frac{\sigma_1^4 \sigma_2^2}{(\sigma_1^2 + \sigma_2^2)^2}$
+
+    $= \frac{\sigma_2^2 \sigma_1^2 (\sigma_2^2 + \sigma_1^2)}{(\sigma_1^2 + \sigma_2^2)^2}$
+
+    $= \frac{\sigma_2^2 \sigma_1^2}{\sigma_1^2 + \sigma_2^2}$
+    
+    \hfill    
+    \end{exercise}
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    \textbf{(a)} $Z_x = \frac{x - \mu_x}{\sigma_x}$
+
+    $E(Z_x) = E(\frac{X - \mu_x}{\sigma_x})$
+
+    $= \frac{E(X) - E(\mu_x)}{\sigma_x}$
+
+    $= \frac{\mu_x - \mu_x}{\sigma_x}$
+
+    $=0$
+
+    \hfill
+
+    $Var(Z_x) = Var(\frac{X - \mu_x}{\sigma_x})$
+
+    $= \frac{1}{\sigma_x^2} Var(X - \mu_x)$
+
+    $= \frac{1}{\sigma_x^2}Var(X)$
+
+    $= \frac{\sigma_x^2}{\sigma_x^2}$
+
+    $= 1$
+
+    \hfill
+
+    \textbf{(b)}
+    $Corr(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}$
+
+    $Corr(X,Y) = \frac{Cov(X,Y)}{\sqrt{\sigma_x^2 \sigma_y^2}}$
+
+    $Corr(X,Y) = \frac{E(XY) - E(Y)E(X)}{\sigma_x \sigma_y}$
+
+    $Corr(X,Y) = \frac{E(X-E(X_1))(Y - E(Y))]}{\sigma_x \sigma_y}$
+
+    $Corr(X,Y) = \frac{E[(X- \mu_x)(Y - \mu_y)]}{\sigma_x \sigma_y}$
+
+    $Corr(X,Y) = E[\frac{1}{\sigma_x \sigma_y}(X - \mu_x)(Y - \mu_y)]$
+
+    $Corr(X,Y) = E[(\frac{X - \mu_x}{\sigma_x})(\frac{Y - \mu_y}{\sigma_y})]$
+
+    $Corr(x,y) = E[Z_x Z_y]$
+
+    $Corr(x,y) = E[(Z_x - 0)(Z_y - 0)]$
+
+    $Corr(x,y) = Cov(Z_x, Z_y)$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    \begin{itemize}
+        \item independent sequence $X_1, X_2, X_3, ... - N(\mu, \sigma^2)$
+        \item for each $n$, the random variable $\overline{X_n} = \frac{1}{n} \sum_{x=1}^n X_k$ denotes the sample means of the first $n$ random variables in the sequence
+    \end{itemize}
+
+    \hfill
+
+    \textbf{(a)} Because of the linearity property of covariance
+    
+    $Cov(X_1 + X_2, X_1 - X_2) = Cov(X_1, X_1) - Cov(X_1, X_2) + Cov(X_2, X_1) - Cov(X_2, X_2)$
+
+    This has the following properties:
+    \begin{itemize}
+        \item $Cov(X_i, X_i) = Var(X_i) = \sigma^2$
+        \item $Cov(X_1, X_2) = Cov(X_2, X_1) = 0$, because $X_1$ and $X_2$ are independent
+    \end{itemize}
+
+    \hfill
+
+    $Cov(X_1 + X_2, X_1 - X_2) = \sigma^2 - 0 + 0 - \sigma^2 = 0$
+
+    \hfill
+
+    \textbf{(b)}
+    \begin{itemize}
+        \item if $1 \leq m < n$ compute $Cov(\overline{X_m}, \overline{X_n})$
+    \end{itemize}
+
+    $= cov(\overline{X_m}, \overline{X_n})$
+
+    $= Cov(\frac{1}{m} \sum_{j=1}^{m} X_j, \frac{1}{n} \sum_{k=1}^{m} + \frac{1}{n}\sum_{k=m+1}^{n} X_k)$
+
+    $= \frac{1}{mn} Cov(\sum_{j=1}^{m} X_j, \sum_{k=1}^{m} X_k + \sum_{k=m+1}^{n} X_k)$
+
+    $= \frac{1}{mn} Cov(\sum_{j=1}^{m} X_j, \sum_{k=1}^{m} X_k) + \frac{1}{mn} Cov(\sum_{j=1}^{m} X_j, \sum_{k=m+1}^{n} X_k)$
+
+    $= \frac{1}{mn} \sum_{j=1}^{m} \sum_{k=1}^{m} Cov(X_j, X_k) + \frac{1}{mn} \sum_{j=1}^{m} \sum_{k=m+1}^{n} Cov(X_j, X_k)$
+
+    $Cov(X_j, X_k) = \begin{cases}
+        \sigma^2, \, if \, j=k \\
+        0, \, if \, j \neq k
+    \end{cases}$
+
+    $= \frac{1}{mn} \sum_{j=1}^{m} \sum_{k=1}^{m} Cov(X_j, X_k)$
+
+    $= \frac{1}{mn} \sum_{j=1}^{m} \sigma^2$
+
+    $= \frac{\sigma^2}{n}$
+
+    \hfill
+
+    \textbf{(c)} 
+    $Cov(X_i - \overline{X_n}, X_j - \overline{X_n}) = Cov(X_i, X_j) - Cov(X_i, X_n) - Cov(X_n, X_j) + Cov(X_n, X_n)$
+
+    \hfill
+
+    Covariance properties:
+    \begin{itemize}
+        \item $Cov(X_i, X_j) = 0$ since $i \neq j$, therefore $X_i$ and $X_j$ are independent
+        \item $Cov(X_i, X_n) = \frac{\sigma^2}{n}$ form part (b)
+        \item $Cov(X_n, X_n) = Var(X_n) = \frac{\sigma^2}{n}$
+    \end{itemize}
+
+    \hfill
+
+    $Cov(X_i - X_n, X_j - X_n) = 0 - \frac{\sigma^2}{n} - \frac{\sigma^2}{n} + \frac{\sigma^2}{n}$
+
+    $Cov(X_i - X_n, X_j - X_n) = -\frac{\sigma^2}{n}$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{12}
+    \hfill
+
+    \begin{itemize}
+        \item $N - geometric(p)$
+        \item on day $N$ the stock is worth $X$ dollars
+        \item $X - log-normal(\mu N, \sigma^2 N)$
+    \end{itemize}
+
+    \hfill
+
+    $E(X|N) = e^{\mu N + \frac{\sigma^2 N}{2}} = e^{(\mu + \frac{\sigma^2}{2})N}$
+
+    \hfill
+
+    Using the law of total expression:
+
+    $E(X) = E(E(X|N))$
+
+    $E(X) = E(e^{(\mu + \frac{\sigma^2}{2})N})$
+
+    $E(X) = \sum_{N=1}^{\infty} (1-p)^{N-1} p e^{(\mu + \frac{\sigma^2}{2})N}$
+
+    $E(X) = p \sum_{N=1}^{\infty} (1-p)^{N-1} e^{(\mu + \frac{\sigma^2}{2})N}$
+
+    \hfill
+
+    Assume $\mu + \frac{\sigma^2}{2} < -ln(1-p)$
+
+    \hfill
+
+    $E(X) = p e^{(\mu + \frac{\sigma^2}{2})} \sum_{N=1}^{\infty} (1-p)^{N-1} (e^{\mu + \frac{\sigma^2}{2})})^{N-1}$
+
+    $E(X) = p e^{(\mu + \frac{\sigma^2}{2})} \sum_{N=1}^{\infty} ((1-p) (e^{\mu + \frac{\sigma^2}{2})}))^{N-1}$
+
+    $E(X) = pe^{\mu + \frac{\sigma^2}{2})} \times \frac{1}{1 - (1-p)e^{(\mu + \frac{\sigma}{2})}}$
+
+    $E(X) = \frac{pe^{\mu + \frac{\sigma^2}{2})}}{1 - (1-p)e^{(\mu + \frac{\sigma^2}{2})}}$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{13}
+    \hfill
+
+    \begin{itemize}
+        \item Prof comes at a time between 9 AM - 1 PM and performs task
+        \item duration of the task is exponentially distributed with parameter $\lambda(y) = \frac{1}{5-y}$
+        \item $y$ is the length of time interval between 9 AM and the time of their  arrival
+    \end{itemize}
+
+    \hfill
+
+    \textbf{(a)} $Y - unif(0,4)$
+
+    $E(Y) = \frac{4}{2} = 2$
+
+    \hfill
+
+    $X|Y=y - exp(\frac{1}{5-y})$
+
+    $E(X|Y=y) = 5-y$
+
+    $E(X) = E(5-y) = 5 - E(Y) = 5 - 2 = 3 \, hours$
+
+    \hfill
+
+    \textbf{(b)}
+    $E[Y+X] = E(Y) + E(X) = 3 + 2 = 5 \, hours$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{14}
+    \hfill
+
+    $X - geometric(\frac{1}{2})$
+
+    $Y - min\{x, k\}$
+
+    \hfill
+
+    $E(Y) = E(Y|A) P(A) + E(Y|A^c) P(A^c)$
+
+    \begin{itemize}
+        \item $A = \{ X \leq k \}$
+        \item $A^c = \{ A^c > k \}$
+    \end{itemize}
+
+    $P(A) = P(X \leq k) = 1 - (1-p)^k = 1 - (1 - \frac{1}{2})^k = 1 - (\frac{1}{2})^k$
+
+    \hfill
+
+    $P(A^c) = P(X > k) = (1-p)^k = (1 - \frac{1}{2})^k = (\frac{1}{2})^k$
+
+    \hfill
+
+    $P(X=x) = (1-p)^{x-1}p = (1- \frac{1}{2})^{x-1}(\frac{1}{2}) = (\frac{1}{2})^{x-1} (\frac{1}{2}) = (\frac{1}{2})^x$
+
+    \hfill
+
+    $E(Y|A) = \frac{\sum_{x=1}^k x P(x=k)}{P(X \leq k)} = \frac{\sum_{x=1}^k x(\frac{1}{2})^x}{1- (\frac{1}{2})^k}$
+
+    \hfill
+
+    $E(Y|A^c) = P(Y|X >k) = E(k|X>k) = k$
+
+    $E(Y) = \frac{\sum_{x=1}^k x(1/2)^k}{1 - (1/2)^k}(1 - (1/2)^k)+ k \frac{1}{2^k}$
+
+    $E(Y) = \sum_{x=1}^k x(\frac{1}{2})^x + \frac{k}{2^k}$
+
+    $E(Y) = \sum_{x=1}^k \frac{x}{2^x} + \frac{k}{2^k}$
+
+    $E(Y) = 2^{-k}(-k + 2^{k+1} - 2) + \frac{k}{2^k}$
+
+    $E(Y) = 2^{-k}(2(2^k-1)-k) + \frac{k}{2^k}$
+
+    $E(Y) = 2(1-\frac{1}{2^k}) - \frac{k}{2^k} + \frac{k}{2^k}$
+
+    $E(Y) = 2(1-2^{-k})$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{15}
+    \hfill
+
+    $X - Gamma(\alpha, \beta)$
+
+    $Y|X= x - Gamma(X,X)$
+
+    \hfill
+
+    \textbf{(a)}
+    $E(Y) = E(E(Y|X)) = E(X^2) = Var(X) + E(X))^2 = \alpha \beta^2 + \alpha^2 \beta^2$
+
+    \hfill
+
+    \textbf{(b)}
+    $Cov(X,Y) = E(XY) - E(X)E(Y)$
+
+    $Cov(X,Y) = E[E(XY|X)] - (\alpha \beta)(\alpha \beta^2 + \alpha^2 \beta^2)$
+
+    $Cov(X,Y) = E[X E(Y|X)] - \alpha^2 \beta^3 - \alpha^3 \beta^3$
+
+    $Cov(X,Y) = E[X X^2] - \alpha^2 \beta^3 - \alpha^3 \beta^3$
+
+    $Cov(X,Y) = E[X^3] - \alpha^2 \beta^3 - \alpha^3 \beta^3$
+
+    \hfill
+
+    $M(\theta) = (1 - \beta \theta)^{-\alpha}$
+
+    $M'(\theta) = \alpha \beta (1 - \beta \theta)^{-\alpha - 1}$
+
+    $M''(\theta) = \alpha \beta^2 (\alpha + 1)(1 - \beta \theta)^{-\alpha - 2}$
+
+    $M'''(\theta) = \alpha \beta^3 (\alpha + 1)(\alpha + 2)(1 - \beta \theta)^{-\alpha - 3}$
+
+    $E(X^3) = (\alpha^2 \beta^3 + \alpha \beta^3)(\alpha + 2) = \alpha^3 \beta^3 + \alpha^3 \beta^3 + 2 \alpha \beta^3 + 2 \alpha \beta^3$
+    $= \alpha^3 \beta^3 + 3 \alpha^2 \beta^3 + 2 \alpha \beta^3$
+
+    \hfill
+
+    $= \alpha^3 \beta + 3 \alpha^2 \beta^3 + 2\alpha \beta^3 - \alpha^2 \beta^3 - \alpha^3 \beta$
+
+    $= 2 \alpha^2 \beta^3 + 2 \alpha \beta^3$
+    
+    \hfill    
+    \end{exercise}
+
+
+    \begin{exercise}{16}
+    \hfill
+
+    \begin{itemize}
+        \item $N$ people enter an elevator at the ground floor
+        \item $N - poisson$ distribution with parameter $\lambda$
+        \item No one enters above the ground floor
+        \item There are $X$ floors above the ground floor, selected uniformly at random
+    \end{itemize}
+
+    \hfill
+
+    P(no one selects floor $i$|$N=n$) = $(1 - \frac{1}{k})^n$
+
+    P(no one selects floor $i$) = $\sum_{n=0}^{\infty} \frac{\lambda^n e^{-\lambda}}{n!} \times (1- \frac{1}{k})^n$
+
+    $= e^{-\lambda} \sum_{n=0}^{\infty} \frac{\lambda^n}{n!}(1 - \frac{1}{k})^n$
+
+    Using Taylor Series for $e^x$
+
+    $= e^{-\lambda} e^{\lambda(1- 1/k)}$
+
+    $= e^{-\lambda} e^{\lambda - \lambda \frac{1}{k}}$
+
+    $= e^{-\lambda \frac{1}{k}}$
+
+    \hfill
+
+    P(elevator stops at floor $i$) = $1 - e^{-\lambda \frac{1}{k}}$
+
+    E(number of stops elevator makes) = $\sum_{i=1}^k (1-e^{-\lambda \frac{1}{k}})$
+
+    $= k (1 - e^{- \lambda \frac{1}{k}})$
+        
+    \end{exercise}
+    
+\end{document}
