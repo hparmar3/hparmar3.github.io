@@ -7,6 +7,9 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
 - Web development using `HTML`, `CSS`, and `JavaScript`
 
 ## Projects
+### Machine Learning & Data Science
+- **[Machine Learning from Scratch] (Machine%20Learning%20from%20Scratch/)** - Logistic Regression and K-Means Clustering implemented from scratch using NumPy
+- 
 
 ## Contact 
 Feel free to reach out!
