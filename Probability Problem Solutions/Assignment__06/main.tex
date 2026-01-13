@@ -1,0 +1,781 @@
+
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment 06}
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+    
+    \textbf{(a)} $E(X) = \sum_{i=1}^{n} P(X = x_i) x_i$
+
+    $E(X) = \sum_{i=1}^{n} \frac{1}{n} x_i$
+
+    $E(X) = \mu = \frac{1}{n} \sum_{i=1}^{n} x_i$
+
+    \hfill
+
+    $Var(X) = E(X^2) - E(X)^2$
+
+    $E(X^2) = \sum_{i=1}^{n} P(X = x_i) {x_i}^2 = \frac{1}{n} \sum_{i=1}^{n} {x_i}^2$
+
+    $Var(X) = \frac{1}{n} \sum_{i=1}^{n} {x_i}^2 - (\frac{1}{n} \sum_{i=1}^{n} x_i)^2$
+
+    \hfill
+
+    \textbf{(b)} $E(X) = \frac{1}{n} \sum_{k=1}^{n} k$
+
+    $E(X) = \frac{1}{n} \frac{n(n+1)}{2}$
+
+    $E(X) = \frac{(n+1)}{2}$
+
+    \hfill
+
+    $Var(X) = E(X^2) - E(X)^2$
+
+    $E(X^2) = \frac{1}{n} \sum_{k=1}^{n} k^2$
+
+    $E(X^2) = \frac{1}{n} \frac{n(n+1)(2n+1)}{6}$
+
+    $E(X^2) = \frac{(n+1)(2n+1)}{6}$
+
+    \hfill
+
+    $Var(X) = \frac{(n+1)(2n+1)}{6} - (\frac{(n+1)}{2})^2$
+
+    $Var(X) = \frac{2n^2 + n + 2n + 1}{6} - \frac{(n+1)^2}{4}$
+
+    $Var(X) = \frac{2n^2 + 3n + 1}{6} - \frac{n^2 + 2n + 1}{4}$
+
+    $Var(X) = \frac{2(2n^2 + 3n + 1) - 3(n^2 + 2n + 1)}{12}$
+
+    $Var(X) = \frac{4n^2 + 6n + 2 - 3n^2 - 6n - 3}{12}$
+
+    $Var(X) = \frac{(n^2 - 1)}{12}$
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{2}
+    \hfill
+
+    \textbf{show:} $Var(aX+b) = a^2 Var(X)$
+
+    $Var(aX+b) = E[((aX+b) - E(aX+b))^2]$
+    
+    $= E[((aX+b) - (a\mu +b)^2]$
+
+    $= E[(aX-a\mu + b - b)^2]$
+
+    $= E[(a(x - \mu))^2]$
+
+    $= E[a^2(x - \mu)^2]$
+
+    $= a^2 Var(X)$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    \textbf{(a)} mean of X - Poisson($\lambda$)
+
+    X - Poisson($\lambda) = e^{-\lambda} \frac{\lambda^x}{x!}$ x = 0, 1, 2, 3, ...
+
+    $E(X) = \sum_{}^{X} x e^{-\lambda} \frac{\lambda^x}{x!}$
+
+    $E(X) = \sum_{0}^{\infty} x e^{-\lambda} \frac{\lambda^x}{x!}$
+
+     $E(X) = \sum_{1}^{\infty} x e^{-\lambda} \frac{\lambda^x}{x!}$
+
+     $E(X) = e^{-\lambda} \sum_{1}^{\infty} \lambda^x \frac{x}{x!}$
+
+     $E(X) = e^{-\lambda} \sum_{1}^{\infty} \frac{\lambda^x}{(x-1)!}$
+
+     $E(X) = e^{-\lambda} \lambda \sum_{1}^{\infty} \frac{\lambda^{x-1}}{(x-1)!}$
+
+     \hfill
+
+     $u = x - 1, u + 1 = x$
+
+     \hfill
+
+     $E(X) = e^{-\lambda} \lambda \sum_{0}^{\infty} \frac{\lambda^{u}}{(u)!}$
+
+     $E(X) = \lambda e^{- \lambda} e^u$
+
+     $E(X) = \lambda e^{- \lambda} e^{\lambda}$
+
+     $E(X) = \lambda$
+
+    \hfill
+
+    \textbf{(b)} $E(X^2) = \sum_{X}^{} x^2 e^{- \lambda} \frac{\lambda^x}{x!}$
+
+    $= \sum_{x = 0}^{\infty} x^2 e^{- \lambda} \frac{\lambda^x}{x!}$
+
+    $= \sum_{x = 1}^{\infty} x^2 e^{- \lambda} \frac{\lambda^x}{x!}$
+
+    $= \sum_{x = 1}^{\infty} x e^{- \lambda} \frac{\lambda^x}{(x - 1)!}$
+
+    $= \sum_{x = 1}^{\infty} ((x-1)+1) e^{- \lambda} \frac{\lambda^x}{(x - 1)!}$
+
+    $= \sum_{x = 1}^{\infty} (x-1) e^{- \lambda} \frac{\lambda^x}{(x - 1)!} + \sum_{x = 1}^{\infty} e^{- \lambda} \frac{\lambda^x}{(x - 1)!}$
+
+    $= (1-1)e^{-1} \frac{\lambda}{(1-1)!} + \sum_{x = 2}^{\infty} e^{- \lambda} \frac{\lambda^x}{(x - 2)!} + \sum_{x = 1}^{\infty} e^{- \lambda} \frac{\lambda^x}{(x - 1)!}$
+
+    $= 0 + e^{- \lambda} \sum_{x = 2}^{\infty} \frac{\lambda^x}{(x - 2)!} + e^{- \lambda} \sum_{x = 1}^{\infty} \frac{\lambda^x}{(x - 1)!}$
+
+    $= e^{- \lambda} \lambda^2 \sum_{x = 2}^{\infty} \frac{\lambda^{x - 2}}{(x - 2)!} + e^{- \lambda} \lambda \sum_{x = 1}^{\infty} \frac{\lambda^{x-1}}{(x - 1)!}$
+
+    \hfill
+
+    $u = x-2, a = x-1$
+    
+    $u = u+2, x = a+1$
+
+    \hfill
+
+    $= e^{- \lambda} \lambda^2 \sum_{x = 2}^{\infty} \frac{\lambda^{u}}{u!} + e^{- \lambda} \lambda \sum_{x = 1}^{\infty} \frac{\lambda^{a}}{a!}$
+
+    $= e^{- \lambda} {\lambda}^2 e^{\lambda} + e^{-\lambda} {\lambda} e^{-\lambda}$
+
+    $= {\lambda}^2 + {\lambda}$
+
+    \hfill
+
+    \textbf{(c)} $M(\theta) = E(e^{\theta x})$
+
+    $M(\theta) = E(e^{\theta x}) = \sum_{x = 0}^{\infty} e^{\theta x} e^{-\lambda} \frac{{\lambda}^x}{x!}$
+
+    $= e^{-\lambda} \sum_{x = 0}^{\infty} \frac{({\lambda e^{\theta}})^x}{x!}$
+
+    $= e^{- \lambda} e^{\lambda e^\theta}$
+
+    $= e^{\lambda e^{\theta} - \lambda}$
+
+    $= e^{\lambda(e^{\theta}-1)}$
+
+    \hfill
+
+    $Var(X) = E(X^2) - E(X)^2$
+
+    $= {\lambda}^2 + {\lambda} - ({\lambda})^2$
+
+    $= {\lambda}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{4}
+    \hfill
+
+    $E(X) = \sum_{k = 0}^{\infty} k P(X=k)$
+
+    \hfill
+
+    $k = \sum_{j = 0}^{k-1} 1$
+
+    \hfill
+
+    $ = \sum_{k = 0}^{\infty} \sum_{j=0}^{k-1} P(X=k)$
+
+    $ = \sum_{k = 0}^{\infty} \sum_{k = j + 1}^{\infty} P(X=k)$
+
+    \hfill
+
+    $P(x > j) = \sum_{k=j+1}^{\infty} P(X=k)$
+
+    $P(X) = \sum_{j=0}^{\infty} P(X>j)$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{5}
+    \hfill
+
+    Poisson moment generating function: $e^{\lambda (e^{\theta}-1)}$
+
+    1st moment: $\frac{d}{d \theta} = {\lambda}e^{\theta + \lambda(e^{\theta}-1)} = \lambda e^{\theta} e^{\lambda(e^{\theta}-1)}$
+
+    $\theta = 0 => \lambda e^{0 + \lambda(e^0 -1)} = \lambda e^{\lambda(1-1)} = \lambda e^0 = \lambda$
+
+    \hfill
+
+    2nd moment: $\frac{d^2}{d{\theta}^2} = \lambda \times 1 e^{\theta} + \lambda e^{\theta}(\lambda e^{\theta + \lambda(e^{\theta} - 1)}) = \lambda e^{\theta} + {\lambda}^2 e^{2 \theta + \lambda(e^{\theta} - 1)}$
+
+    $\theta = 0 => \lambda e^0 + \lambda^2 e^{0 + \lambda(e^0 -1)} = \lambda + {\lambda}^2$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    $E(X+1) = Var(X)$
+    
+    $E(-2X+8) = 4 Var(X)$
+
+    \hfill
+
+    $E(X) + 1 = Var(X)$
+
+    \hfill
+
+    $E(-2X) + 8 = 4 Var(X)$
+
+    $-2 E(X) + 8 = 4 Var(X)$
+
+    \hfill
+
+    $-2 E(X) + 8 = 4(E(X) + 1)$
+
+    $-2 E(X) + 8 = 4 E(X) + 4$
+
+    $4 = 6 E(X)$
+
+    $E(X) = \frac{2}{3}$
+
+    \hfill
+
+    $Var(X) = \frac{2}{3} + 1 = \frac{5}{3}$
+    
+    \hfill    
+    \end{exercise}
+
+
+
+    \begin{exercise}{7}
+    \hfill
+
+    Pareto distribution PDF: $f(x) = \frac{\theta}{x^{\theta + 1}}$ for $X > 1$ (=0 elsewhere) $\theta > 0$
+
+    $E(X) = \int_{1}^{\infty} x f(x) \,dx $
+
+    $E(X) = \int_{1}^{\infty} x \frac{\theta}{x^{\theta + 1}} \,dx $
+
+    $= \theta \int_{1}^{\infty} \frac{x}{x^{\theta}x} \,dx $
+
+    $= \theta \int_{1}^{\infty} \frac{1}{x^{\theta}} \,dx $
+
+    $= \theta \int_{1}^{\infty} x^{-\theta} \,dx $
+
+    $\theta [\frac{1}{1 - \theta} x^{1 - \theta}]$
+
+    $\frac{\theta}{1 - \theta} x^{1 - \theta}$
+
+    The expected value is finite for $\theta > 1$
+
+    \hfill
+
+    $Var(X) = E(X^2) - (E(X))^2$
+
+    \hfill
+
+    $E(X^2) = \int_{1}^{\infty} x^2 \frac{\theta}{x^{\theta + 1}} \,dx $
+
+    $= \theta \int_{1}^{\infty} \frac{x}{x^{\theta}} \,dx $
+
+    $= \theta \int_{1}^{\infty} x^{1- \theta} \,dx $
+
+    $= \theta [\frac{1}{2 - \theta} x^{2- \theta}]$
+
+    $= \frac{\theta}{2 - \theta} x^{2 - \theta}$
+
+    \hfill
+
+    $Var(X) = \frac{\theta}{2 - \theta} x^{2 - \theta} - (\frac{\theta}{1 - \theta} x^{1 - \theta} )^2$
+
+    $= \frac{\theta}{2 - \theta} x^{2 - \theta} - \frac{{\theta}^2}{(1- \theta)^2} x^{2 -2 \theta}$
+
+    $= \frac{\theta}{2 - \theta} x^{2 - \theta} - \frac{\theta}{1 - 2 \theta + {\theta}^2} x^{2- 2\theta}$
+
+    The variance is finite for $\theta > 2$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{8}
+    \hfill
+
+    \begin{itemize}
+        \item trying to make spheres radius 1
+        \item only can make sphere of radius R, R - unif$(1 - \epsilon, 1 + \epsilon)$
+        \item PDF: $f(r) = \frac{1}{2 \epsilon}$ for $1 - \epsilon < r < 1 + \epsilon$
+        \item volume of sphere = $\frac{3}{4} \pi R^3$
+    \end{itemize}
+
+    \textbf{(a)} $P(V > \frac{3}{4} \pi) = P(R > 1)$
+
+    $P(R > 1) = \frac{1 + \epsilon - 1}{2 \epsilon} = \frac{\epsilon}{2 \epsilon} = \frac{1}{2}$
+
+    $P(V > \frac{3}{4}) = \frac{1}{2}$
+
+    \hfill
+
+    \textbf{(b)} $E(V) = E(\frac{3}{4} \pi R^3)$
+
+    $E(\frac{4}{3} \pi R^3) = \frac{4}{3} \pi E(R^3)$
+
+    $E(r^3) = \int_{1 + \epsilon}^{1 - \epsilon} r^3 f(r) \, dr$
+
+    $= \int_{1 - \epsilon}^{1 + \epsilon} r^3 \frac{1}{2 \epsilon} \, dr$
+
+    $= \frac{1}{2 \epsilon} \int_{1 - \epsilon}^{1 + \epsilon} r^3 \, dr$
+
+    $= \frac{1}{2 \epsilon} [\frac{1}{4} r^4 |_{1 - \epsilon}^{1 + \epsilon}]$
+
+    $= \frac{1}{2 \epsilon} (\frac{1}{4} (1 + \epsilon)^4 - \frac{1}{4} (1 - \epsilon)^4)$
+
+    $= \frac{1}{8 \epsilon} ((1 + \epsilon)^4 - (1 - \epsilon)^4)$
+
+    $= \frac{1}{8 \epsilon} (1 + 4 \epsilon + 6 {\epsilon}^2 + 4{\epsilon}^3 + {\epsilon}^4 - (1 - 4 \epsilon + 6 {\epsilon}^2 - 4 {\epsilon}^3 + {\epsilon}^4))$
+
+    $= \frac{1}{8 \epsilon}(8 \epsilon + 8 {\epsilon}^3)$
+
+    $= 1 + {\epsilon}^2$
+
+    $E(V) = \frac{4}{3} \pi (1 + {\epsilon}^2)$
+
+    \hfill
+
+    \textbf{(c)} expected error: $E(V) - \frac{4}{3} \pi$
+
+    $= \frac{4}{3} \pi (1 + {\epsilon}^2) - \frac{4}{3} \pi$
+
+    $= \frac{4}{3} \pi + \frac{4}{3} \pi {\epsilon}^2 - \frac{4}{3} \pi$
+
+    $= \frac{4}{3} \pi {\epsilon}^2$
+
+    Since $\epsilon > 0$, the term ${\epsilon}^2 > 0$, which implies that the expected error is always positive.
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{9}
+    \hfill
+    
+    \begin{itemize}
+        \item $x - Exp(\lambda)$ for some fixed $\lambda > 0$
+        \item $f(x) = \lambda e^{-\lambda x}$ for $x \geq 0$, 0 elsewhere
+    \end{itemize}
+
+    $\lambda E(cos(\theta X)) = E(1 - \frac{(\theta x)^2}{2!} + \frac{(\theta x)^4}{4!} - \frac{(\theta x)^6}{6!} +-...)$
+
+    $= E(1) - E(\frac{(\theta x)^2}{2!} + E(\frac{(\theta x)^4}{4!} - E(\frac{(\theta x)^6}{6!} +-...$
+
+    $= 1 - \frac{{\theta}^2 E(X^2)}{2!} + \frac{{\theta}^4 E(X^4)}{4!} - \frac{{\theta}^6 E(X^6)}{6!} +-...$
+
+    $= 1 - \frac{{\theta}^2 \frac{2!}{{\lambda}^2}}{2!} + \frac{{\theta}^4 \frac{4!}{{\lambda}^4}}{4!} - \frac{{\theta}^6 \frac{6!}{{\lambda}^6}}{6!} +-...$
+
+    $= 1 - \frac{{\theta}^2 2!}{2! {\lambda}^2} + \frac{{\theta}^4 4!}{4! {\lambda}^4} - \frac{{\theta}^6 6!}{6! {\lambda}^6} +-...$
+
+    $= 1 - \frac{{\theta}^2}{{\lambda}^2} + \frac{{\theta}^4}{{\lambda}^4} - \frac{{\theta}^6}{{\lambda}^6} +-...$
+
+    $E(cos(\theta X)) = \frac{1}{1 + \frac{{\theta}^2}{{\lambda}^2}}$
+
+    $E(cos(\theta X) = \frac{{\lambda}^2}{{\lambda}^2 + {\theta}^2}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    \begin{itemize}
+        \item $X - unif(a, b)$
+        \item uniformly distributed on the interval [a, b] if
+        \item $f(x) = \frac{1}{b - a}$ for $a \leq x \leq b$, 0 elsewhere
+    \end{itemize}
+
+    $E(x) = \mu = \int_{a}^{b} x \frac{1}{b-a} \, dx$
+
+    $= \frac{1}{b-a} \int_{a}^{b} x \, dx$
+
+    $= \frac{1}{b - a} [\frac{1}{2} x^2 |_{a}^{b}]$
+
+    $= \frac{1}{b-a}[\frac{1}{2} b^2 - \frac{1}{2} a^2]$
+
+    $= \frac{1}{b-a} \frac{b^2 - a^2}{2}$
+
+    $= \frac{b^2 - a^2}{2(b-a)}$
+
+    $= \frac{(b-a)(b+a)}{2(b-a)}$
+
+    $= \frac{b+a}{2}$
+
+    \hfill
+
+    $Var(X) = E(X^2) - E(X)^2$
+
+    \hfill
+
+    $E(X^2) = \int_{a}^{b} x^2 \frac{1}{b-a} \, dx$
+
+    $= \frac{1}{b-a} \int_{a}^{b} x^2 \, dx$
+
+    $= \frac{1}{b-a} [\frac{1}{3} x^3 |_{a}^{b}]$
+
+    $= \frac{1}{b-a}(\frac{1}{3} b^3 - \frac{1}{3} a^3)$
+
+    $= \frac{1}{b-a} \frac{b^3 - a^3}{3}$
+
+    $= \frac{(a^2 + ab + b^2)(b-a)}{3(b-a)}$
+
+    $= \frac{a^2 + ab + b^2}{3}$
+
+    \hfill
+
+    $Var(X) = \frac{a^2 + ab + b^2}{3} - (\frac{b+a}{2})^2$
+
+    $= \frac{a^2 + ab + b^2}{3} - \frac{a^2 + 2ab + b^2}{4}$
+
+    $= \frac{4a^2 + 4ab + 4b^2 - 3a^2 - 6ab - 3b^2}{12}$
+
+    $= \frac{a^2 + -2ab + b^2}{12}$
+
+    $= \frac{(a-b)^2}{12}$
+
+    \hfill   
+    \end{exercise}
+
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    \begin{itemize}
+        \item symmetric: $f(c-x) = f(c+x)$ for every real value of x
+        \item X - continuous random variable with a PDF f(x) that is symmetric about c
+        \item show: $E((X-c)^3) = 0, {\mu}_3 = 0$
+    \end{itemize}
+
+    $E((x-c)^3) = \int_{- \infty}^{\infty} (x-c)^3 f(x) \, dx$
+
+    $$u = x-c, x = u+c$$
+
+    $= \int_{- \infty}^{\infty} (u)^3 f(u+c) \, du$
+
+    Since the PDF is symmetric for c, we know that $f(c+u)=f(c-u)$
+
+    $$\int_{- \infty}^{\infty} (u)^3 f(c+u) \, du = \int_{- \infty}^{\infty} (u)^3 f(c-u) \, du$$
+
+    The function has the properties that $(-u)^3 = -u^3$, which is characteristic of an odd function and $f(c-u) = f(c+u)$, which is characteristic of an even function. Therefore, $(-u)^3 f(c-u) = -u^3 f(c+u)$, which characteristic of an odd function, so the overall function is odd.
+
+    If the function is odd and the upper and lower limits are opposite values ($\infty$ and $- \infty$ are opposite values, and the function as we just established is odd) then the integral equals 0.
+
+    $$= \int_{- \infty}^{\infty} u^3 f(c+u) \, du = 0$$
+
+    So,
+
+    $$E((X-c)^3) = 0$$
+
+    Skewness: ${\mu}_3 = E((\frac{x - \mu}{\sigma})^3)$
+
+    $= \frac{E((x-\mu)^3)}{\sigma^3}$
+
+    Since the function is symmetric the mean, $\mu$, must be equal to 0. But let's let $c=\mu$, since $c$ is a constant value for every real value of $x$ and $\mu$ is a real value of $X$. So $E((X - \mu)^3) = E((X - c)^3) = 0$
+
+    $= \frac{E((x - \mu)^3)}{{\sigma}^3} = \frac{E((x-c)^3)}{{\sigma}^3} = \frac{0}{{\sigma}^3} = 0$
+
+    Therefore, for a symmetric PDF, $E((X-c)^3) = 0$, and therefore the coefficient of skewness must also be 0.
+
+    \hfill   
+    \end{exercise}
+
+
+
+    \begin{exercise}{12}
+    \hfill
+
+    $f(x) = \begin{cases}
+        \frac{1}{{\beta}^2} x e^{- \frac{1}{2}(\frac{x}{\beta})^2}, x > 0 \\
+        0, x \leq 0
+    \end{cases}$
+
+    $F(x) = \int_{- \infty}^{\infty} f(x) \, dx = \int_{- \infty}^{0} 0 \, dx + \int_{0}^{\infty} \frac{1}{{\beta}^2} x ^{- \frac{1}{2} (\frac{x}{\beta})^2} \, dx$
+
+    $= \int_{0}^{x} \frac{1}{{\beta}^2} x ^{-\frac{x^2}{2{\beta}^2}} \, dx$
+
+    $$u = -x^2, du = -2x dx$$
+
+    $= \int_{0}^{x} \frac{1}{{\beta}^2} \frac{1}{-2} e^{\frac{u}{2 {\beta}^2}} \, du$
+
+    $= -\frac{1}{2{\beta}^2} \int_{0}^{x} e^{\frac{u}{2 {\beta}^2}} \, du$
+
+    $= - \frac{1}{2{\beta}^2} [2{\beta}^2 e^{\frac{u}{2{\beta}^2}} |_{0}^{x}]$
+
+    $= -e^{\frac{u}{2{\beta}^2}} |_{0}^{x}$
+
+    $= -e^{-\frac{x^2}{2{\beta}^2}} |_{0}^{x}$
+
+    $= -e^{-\frac{x^2}{2{\beta}^2}}- - e^0$
+
+    $= 1 - e^{-\frac{x^2}{2{\beta}^2}}$
+
+    $F(x) = \begin{cases}
+        1 - e^{-\frac{x^2}{2{\beta}^2}}, x>0 \\
+        0, x \leq 0
+    \end{cases}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{13}
+    \hfill
+
+    $F(x) = \frac{1}{1 + e^{-(x - \alpha)/{\beta}}}$
+
+    $f(x) = \frac{d}{dx}(\frac{1}{1+e^{-(x-\alpha)/{\beta}}})$
+
+    $= - \frac{e^{-(x - \alpha)/{\beta}}(-\frac{1}{b})}{(1+e^{-(x-\alpha)/{\beta}})^2}$
+
+    $f(x) = \frac{e^{-(x - \alpha)/{\beta}}}{b(1+e^{-(x-\alpha)/{\beta}})^2}, - \infty < x < \infty$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{14}
+    \hfill
+
+    \textbf{(a)} \begin{itemize}
+        \item Supp(0,1)
+        \item P(X = 0) = 0.2, P(X = 1) = 0.8
+    \end{itemize}
+
+    $M_x(\theta) = E(e^{\theta x}) = \sum_{x} e^{\theta x} P(X=x)$
+
+    $M_x(\theta) = e^{\theta 0} P(X = 0) + e^{\theta 1} P(X = 1)$
+
+    $= e^0 \times 0.2 + e^{\theta} \times 0.8$
+
+    $= 0.2 + 0.8 e^{\theta}$
+
+    \hfill
+
+    \textbf{(b)} Y - unif(0,1)
+
+    $f_y(y) = \begin{cases}
+        1, 0 \leq y \leq 1 \\
+        0, otherwise
+    \end{cases}$
+
+    \textbf{Case 1:} $\theta \neq 0$
+
+    $M_y(\theta) = E(e^{\theta y}) = \int_{0}^1 e^{\theta y} f_y(y) \, dy$
+
+    $ = \int_{0}^{1} e^{\theta y} \, dy$
+
+    $ = \frac{1}{\theta} e^{\theta y} |_{0}^{1}$
+
+    $= \frac{1}{\theta} e^{\theta} - \frac{1}{\theta}$
+    $= \frac{e^{\theta} - 1}{\theta}$
+
+    \hfill
+
+    \textbf{Case 2:} $\theta = 0$
+
+    $M(\theta) = E(e^{\theta y}) = E(e^{0 \times y}) = E(e^0) = 1$
+
+    \hfill
+
+    \textbf{(c)} $M(\theta) = \frac{3}{4} e^{-\theta} + \frac{1}{8} + \frac{1}{8} e^{\theta}$
+
+    $Supp(-1, 0, 1) =>$ corresponding to $e^{-\theta}, 1, e^{\theta}$
+
+    $P(X = -1) = \frac{3}{4}, P(X=0) = \frac{1}{8}, P(X=1) = \frac{1}{8}$
+
+    \hfill     
+    \end{exercise}
+
+
+
+    \begin{exercise}{15}
+    \hfill
+
+    $f(x) = \begin{cases}
+        x^2, 0 \leq x \leq 1 \\
+        1, 2 \leq x \leq \frac{8}{3} \\
+        0, otherwise
+    \end{cases}$
+
+    $f(x) = \begin{cases}
+        0, - \infty < x < 0 \\
+        x^2, 0 \leq x \leq 1 \\
+        0, 1 < x < 2 \\
+        1, 2 \leq x \leq \frac{8}{3} \\
+        0, \frac{8}{3} < x < \infty
+    \end{cases}$
+
+    $F(x) = \int f(x) dx$
+
+    $f(x) = \begin{cases}
+        0, - \infty < x < 0 \\
+        \int_{0}^{x} x^2 \, dx, 0 \leq x \leq 1 \\
+        \int_{0}^{1} x^2 \, dx, 1 < x < 2 \\
+        \int_{0}^{1} x^2 \, dx + \int_{2}^{x} 1 \, dx, 2 \leq x \leq \frac{8}{3} \\
+        1, \frac{8}{3} < x < \infty
+    \end{cases}$ 
+    
+    (because all probability mass is accounted for)
+
+    $F(x) = \begin{cases}
+        0, - \infty < x < 0 \\
+        \frac{1}{3} x^3, 0 \leq x \leq 1 \\
+        \frac{1}{3}, 1 < x < 2 \\
+        \frac{1}{3} + (x - 2), 2 \leq x \leq \frac{8}{3} \\
+        1, \frac{8}{3} < x < \infty
+    \end{cases}$
+
+    \hfill
+    \end{exercise}
+
+    \begin{exercise}{16}
+    \hfill
+
+    U - uniform(0, 1)
+
+    $f_u(u) = \begin{cases}
+        1, 0 \leq u \leq 1 \\
+        0, otherwise
+    \end{cases}$
+
+    $E(U) = \int_{0}^{1} u f(u) \, du$
+
+    $= \int_{0}^{1} u \times 1 \, du$
+
+    $= \frac{1}{2} u^2 |_{0}^{1}$
+
+    $= \frac{1}{2} - 0$
+
+    $= \frac{1}{2}$
+
+    \hfill
+
+    $Var(U) = E(U^2) - E(U)^2$
+
+    \hfill
+
+    $E(U^2) = \int_{0}^{1} u^2 \times 1 \, du$
+
+    $= \frac{1}{3} |_{0}^{1}$
+
+    $=\frac{1}{3}$
+
+    \hfill
+
+    $Var(U) = \frac{1}{3} - (\frac{1}{2})^2$
+
+    $Var(U) = \frac{1}{3} - \frac{1}{4}$
+
+    $Var(U) = \frac{1}{12}$
+
+    \hfill
+
+    $X= (b-a)U + a$
+
+    \hfill
+
+    $E(X) = E((b-a)U + a)$
+
+    $= (b-a)E(U) + a$
+
+    $= (b-a)\frac{1}{2} + a$
+
+    $= \frac{b-a}{2} + a$
+
+    $= \frac{b+a}{2}$
+
+    \hfill
+
+    $Var(X) = Var((b-a)U + a)$
+    
+    $= (b-a)^2 Var(U)$
+
+    $= (b=a)^2 \frac{1}{12}$
+
+    $= \frac{(b-a)^2}{12}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{17}
+    \hfill
+
+    $f(x) = xe^{x^2} I_{[0, 1]} (x)$
+
+    Two conditions for a valid PDF:
+    \begin{enumerate}
+        \item Non-negativity: A valid PDF must satisfy $f(x) > 0$ for all x
+        \item Normalization: The total integral of the PDF over its support must equal 1
+    \end{enumerate}
+
+    \hfill
+
+    \textbf{(1)} The indicator function $I_{[0,1]}$ (x) is equal to 1 if $x \in [0,1]$ and 0 otherwise.
+
+    So, $f(x) = xe^{x^2}$ for $0 \leq x \leq 1$, and $f(x) = 0$ for $x \notin [0, 1]$
+
+    \hfill
+
+    For $0 \leq x \leq 1$, the function $x e^{x^2}$ is non-negative, as both $x \geq 0$ and $e^{x^2} > 0$. So, $f(x) \geq 0$ for all $x$.
+
+    \hfill
+
+    This condition is satisfied
+
+    \textbf{(2)} $= \int_{0}^{1} x e^{x^2} \, dx$
+
+    $$u = x^2, du = 2x \, dx$$
+
+    $= \int_{0}^{1} \frac{1}{2} e^u \, du$
+
+    $= \frac{1}{2} e^u |_{0}^{1}$
+
+    $= \frac{1}{2} e^{x^2} |_{0}^{1}$
+
+    $= \frac{1}{2} e^1 - \frac{1}{2} e^0$
+
+    $= \frac{1}{2} e - \frac{1}{2}$
+
+    $= \frac{e-1}{2}$
+
+    \hfill
+
+    Turning into valid PDF:
+
+    $f_n(x) = \frac{2}{e-1} x e^{x^2} I_{[0, 1]} (x)$
+
+    This new function now satisfies both conditions for being a valid PDF.     
+    \end{exercise} 
+\end{document}
