@@ -1,0 +1,454 @@
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment }
+
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+
+    $P(C_F) = \frac{9}{10}$
+    
+    $P(C_N) = \frac{1}{10}$
+
+    $P(H_4 | C_F) = (\frac{1}{2})^2 = \frac{1}{16}$
+
+    $P(H_4 | C_N) = 1$
+
+    $P(H_4) = \frac{9}{10} \times \frac{1}{16} + 1 \times \frac{1}{10} = \frac{9}{160} + \frac{1}{10} = \frac{5}{32}$
+
+    The probability the coin is double headed based on 4 heads in a row:
+
+    $P(C_N | H_4) = \frac{P(H_4 | C_N)P(C_N)}{P(H_4)} = \frac{1 \times \frac{1}{10}}{\frac{5}{32}} = \frac{\frac{1}{10}}{\frac{5}{32}} = \frac{1}{10} \times \frac{32}{5} = \frac{32}{50} = \frac{16}{25}$
+
+    $P(C_F | H_4) = \frac{P(H_4 | C_F)P(C_F)}{P(H_4)} = \frac{\frac{1}{16 } \times \frac{9}{10}}{\frac{5}{32}} = \frac{\frac{9}{160}}{\frac{5}{32}} = \frac{9}{160} \times \frac{32}{5} = \frac{9}{25}$
+
+    $P(H | H_4) = P(C_F | H_4) \times \frac{1}{2} + P(C_N | H_4) \times 1$
+
+    $P(H | H_4) = \frac{9}{25} \times \frac{1}{2} + \frac{16}{25} \times 1$
+
+    $= \frac{9}{50} + \frac{16}{25} = \frac{41}{50}$
+    \end{exercise}
+
+    
+
+    \begin{exercise}{2}
+    \hfill
+
+    BOOLAHUBOO
+
+    B = 2
+
+    O = 4
+
+    L = 1
+
+    A = 1
+
+    H = 1
+
+    U = 1
+
+    10 letters
+
+    $|\Omega | = \binom{10}{2, 4, 1, 1, 1, 1} = \frac{10!}{2!4!1!1!1!1!} = \frac{3,628,800}{2 \times 24 \times 1} = \frac{3,628,800}{48} = 75,600$
+
+    $P(B) = \binom{10}{1, 4, 1, 1, 1, 1} = \frac{9!}{1!4!1!1!1!1!} = \frac{362,880}{2 \times 24 \times 1} = \frac{362,880}{48} = 15,120$
+
+    There are 5! = 120 ways to arrange the non O letters.
+
+    Between the 5 letters, there are 6 gaps where 1 O can be placed. 4 out of these gaps can be chosen. So,
+
+    $= \binom{6}{4} = 15$
+
+    Therefore,
+
+    $P(B \cap O_B) = 120 \times 15 = 1,800$
+
+    $P(O_B | B) = \frac{1,800}{15,120} = \frac{5}{42} \approx 0.1190$
+    \end{exercise}
+
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    \textbf{(a)}
+    \begin{itemize}
+        \item one match has n ways of being placed
+        \item for the n-1 elements there is no matches
+    \end{itemize}
+
+    $m_1(n) = r_1(n - 1) = 1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} +- ... + (-1)^{n-1} \frac{1}{(n-1)!}$
+
+    \hfill
+
+    \textbf{(b)}
+    $p(m_1|p_1) = \frac{P(m_1 \cap p_1)}{P(p_1)} = \frac{P(m_1)}{P(p_1)} = \frac{1 - \frac{1}{1!} + \frac{1}{2!} -+ ... + \frac{(-1)^{n-1}}{(n-1)!}}{1 - \frac{1}{1!} + \frac{1}{2!} -+ ... + \frac{(-1)^{n-1}}{n!}}$
+
+    \hfill
+
+    \textbf{(c)} conditional prob. : $P(r_2|r_1) = 1 - P(m_1|r_1)$
+
+    $P(r_2|r_1) = 1 - \frac{1 - \frac{1}{1!} + \frac{1}{2!} -+ ... + \frac{(-1)^{n-1}}{(n-1)!}}{1 - \frac{1}{1!} + \frac{1}{2!} -+ ... + \frac{(-1)^{n-1}}{n!}}$   
+    \end{exercise}
+
+
+
+    \begin{exercise}{4}
+    \hfill
+
+    (1, 1) (1, 2) (1, 3) (1, 4) (1, 5) (1, 6)
+
+    (2, 1) (2, 2) (2, 3) (2, 4) (2, 5) (2, 6)
+
+    (3, 1) (3, 2) (3, 3) (3, 4) (3, 5) (3, 6)
+
+    (4, 1) (4, 2) (4, 3) (4, 4) (4, 5) (4, 6)
+
+    (5, 1) (5, 2) (5, 3) (5, 4) (5, 5) (5, 6)
+
+    (6, 1) (6, 2) (6, 3) (6, 4) (6, 5) (6, 6)
+
+    \hfill
+
+    $P(C_H) = \frac{1}{2}$
+
+    $P(C_T) = \frac{1}{2}$
+
+    $P(D_6 | C_H) = \frac{1}{6}$
+
+    $P(D_6 | C_F) = \frac{5}{36}$
+
+    $P(D_6) = P(D_6 | C_H) \times P(C_H) + P(D_6 | D_T) \times P(C_T)$
+
+    $= \frac{1}{6} \times \frac{1}{2} + \frac{5}{36} \times \frac{1}{2}$
+
+    $= \frac{1}{12} + \frac{5}{72}$
+
+    $= \frac{11}{72}$
+    \end{exercise}
+
+    \begin{exercise}{5}
+    \hfill
+
+    6 tennis balls: 4 branch new, 2 used
+    
+    After someone uses a new ball it becomes a used ball.
+
+    \textbf{(a)} Ways the roommate can grabs new balls:
+    \begin{itemize}
+        \item Probability I grabbed 2 new ones and roommate grabbed 2 new ones: 
+
+        Probability 2 new ones grabbed = $P(M_n) = \frac{4}{6} \times \frac{3}{5} = \frac{2}{5}$
+
+        Probability roommate grabs 2 new balls = $P(M_n | R_n) = \frac{2}{6} \times \frac{1}{5} = \frac{1}{15}$
+
+        \item Probability I grabbed an old and a new one and roommate grabbed 2 new ones:
+
+        Probability 1 new and 1 old are grabbed = $P(M_{n,o}) = \frac{2}{6} \times \frac{4}{5} = \frac{4}{15}$
+
+        Probability roommate grabs 2 new balls = $P(M_{n,o} | R_n) = \frac{3}{6} \times \frac{2}{5} = \frac{1}{5}$
+
+        \item Probability I grabbed a new and an old one and roommate grabbed 2 new ones
+
+        Probability 1 old and 1 new are grabbed = $P(M_{o,n}) = \frac{4}{6} \times \frac{2}{5} = \frac{4}{15}$
+
+        Probability roommate grabs 2 new balls = $P(M_{n,o} | R_n) = \frac{3}{6} \times \frac{2}{5} = \frac{1}{5}$
+
+        \item Probability I grabbed 2 old ones and roommate grabbed 2 new ones:
+
+        Probability 2 old ones grabbed = $P(M_o) = \frac{2}{6} \times \frac{1}{5} = \frac{1}{15}$
+
+        Probability roommate grabs 2 new balls = $P(M_o | R_n) = \frac{4}{6} \times \frac{3}{5} = \frac{2}{5}$
+
+        \item $P(R_n) = P(M_n | R_n) P(M_n) + P(M_{n,o} | R_n) P(M_{n,o}) + P(M_{o,n} | R_n) P(M_{o,n}) + P(M_o | R_n) P(M_o)$
+
+        $P(R_n) = \frac{2}{5} \times \frac{1}{15} + \frac{4}{15} \times \frac{1}{5} + \frac{4}{15} \times \frac{1}{5} + \frac{1}{15} \times \frac{2}{5}$
+
+        $P(R_n) = \frac{2}{75} + \frac{4}{75} + \frac{4}{75} + \frac{2}{75}$
+
+        $P(R_n) = \frac{4}{25} = 0.16$
+    \end{itemize}
+
+    \hfill
+
+    \textbf{(b)} Roommate grabbed 2 new balls, what is the prob. I used 2 new ones?
+
+    $P(M_n | R_n) = \frac{(R_n | M_n) P(M_n)}{P(R_n)} = \frac{\frac{1}{15} \times \frac{2}{5}}{\frac{4}{25}} = \frac{1}{6}$
+    \end{exercise}
+
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    $P(A|B) = \frac{1}{2}$
+
+    $P(B|A) = \frac{1}{4}$
+
+    $P(A \cup B) = \frac{1}{4}$
+
+    \hfill
+
+    $P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{1}{2}$
+    
+    $2 P(A \cap B) = P(B)$
+
+    \hfill
+
+    $P(B|A) = \frac{P(B \cap A)}{P(A)} = \frac{1}{4}$
+
+    $4 P(B \cap A) = P(A) = 4 P(A \cap B)$
+
+    \hfill
+
+    $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+    
+    $\frac{3}{4} = P(A) + P(B) - P(A \cap B)$
+    
+    $\frac{3}{4} = 4 P(A \cap B) + 2 P(A \cap B) - P(A \cap B)$
+
+    $\frac{3}{4} = 5 P(A \cap B)$
+
+    $\frac{3}{20} = P(A \cap B)$
+
+    \hfill
+
+    $P(B) = 2 P(A \cap B)$
+
+    $P(B) = 2 \times \frac{3}{20} = \frac{3}{10}$
+
+    \hfill
+
+    $P(A) = 4 P(A \cap B)$
+
+    $P(A) = 4 \times \frac{3}{20} = \frac{3}{5}$      
+    \end{exercise}
+
+
+
+    \begin{exercise}{7}
+    \hfill
+
+    (1, 1) (1, 2) (1, 3) (1, 4) (1, 5) (1, 6)
+
+    (2, 1) (2, 2) (2, 3) (2, 4) (2, 5) (2, 6)
+
+    (3, 1) (3, 2) (3, 3) (3, 4) (3, 5) (3, 6)
+
+    (4, 1) (4, 2) (4, 3) (4, 4) (4, 5) (4, 6)
+
+    (5, 1) (5, 2) (5, 3) (5, 4) (5, 5) (5, 6)
+
+    (6, 1) (6, 2) (6, 3) (6, 4) (6, 5) (6, 6)
+
+    \hfill
+
+    \textbf{8:}
+
+    (2,6) (3,5) (4,4) (5, 3) (2, 6)
+
+    $P(R_8) = \frac{5}{36}$
+
+    \hfill
+
+    \textbf{7:}
+
+    (1, 6) (2, 5) (3, 4) (4, 3) (5, 2) (6, 1)
+
+    $P(R_7) = \frac{6}{36} = \frac{1}{6}$
+
+    \hfill
+
+    \textbf{No 7 or 8 in a roll:}
+
+    $36 - 6 - 5 = 25$
+
+    $P(R_n) = \frac{25}{36}$
+
+    \hfill
+
+    $P(R_8 \cap R_7) = 0$
+
+    $P(R_8 \cap R_7) = \frac{11}{36}$
+
+    \hfill
+
+    \textbf{Probability the sum of 8 happens before the sum of 7:}
+
+    $p = \frac{P(R_8)}{P(R_8 \cap R_7)} = \frac{\frac{5}{36}}{\frac{11}{36}} = \frac{5}{11}$
+    \end{exercise}
+
+
+
+    \begin{exercise}{8}
+    \hfill
+    
+    \begin{itemize}
+        \item Fred hits a bullseye, $P(F) = 0.5$
+        \item Greg hits a bullseye, $P(G) = 0.6$
+        \item Fred and Greg hitting the bullseye is independent
+    \end{itemize}
+
+    \hfill
+
+    \textbf{(a) They both hit the bullseye on a throw:}
+
+    $P(F \cap G) = P(F)P(G) = 0.5 \times 0.6 = 0.3$
+
+    \hfill
+
+    \textbf{(b) Exactly one of the hits the bullseye on a throw:}
+
+    $P(F \cap G^c) = 0.5 \times 0.4 = 0.2$
+
+    $P(F^c \cap G) = 0.5 \times 0.6 = 0.3$
+
+    P(exactly one hit) $= P(F \cap G^c) + P(F^c \cap G)$
+
+    $= 0.2 + 0.3 = 0.5$
+
+    \hfill
+
+    \textbf{(c) Neither hits the bullseye on a throw:}
+
+    $P(F^c \cap G^c) = 0.5 \cap 0.4 = 0.2$
+
+    \hfill
+
+    \textbf{(d)} M and A are independent
+
+    $P(M) = P(F_1^c \cap F_2^c \cap F_3^c) = P(F_1^c)P(F_2^c)(P(F_3^c) = 0.5 \times 0.5 \times 0.5 = 0.125$
+
+    $P(A) = P(G_1 \cup G_2 \cup G_3) = P(G_1) + P(G_2) + P(G_3) - P(G_1 \cap G_2) - P(G_1 \cap G_3) - P(G_2 \cap G_3) + P(G_1 \cap G_2 \cap G_3)$
+
+    $= P(G_1) + P(G_2) + P(G_3) - P(G_1)P(G_2) - P(G_1)P(G_3) - P(G_2)P(G-3) + P(G_1)P(G_2)P(G_3)$
+
+    $= 0.6 + 0.6 + 0.6 - 0.6 * 0.6 - 0.6 * 0.6 - 0.6 * 0.6 + 0.6 * 0.6 * 0.6$
+
+    $= 1.8 - 0.36 - 0.36 - 0.36 + 0.216$
+
+    $= 0.936$
+
+    \hfill
+
+    $P(M \cap A) = P(M)P(A) = 0.125 \times 0.936 = 0.117$   
+    \end{exercise}
+
+
+
+    \begin{exercise}{9}
+    \hfill
+
+    \textbf{(a) At least one of them hits:}
+
+    $P(H) = 1 - P(F^c \cap G^c)$
+
+    $P(H) = 1 - P(F^c)P(G^c)$
+
+    $P(H) = 1 - (0.5)(0.4)$
+
+    $P(H) = 1 - 0.2$
+
+    $P(H) = 0.8$
+
+    $P((F \cap G)|H) = \frac{P((F \cap G) \cap H)}{P(H)} = \frac{P(F \cap H) P(G \cap H)}{P(H)} = \frac{0.5 \times 0.6}{0.8} = \frac{0.3}{0.8} = \frac{3}{8} = 0.375$
+
+    \hfill
+
+    \textbf{(b)}
+    $P((F^c \cap G)|H) = \frac{P((F^c \cap G) \cap H)}{P(H)} = \frac{P(F^c \cap H) P(G \cap H)}{P(H)} = \frac{0.5 \times 0.6}{0.8} = \frac{0.3}{0.8} = \frac{3}{8}  = 0.375$
+
+    \hfill
+
+    \textbf{(c)}
+    P(exactly one hit | H) $ = \frac{P(1 hit)}{P(H)} = \frac{0.5}{0.8} = \frac{5}{8} = 0.625$
+    \end{exercise}
+
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    \begin{itemize}
+        \item 10 balls, 3 black and 7 white
+        \item color drawn 2 more of that color put back with it
+    \end{itemize}
+
+    Prob. black balls drawn each of the first 3 trials: $\frac{3}{10} \times \frac{5}{12} \frac{7}{14} = \frac{105}{1,680} = 0.0625$
+    \end{exercise}
+
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    \begin{itemize}
+        \item Box A: 3 chips labeled 1-3
+        \item Box B: 6 chips labeled 1-6
+        \item Box C: 12 chips labeled 1-12
+        \item S: Amy selects the same chip twice in a row
+    \end{itemize}
+
+    $P(A) = P(B) = P(C) = \frac{1}{3}$
+
+    $P(S|A) = \frac{1}{3}$
+
+    $P(S|B) = \frac{1}{6}$
+
+    $P(S|C) = \frac{1}{12}$
+
+    \hfill
+
+    $P(S) = P(S|A)P(A) + P(S|B)P(B) + P(S|C)P(C)$
+
+    $P(S) = \frac{1}{3} \times \frac{1}{3} + \frac{1}{6} \times \frac{1}{3} + \frac{1}{12} \times \frac{1}{3}$
+
+    $P(S) = \frac{1}{9} + \frac{1}{18} + \frac{1}{36}$
+
+    $P(S) = \frac{7}{36}$
+
+    \hfill
+
+    $P(B|S) = \frac{P(S|B)P(B)}{P(S)} = \frac{\frac{1}{6} \times \frac{1}{3}}{\frac{7}{36}} = \frac{2}{7}$
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{12}
+    \hfill
+
+    $P(A \cap B | C) = \frac{P(A \cap B \cap C)}{P(C)}$
+
+    \hfill
+
+    $P(A \cap B \cap C) = P(A)P(B)P(C)$
+
+    \hfill
+
+    $P(A \cap B|C) = P(A)P(B)$
+
+    \hfill
+
+    $P(A|C) = \frac{P(A \cap C)}{P(C)} = \frac{P(A)P(C)}{P(C)} = P(A)$
+
+    $P(B|C) = \frac{P(B \cap B)}{P(C)} = \frac{P(B)P(C)}{P(C)} = P(B)$
+
+    \hfill
+
+    $P(A \cap B | C) = P(A)P(B) = P(A|C)P(B|C)$
+
+    $P(A \cap B | C) = P(A|C) P(B|C)$
+    \end{exercise}
+\end{document}
