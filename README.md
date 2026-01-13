@@ -52,9 +52,18 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - **Key Features:** Gradient-based optimization, symmmetric positive definite matrices, convergence analysis
 
 ### Simulation & Statistical Modeling
-- **[Monte Carlo Simulation](Monte%20Carlo%20Simulation/)** - Statistical simulation for uncertainty modeling
-- **[Markov Chain](Markov%20Chain/)** - Markov chain-based text generation
-- **[Moving Average](Moving%20Average/)** - Time series analysis and forecasting
+- **[Monte Carlo Simulation](Monte%20Carlo%20Simulation/)**
+  - Statistical simulation techniques for modeling uncertainty and probabilistic systems using Monte Carlo methods. Demonstrates random sampling and numerical integration approaches.
+  - **Technologies:** Python, NumPy
+  - **Key Features:** Stochastic modeling, uncertainty quantification, probabilistic analysis
+- **[Markov Chain](Markov%20Chain/)**
+  - Markov chain-based text generation system that learns word sequence probabilities from classic literature and generates new random text. Demonstrates natural language processing fundamentals.
+  - **Technologies:** Python, Jupyter Notebook
+  - **Key Features:** Probabilistic language modeling, Project Gutenberg integration, sequence generation
+- **[Moving Average](Moving%20Average/)**
+  - LSTM-based trading strategy implementation in R using moving averages and technical indicators. Analyzes stock data (SPY) with feature engineering including RSI, MACD, Bollinger Bands, and volatility measures.
+  - **Technologies:** R, quantmod, TTR, keras
+  - **Key Features:** Time series analysis, technical indicators, deep learning for trading
 
 ### Web Development & Software Enginnering
 - **[Technical Documentation Page](Technical%20Documentation/)** - Responsive documentation website
