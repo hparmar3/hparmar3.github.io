@@ -64,6 +64,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - LSTM-based trading strategy implementation in R using moving averages and technical indicators. Analyzes stock data (SPY) with feature engineering including RSI, MACD, Bollinger Bands, and volatility measures.
   - **Technologies:** R, quantmod, TTR, keras
   - **Key Features:** Time series analysis, technical indicators, deep learning for trading
+- **[Probability Problem Solutions](Probability%20Problem%20Solutions/)**
 
 ### Web Development & Software Enginnering
 - **[Technical Documentation Page](Technical%20Documentation/)**
