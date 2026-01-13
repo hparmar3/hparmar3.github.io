@@ -1,0 +1,767 @@
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment 07}
+
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+    
+    \textbf{(a)} $\int_{0}^{\infty} x^3 e^{-2x} \, dx$
+    $= \int_{0}^{\infty} x^{4-1} e^{-\frac{x}{1/2}} \, dx = (\frac{1}{2})^4 \Gamma (4) = \frac{1}{16} 3! = \frac{1}{16} \times 6 = \frac{3}{8}$
+
+    \hfill
+
+    \textbf{(b)} $\int_{0}^{\infty} \sqrt{x}e^{-x/2} \, dx = \int_{0}^{\infty} x^{1/2} e^{-x/2} \, dx = \int_{0}^{\infty} x^{3/2 - 1} e^{-x/2} \, dx = (2)^{3/2} \Gamma(\frac{3}{2}) = 2 \sqrt{2} \frac{1}{2} \Gamma(\frac{1}{2}) = \sqrt{2 \pi}$
+
+    \hfill
+
+    \textbf{(c)} 
+    Gaussian integral
+    $$\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}$$
+
+    $\int_{-\infty}^{\infty} e^{-2x^2} \, dx$
+
+    $$ u = \sqrt{2}x$$
+    $$du = \sqrt{2}dx$$
+
+    $\frac{1}{2} \int_{-\infty}^{\infty} e^{-u^2} \, du$
+
+    $\frac{1}{\sqrt{2}} \times \sqrt{\pi} = \sqrt{\frac{\pi}{2}}$
+    
+
+    \hfill
+
+    \textbf{(d)}
+
+    $\sum_{x=4}^{\infty} \binom{x-1}{3} (\frac{2}{3})^{x-4}$
+
+    $$x-1 = n+3$$
+
+    $\sum_{n=0}^{\infty} \binom{n+3}{3} (\frac{2}{3})^{n}$
+
+    $$r = \frac{2}{3} , k = 3$$
+
+    $\sum_{n=0}^{\infty} \binom{n+k}{k} r^n = \frac{1}{(1-r)^{k+1}}$ for $|r| < 1$
+
+    $= \frac{1}{(1 - \frac{2}{3})^{3+1}}$ for $|r|<1$
+
+    $= \frac{1}{(1 - \frac{2}{3})^4}$
+
+    $= \frac{1}{(\frac{1}{3})^4}$
+
+    $= \frac{1}{\frac{1}{81}}$
+
+    $= 81$
+
+    \hfill
+
+    \textbf{(e)} 
+    $= \sum_{x=0}^{n} \frac{1}{x!(n-x)!}$ for $n>1$
+
+    $= \frac{1}{n!} \sum_{x=0}^{n} \binom{n}{x}$
+
+    $= \frac{2^n}{n!}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{2}
+    \hfill
+
+    $f(x) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} x^{\alpha - 1} (1-x)^{\beta - 1} 1_{(0, 1)} (x)$
+
+    $E(X) = \int_{0}^{1} x \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} x^{\alpha - 1} (1-x)^{\beta - 1) \, dx}$
+
+    $= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} \int_{0}^{1} x^{\alpha} (1-x)^{\beta - 1} \, dx$
+
+    $= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} \int_{0}^{1} x^{\alpha + 1 - 1} (1-x)^{\beta - 1} \, dx$
+
+    $$\int_{0}^{1} t^{x-1} (1-t)^{y-1} \, dt = \frac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$$
+
+    $= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} \times \frac{\Gamma(\alpha + 1) \Gamma(\beta)}{\Gamma(\alpha + \beta + 1)}$
+
+    $= \frac{\Gamma(\alpha + \beta) \Gamma(\alpha + 1)}{\Gamma(\alpha) \Gamma(\alpha + \beta + 1)}$
+
+    $= \frac{\Gamma(\alpha + \beta) \alpha \Gamma(\alpha)}{\Gamma(\alpha) (\alpha + \beta) \Gamma(\alpha + \beta)}$
+
+    $\mu = \frac{\alpha}{\alpha + \beta}$
+
+    \hfill
+
+    $Var(X) = E(X^2) - E(X)^2$
+
+    \hfill
+
+    $E(X^2) = \int_{0}^{1} x^2 \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} x^{\alpha - 1} (1-x)^{\beta -1} \, dx$
+
+    $= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} \int_{0}^{1} x^{\alpha + 1} (1-x)^{\beta - 1} \, dx$
+
+    $= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} \int_{0}^{1} x^{\alpha + 2 - 1} (1-x)^{\beta - 1} \, dx$
+
+    $= \frac{\Gamma(\alpha + \beta}{\Gamma(\alpha) \Gamma(\beta)} \times \frac{\Gamma(\alpha + 2) \Gamma(\beta)}{\Gamma(\alpha + \beta + 2)}$
+
+    $= \frac{\Gamma(\alpha + \beta) \Gamma(\alpha + 2)}{\Gamma(\alpha) \Gamma(\alpha + \beta + 2)}$
+
+    $= \frac{\Gamma(\alpha + \beta) (\alpha + 1) (\alpha) \Gamma(\alpha)}{\Gamma(\alpha) (\alpha + \beta + 1)(\alpha + \beta) \Gamma(\alpha + \beta)}$
+
+    $= \frac{\alpha (\alpha + 1)}{(\alpha + \beta + 1)(\alpha + \beta)}$
+
+    \hfill
+
+    $Var(X) = \frac{\alpha (\alpha + 1)}{(\alpha + \beta + 1)(\alpha + \beta)} - (\frac{\alpha}{\alpha + \beta})^2$
+
+    $= \frac{({\alpha}^2 + \alpha)}{(\alpha + \beta + 1)(\alpha + \beta)} - \frac{{\alpha}^2}{(\alpha + \beta)^2}$
+
+    $= \frac{({\alpha}^2 + \alpha)(\alpha + \beta) - {\alpha}^2 (\alpha + \beta + 1)}{(\alpha + \beta + 1)(\alpha + \beta)^2}$
+
+    $= \frac{{\alpha}^3 + {\alpha}^2 + {\alpha}^2 \beta + \alpha \beta - {\alpha}^3 - {\alpha}^2 \beta - {\alpha}^2}{(\alpha + \beta + 1)(\alpha + \beta)^2}$
+
+    $= \frac{\alpha \beta}{(\alpha + \beta + 1)(\alpha + \beta)^2}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    $X -$ Poisson$(\lambda)$
+
+    $P(X = x) = e^{- \lambda} \frac{\lambda}{x!}, x = 0, 1, 2, 3, ...$
+
+    \hfill
+
+    $E((X)_r) = \sum_{x=r}^{n} x_r e^{- \lambda} \frac{{\lambda}^x}{x!}$
+
+    $= \sum_{x=r}^{n} \frac{x!}{(x-r)!} e^{- \lambda} \frac{{\lambda}^x}{x!}$
+
+    $= e^{- \lambda} \sum_{x=r}^{n} \frac{{\lambda}^x}{(x-r)!}$
+
+    $$k = x-r$$
+
+    $= e^{- \lambda} \sum_{k=0}^{n} \frac{{\lambda}^{k+r}}{k!}$
+
+    $= e^{- \lambda} \sum_{k=0}^{n} \frac{{\lambda}^k {\lambda}^r}{k!}$
+
+    $= e^{- \lambda} {\lambda}^r \sum_{k=0}^{n} \frac{{\lambda}^k}{k!}$
+
+    Maclaurian Series Expansion
+    
+    $$\sum_{n=0}^{\infty} \frac{1}{n!} x^n = e^x$$
+
+    $= e^{- \lambda} {\lambda}^r e^{\lambda}$
+
+    $E((X)_r) = {\lambda}^r$
+
+    \hfill
+    \end{exercise}
+
+    \begin{exercise}{4}
+    \hfill
+
+    $Z - N(0,1)$
+
+    pdf: $= \frac{e^{- \frac{x^2}{2}}}{\sqrt{2 \pi}}$ for $-\infty < x < \infty$
+
+    \textbf{(a)}
+    $E(Z) = \int_{-\infty}^{\infty} z \frac{e^{-\frac{z^2}{2}}}{\sqrt{2 \pi}} \, dz$
+
+    $= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} z e^{-\frac{z^2}{2}} \, dz$
+
+    $= \frac{1}{\sqrt{2 \pi}} \times -2 e^{- \frac{1}{2}z^2} |_{-\infty}^{\infty}$
+
+    $= 0$
+
+    \hfill
+
+    $E(Z^2) = \int_{-\infty}^{\infty} z^2 \frac{e^{\frac{1}{2}z^2}}{\sqrt{2 \pi}} \, dz$
+
+    $= \frac{2}{\sqrt{2 \pi}} \int_{0}^{\infty} z^2 e^{\frac{1}{2}z^2} \, dz$
+
+    $$u = z, dv = ze^{- \frac{1}{2}z^2} \, dz$$
+
+    $$du = dz, v= -e^{- \frac{1}{2}z}$$
+
+    $= \frac{1}{\sqrt{2 \pi}} [-ze^{-\frac{1}{2}z^2} + \int_{0}^{- \infty} e^{-\frac{1}{2}z} \, dz]$
+
+    $= \frac{1}{\sqrt{2 \pi}} [-ze^{-\frac{1}{2}z^2} - 2e^{- \frac{1}{2}z} |_{0}^{-\infty}]$
+
+    $= 1$
+
+    \hfill
+
+    $E(Z^{2m-1}) = \int_{-\infty}^{\infty} z^{2m-1} \frac{e^{-\frac{1}{2} z^2}}{\sqrt{2 \pi}} \, dz$
+
+    $= \frac{2}{\sqrt{2 \pi}} \int_{0}^{\infty} z^{2m-1} e^{-\frac{1}{2} z^2} \, dz$
+
+    $= \frac{1}{\sqrt{2 \pi}} \int_{0}^{\infty} z^{2m-2} 2z e^{-\frac{1}{2}z^2} \, dz$
+
+    $$u = z^{2m-2}, dv = ze^{-\frac{1}{2}z^2}$$
+
+    $$du = (2m-2)z^{2m-3}, v= -e^{-{\frac{1}{2}z^2}}$$
+
+    $= \frac{1}{\sqrt{2 \pi}} [-z^{2m-2} e^{-\frac{1}{2}z^2} + (2m-2) \int_{0}^{\infty} z^{2m-3}e^{- \frac{1}{2}z^2} \, dz]$
+
+    $= \frac{1}{\sqrt{2 \pi}} [-z^{2m-2} e^{-\frac{1}{2}z^2} + (2m-2) E(Z^{2m-3})]$
+
+    $= 0 + \frac{1}{\sqrt{2 \pi}}(2m-2) E(Z^{2m-3})$
+
+    $E(Z^{2m-1} = (2m-2)(2m-4)(2m-6)...(4)(2)E(Z)$
+
+    $E(Z^{2m-1}) = 0$
+
+    \hfill
+
+    $E(Z^{2m}) = \int_{-\infty}^{\infty} z^{2m} \frac{e^{- \frac{1}{2}z^2}}{\sqrt{2 \pi}} \, dz$
+
+    $= \frac{1}{\sqrt{2m}} \int_{-\infty}^{\infty} z^{2m}e^{-\frac{1}{2}z^2} \, dz$
+
+    $= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} z^{2m-1} z e^{-\frac{1}{2}z^2} \, dz$
+
+    $$u = z^{2m-1}, dv = z e^{-\frac{1}{2}z^2}$$
+
+    $$du = (2m-1)z^{2m-2}, v= -ze^{-\frac{1}{2}z^2}$$
+
+    $= \frac{1}{\sqrt{2 \pi}} [z^{2m-1} - ze^{-\frac{z^2}{2}} + \int_{-\infty}^{\infty} z e^{-\frac{1}{2}z^2} (2m-1)z^{2m-2} \, dz]$
+
+    $= \frac{1}{\sqrt{2 \pi}} [z^{2m-1} - ze^{-\frac{z^2}{2}} + (2m-1) \int_{-\infty}^{\infty} z e^{-\frac{1}{2}z^2} z^{2m-2} \, dz]$
+
+    $= \frac{1}{\sqrt{2 \pi}} [0 + (2m-1) \int_{-\infty}^{\infty} e^{-\frac{1}{2}z^2} z^{2m-1} \, dz]$
+
+     $= \frac{(2m-1)}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-\frac{1}{2}z^2} z^{2m-1} \, dz$
+
+     $= \frac{1}{\sqrt{2 \pi}} (2m-1) E(Z^{2m-2})$
+
+     $= (2m-1)(2m-3)(2m-5)...(3)E(Z^2)$
+
+     $= (2m-1)(2m-3)(2m-5)...(3)(1)$
+
+     $=(2m-1)!!$
+
+     Properties of Double Factorial
+
+     $$n!! = \prod_{k=1}^{\frac{n+1}{2}} (2k-1) = n(n-2)(n-4)...3*1$$
+
+     $$n!! = \frac{n!}{(n-1)!!} = \frac{(n+1)!}{(n+1)!!}$$
+
+     for an even non-negative integer n=2k with $k \geq 0$
+
+     $$2k!! = 2^k k!$$
+
+     $$(2k-1)!! = \frac{(2k)!}{2^k k!} = \frac{(2k-1)!}{2^{k-1}(k-1)!}$$
+
+     $= (2m-1)!! = \frac{(2m)!!}{2^m m!}$
+
+     \hfill
+
+     \textbf{(b)} $\int_{-\infty}^{\infty} cos(\theta z) \frac{1}{\sqrt{2 \pi}} e^{-\frac{z^2}{2}} \, dz$
+
+     $$cos(x) = \frac{e^{ix} + e^{-ix}}{2}$$
+
+     $= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \frac{e^{i\theta z} + e^{-i \theta z}}{2} e^{-\frac{z^2}{2}} \, dz$
+
+     $= \frac{1}{2 \sqrt{2 \pi}} \int_{-\infty}^{\infty}(e^{i\theta z} + e^{-i \theta z}) e^{-\frac{z^2}{2}} \, dz$
+
+     $= \frac{1}{2 \sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \theta z - \frac{z^2}{2}} + e^{i \theta z + \frac{z^2}{2}} \, dz$
+
+     $= \frac{1}{2 \sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{\frac{1}{2}(2i \theta z - z^2)} + e^{\frac{1}{2}(2i \theta z + z^2)} \, dz$
+
+     $= \frac{1}{2 \sqrt{2 \pi}}[\int_{-\infty}^{\infty} e^{\frac{1}{2}(2i \theta z - z^2)} + \int_{-\infty}^{\infty} e^{\frac{1}{2}(2i \theta z + z^2)} \, dz]$
+
+     both integrals are equal to each other since the normal distribution is symmetric.
+
+     $= \frac{2}{2\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{\frac{1}{2}((z-i\theta)^2 - \theta^2)}$
+
+     $= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-\frac{1}{2}(z-i
+     \theta)^2} e^{-\frac{\theta^2}{2}} \, dz$
+
+     $= \frac{e^{-\frac{\theta^2}{2}}}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-\frac{1}{2}(z-\theta i)^2}$
+
+     $$u = z-i\theta$$
+     $$du = dz$$
+
+     $= e^{-\frac{\theta^2}{2}} \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2}u^2} \, dx$ (the integral is equal to 1 because its the pdf integrated)
+
+     $= e^{-\frac{\theta^2}{2}} \times 1$
+
+     $= e^{-\frac{\theta^2}{2}}$
+ 
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{5}
+    \hfill
+
+    $Y = e^{\delta T}$
+
+    $T \delta = ln(Y)$
+
+    $T = \frac{ln(Y)}{\delta}$
+
+    for $y > 1$ (i.e. $e^{\delta T} \geq e^{\delta 0} = 1)$
+
+    $F_Y(y) = P(Y \leq y) = P(e^{\delta T} \leq y)$
+
+    $P(e^{\delta T} < y) = P(T \leq \frac{ln(y)}{\delta})$
+
+    $P(T \leq t) = 1 - e^{-ct}$
+
+    $F_Y(T \leq \frac{ln(y)}{\delta}) = 1 - e^{c \frac{ln(y)}{\delta}}$
+
+    $F_Y= 1 - y^{-\frac{c}{\delta}}$
+
+    $f_Y(y) = \frac{d}{dy} F_x(y)$
+
+    $= \frac{d}{dy} (1-y)^{-\frac{c}{s}}$
+
+    $f_Y(y) = \frac{c}{\delta}y^{-\frac{c}{\delta} - 1}$
+
+    This resembles a Pareto distribution, where $\alpha = \frac{c}{\delta}$ and $\lambda = 1$
+    
+    \hfill    
+    \end{exercise}
+
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    \textbf{(a)} $Y - N(\mu, \sigma^2)$
+
+    $Y - N(\frac{5}{9}(88-32), (\frac{5}{9} 2)^2$
+
+    $Y - N(31.1111, 1.2346)$
+
+    \hfill
+
+    \textbf{(b)} $P(X > 93)$
+
+    $z = \frac{x - \mu}{\sigma} = \frac{93-88}{2} = 2.5$
+
+    $P(X > 93) = P(Z > 2.5)$
+
+    $Z = 1 - 0.9938$
+
+    $P(X > 93) = 0.0062$
+
+    \textbf{(c)} $P(Y < 30)$
+
+    $z = \frac{30 - 31.1111}{1.1111} = \frac{-1.1111}{1.1111} = -1$
+
+    $P(Y < 30) = P(Z < -1)$
+
+    $Z = 0.1587$
+
+    $P(Y < 30) = 0.1587$
+
+    \hfill
+    \end{exercise}
+
+    \begin{exercise}{7}
+    \hfill
+
+    \begin{itemize}
+        \item hypotenuse X, continous random variable having PDF $f(x) = 3x^2 \, 1_{(0,1)} (x)$
+    \end{itemize}
+
+    \textbf{(a)} $X^2 = L^2 + L^2$
+
+    $X^2 = 2 L^2$
+
+    $L^2 = \frac{X^2}{2}$
+
+    $L = \frac{X}{\sqrt{2}}$
+
+    Area of Triangle is:
+
+    $Y = \frac{1}{2} L^2$
+
+    $Y = \frac{1}{2} (\frac{X}{\sqrt{2}})^2$
+
+    $Y = \frac{1}{2} \times \frac{X^2}{2}$
+
+    $Y = \frac{X^2}{4}$
+
+    $X^2 = 4Y$
+
+    $X = 2 \sqrt{Y}$
+
+    \hfill
+
+    $\frac{dX}{dY} = \frac{d}{dY} (2 \sqrt{y}) = \frac{1}{\sqrt{y}}$
+
+    $f_Y(y) = f_X(x) |\frac{dX}{dY}| = f_x(2 \sqrt{2}) \times \frac{1}{\sqrt{y}}$
+
+    $= 3(2 \sqrt{y})^2 \times \frac{1}{\sqrt{y}}$
+
+    $= 3 \times 4 y \times \frac{1}{\sqrt{y}}$
+
+    \hfill
+
+    $f_Y(y) = 12 \sqrt{y}$
+
+    Supp of X is $(0, 1)$
+
+    $(0, \frac{X^2}{4}, X= 1)$
+
+    $(0, \frac{1}{4})$
+
+    \hfill
+
+    Supp of Y: $0 < Y < \frac{1}{4}$
+
+    \hfill
+
+    \textbf{(b)} $P(Y < \frac{1}{16}) = \int_{0}^{\frac{1}{16}} 12 \sqrt{y} \, dy$
+
+    $= \frac{12}{3} \times 2 y^{3/2} \, |_{0}^{\frac{1}{16}}$
+
+    $= \frac{24}{3} y^{3/2} \, |_{0}^{\frac{1}{16}}$
+
+    $= 8 y^{3/2} \, |_{0}^{\frac{1}{16}}$
+
+    $= 8 (\frac{1}{16})^{3/2}$
+
+    $= \frac{1}{8}$
+
+    \hfill
+
+    \textbf{(c)} $E[X] = \int_{0}^{\frac{1}{4}} y 12 \sqrt{y} \, dy$
+
+    $= \int_{0}^{\frac{1}{4}} 12 y^{3/2} \, dy$
+
+    $= \frac{12 \times 2}{5} y^{5/2} \, |_{0}^{\frac{1}{4}}$
+
+    $= \frac{24}{5} y^{\frac{5}{2}} \, |_{0}^{\frac{1}{4}}$
+
+    $= \frac{24}{5} (\frac{1}{4})^{5/2}$
+
+    $= \frac{24}{5} \times \frac{1}{32}$
+
+    $= \frac{3}{20}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{8}
+    \hfill
+
+    $F_Y(y) = P(Y \leq y) = P(aX+b \leq y)$
+
+    $aX + b \leq y$
+
+    $aX \leq y -b$
+
+    $X \geq \frac{y-b}{a}$ (since $a<0$)
+
+    $F_Y(y) = P(X \geq \frac{y-b}{a})$
+
+    $P(X \geq \frac{y-b}{a}) = P(\frac{x- \mu}{\sigma} \geq \frac{\frac{y-b}{a} - \mu}{\sigma}) = P(Z \geq \frac{\frac{y-b}{a}- \mu}{\sigma}) = P(Z \geq \frac{y - (a \mu +b)}{a \sigma})$
+
+    $F_Y(y) = 1 - \Phi (\frac{y - (a \mu +b)}{a \sigma})$
+
+    This CDF expression show that $Y = aX+b$ as a normal distribution with a mean = $a \mu + b$ and variance = $a^2 {\sigma}^2$, so standard deviation = $\sqrt{a^2{\sigma}^2} = |a| \sigma$
+
+    Therefore, $Y - N(a \mu +b, a^2{\sigma}^2)$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{9}
+    \hfill
+
+    z-score: $z = \frac{X - \mu}{\sigma}$
+
+    standardizes X to have the mean = 0 and variance = 1
+
+    $M_z(\theta) = E[e^{\theta z}]$
+
+    $M_z(\theta) = E[e^{\theta \frac{x - \mu}{\sigma}}]$
+
+    $M_z(\theta) = E[e^{\frac{\theta}{\sigma}(x- \mu)}]$
+
+    $M_z(\theta) = E[e^{\frac{\theta}{\sigma}x} e^{-\frac{\theta}{\sigma} \mu}] = e^{-\frac{\theta \mu}{\sigma}} E[e^{\frac{\theta}{\sigma}x}]$
+
+    $M_z(\theta) = e^{-\frac{\theta \mu}{\sigma}} M_x(\frac{\theta}{\sigma})$
+
+    MGF of the z-score is: $M_z(\theta) = e^{-\frac{\theta \mu}{\sigma}} M_x(\frac{\theta}{\sigma})$
+
+    \hfill
+
+    The domain of the MGF pf x, $M_x(\theta)$, is given as $A < \theta < B$, where $A < 0$ (possible $-\infty$) and $B>0$ (possible $+\infty$)
+
+    $A< \frac{\theta}{\sigma} < B$
+
+    $\sigma A < \theta < \sigma B$
+
+    Because $A < 0$, would should consider $A$ as $|A| = -A$ when considering the domain. So, the domain of the MGF of z is: $- \sigma A < \theta < \sigma B$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    PDF of $Z - N(0,1)$:
+
+    $\varphi(z) = \frac{e^{-\frac{z^2}{2}}}{\sqrt{2 \pi}}$
+
+    $\varphi'(z) = - \frac{2z}{z} \frac{e^{-\frac{z^2}{2}}}{\sqrt{2 \pi}}$
+
+    $= - \frac{ze^{-\frac{z^2}{2}}}{\sqrt{2 \pi}}$
+
+    $\varphi''(x) = \frac{-e^{\frac{z^2}{2}} + z^2 e^{-\frac{z^2}{2}}}{\sqrt{2 \pi}}$
+
+    $= \frac{e^{-\frac{z^2}{2}}(z^2 -1)}{\sqrt{2 \pi}}$
+
+    $0 = \frac{e^{-\frac{z^2}{2}}(z^2 -1)}{\sqrt{2 \pi}}$
+
+    $0 = e^{-\frac{z^2}{2}}(z^2 -1)$
+
+    $0 = z^2 -1$
+
+    $z^2 = 1$
+
+    $z = \pm 1$
+
+    If $Z = N(0,1)$, then $X= \sigma Z - \mu - N(\mu, {\sigma}^2)$
+
+    \hfill
+
+    The inflection points of the standard distribution Z are at $z = \pm 1$. Since $X = \sigma z + \mu$ the inflection points of Z can be transformed.
+    \begin{itemize}
+        \item $Z= 1, x = \sigma(1) + \mu = \mu + \sigma$
+        \item $Z = -1, x = \sigma(-1) + \mu = \mu - \sigma$
+    \end{itemize}
+
+    Therefore, the inflection points of $f_X(x)$, the PDF of $X - N(\mu, {\sigma}^2)$, occur at $x = \mu \pm \sigma$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    $X - Exp$
+
+    $f_X(x) = e^{-x} \, 1_{(0,\infty)} (x)$
+
+    \hfill
+
+    $Y = \nu +  \alpha X^{1/\beta}$
+
+    $Y - \nu = \alpha X^{1/\beta}$
+
+    $X^{a/\beta} = \frac{Y - \nu}{\alpha}$
+
+    $X = (\frac{Y- \nu}{\alpha})^{\beta}$
+
+    \hfill
+
+    $\frac{d}{dY} (x = (\frac{Y - \nu}{\alpha})^{\beta})$
+
+    $\frac{dX}{dY} = \frac{\beta}{\alpha} (\frac{Y - \nu}{\alpha})^{\beta -1}$
+
+    \hfill
+
+    $f_Y(x) = f_X(x)|\frac{dX}{dY}|$
+
+    $f_Y(x) = f_X((\frac{Y - \nu}{\alpha})^\beta) \frac{\beta}{\alpha} (\frac{Y - \nu}{\alpha})^{\beta -1}$
+
+    $f_Y(x) = e^{-(\frac{Y - \nu}{\alpha})^\beta} \, 1_{(\nu, \infty)} (y) \frac{\beta}{\alpha} (\frac{y - \nu}{\alpha})^{\beta -1}$
+
+    $f_Y(x) = \frac{\beta}{\alpha}(\frac{y - \nu}{\alpha})^{\beta - 1} e^{-(\frac{Y-\nu}{\alpha})^\beta} (y) \, 1_{(\nu, \infty)} (y)$
+
+    $f_Y(x) = \frac{\beta (y-\nu)^{\beta-1}}{{\alpha}^\beta} e^{-(\frac{Y-\nu}{\alpha})^\beta} (y) \, 1_{(\nu, \infty)} (y)$
+
+    $ f(x) =\begin{cases}
+    \frac{\beta (y-\nu)^{\beta-1}}{{\alpha}^\beta} e^{-(\frac{Y-\nu}{\alpha})^\beta} (y) \, 1_{(\nu, \infty)} (y), y > \nu \\
+    0, y \leq \nu
+    \end{cases}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{12}
+    \hfill
+
+    \begin{itemize}
+        \item Let X be a continuous random variable with a strictly increasing CDF $F(x)$
+        \item Since $F(x)$ is strictly increasing, its inverse $F^{-1}(x)$ exists. We define U as:
+        $U = F(X)$
+        \item want to show $U - Unif(0,1)$, which means that the CDF of U, denoted $F_U(u)$ is given by: 
+        $F_U(u) = P(U \leq u) = u$ for $0 \leq u \leq 1$
+        \item for $u < 0$, since CDF $F(x)$ only takes values in [0, 1], it follows that $P(U \leq u) = 0$ for $u < 0$
+        \item for $u \geq 0$, the CDF $F(x)$ always satisfies $F(x) \leq 1$. Therefore, for $u \geq 1$, we have $P(U \leq u) = 1$
+    \end{itemize}
+
+    For $0 \leq u \leq 1$, we need to show that $P(U \leq u) = u$
+    $F_U(u) = P(U \leq u) = P(F(x) \leq u)$
+
+    \hfill
+
+    Since $F(X)$ is a strictly increasing function, the event $F(X) \leq u$ is equal to $X \leq F^{-1}(u)$
+    $P(U \leq u) = P(F(X) \leq u) = P(X \leq F^{-1}(u))$
+
+    \hfill
+
+    Since $F$ is a CDF strictly increasing
+    $F(F^{-1}(u)) = u$
+
+    \hfill
+
+    Therefore, 
+
+    $F_U(u) = P(U \leq u) = u$
+
+    This proves that $U - Unif(0,1)$ since its CDF is precisely the CDF of a uniform random variable on [0,1]
+
+    \hfill
+
+    If we generate a uniform random variable $U - Unif(0,1)$, then the transformation:
+    $X = F^{-1}(U)$
+
+    This will give us a random variable of X with the desired distribution described by $F(X)$
+
+    Ex: $X - Exp(\lambda)$
+
+    $F(x) = 1 - e^{- \lambda x}$ for $x \geq 0$
+
+    \hfill
+
+    We need to find the inverse of $F(x)$. Set $F(x) = u$, where $u \in [0,1]$:
+
+    $u = 1 - e^{-\lambda x}$
+
+    $e^{\lambda x} = 1- u$
+
+    $x = - \frac{1}{\lambda} ln(1-u)$
+
+    If $U - Unif(0,1)$: $X = -\frac{1}{\lambda} ln(1-U)$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{13}
+    \hfill
+
+    \begin{itemize}
+        \item $X - N(\mu, \sigma), e^x - lognormal(\mu, {\sigma}^2)$
+        \item $Y - lognormal(\mu, {\sigma}^2), ln(Y) - N(\mu, {\sigma}^2)$
+    \end{itemize}
+
+    \textbf{(a)} $ln(Y) - N(1, 4), \mu = 1, {\sigma}^2 = 4, \sigma = 2$
+
+    \hfill
+
+    $P(Y \geq 137) = P(ln(Y) \geq ln(137))$
+
+    $z = \frac{ln(Y) - \mu}{\sigma}$
+
+    $= P(Y \geq 137) = P(\frac{ln(137) -1}{2} \geq Z)$
+
+    $= P(\frac{4.9199 - 1}{2} \geq Z)$
+
+    $= P(\frac{3.9199}{2} \geq Z)$
+
+    $= P(1.9599 \geq Z)$
+
+    $= P(Z \leq 1.96) = 0.9750$
+
+    $= P(Y \geq 137) = 1 - 0.9750 = 0.025$
+
+    \hfill
+
+    $P(7.389 \geq Y\geq 73.7) = P(ln(7.389) \geq ln(Y) \geq ln(73.7))$
+
+    $ = P(1.9999 \geq ln(Y) \geq 4.3000)$
+
+    $= P(2 \geq ln(Y) \geq 4.3)$
+
+    $= P(\frac{2-1}{2} \leq Z \leq \frac{4.3 -1}{2})$
+
+    $= P(0.5 \leq Z \leq 1.65)$
+
+    \hfill
+
+    $= P(Z \geq 0.5) = 0.6915$
+
+`   $= P(Z \geq 1.65) = 0.9505$
+
+    \hfill
+
+    $P(7.389 \leq Y \leq 73.7) = 0.9505 - 0.6915 = 0.259$
+
+    \textbf{(b)} The expected value of Y is: $E(Y) = e^{\mu + \frac{\sigma^2}{2}}$
+
+    \hfill
+
+    The second moment (expected value of $Y^2$) is: $E(Y^2) = e^{2 \mu + 2 \sigma^2}$
+
+    \hfill
+
+    The variance $Var(Y)$ is: $Var(Y) = E(Y^2) - (E(Y))^2$
+
+    $Var(Y) = e^{2 \mu + 2 \sigma^2} - (e^{\mu + \frac{\sigma^2}{2}})^2$
+
+    $Var(Y) = e^{2 \mu + 2 \sigma^2} - (e^{\mu + \frac{\sigma^2}{2}})^2$
+
+    $= e^{2 \mu + 2 \sigma^2} - e^{2 \mu + \sigma^2}$
+
+    $= e^{2 \mu + \sigma^2}(e^{\sigma^2}-1)$
+
+    \hfill   
+    \end{exercise}
+
+
+
+    \begin{exercise}{14}
+    \hfill
+
+    $= \sum_{x=1}^{\infty} \sum_{y=1}^{x} P_{X,Y} (x,y) = 1$
+
+    $= \sum_{x=1}^{\infty} \sum_{y=1}^{x} \frac{2y}{x(x+1)}(\frac{1}{2})^x$
+
+    $= \sum_{x=1}^{\infty} \frac{1}{x(x+1)}(\frac{1}{2})^x \sum_{y=1}^{x} 2y$
+
+    $= \sum_{x=1}^{\infty} \frac{1}{x(x+1)}(\frac{1}{2})^x \times 2 \times \frac{x(x+1)}{2}$
+
+    $= \sum_{x=1}^{\infty} (\frac{1}{2})^x$
+
+    $= \frac{\frac{1}{2}}{1 - \frac{1}{2}}$
+
+    $= \frac{1/2}{1/2}$
+
+    $= 1$
+
+    \hfill
+    \end{exercise}
+    
+\end{document}
