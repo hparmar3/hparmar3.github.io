@@ -8,7 +8,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
 
 ## Projects
 ### Machine Learning & Data Science
-- **[Machine Learning from Scratch] (Machine%20Learning%20from%20Scratch/)** - Logistic Regression and K-Means Clustering implemented from scratch using NumPy
+- **[Machine Learning from Scratch](Machine%20Learning%20from%20Scratch/)** - Logistic Regression and K-Means Clustering implemented from scratch using NumPy
 - 
 
 ## Contact 
