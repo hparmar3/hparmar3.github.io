@@ -12,8 +12,14 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - A hands-on implementation of Logistic Regression and K-Means Clustering alogrithms coded entirely from scratch using NumPy. Demonstrates gradient descent optimization, decision boundary visualization, and cluster assignments without using Scikit-learn or other ML libraries.
   - Technologies: Python, NumPy, Matplotlib
   - Key Features: Sigmoid function & cross entropy loss, iterative centroid updates, visual analysis
-- **[Diabetes Data Visualization](Diabetes%20Data%20Visualization/)** - Linear regression analysis and comprehensive data visualization pipeline
-- **[Logisitic Regression](Logisitic%20Regression/)** - Advanced classification model with gradient descent optimization
+- **[Diabetes Data Visualization](Diabetes%20Data%20Visualization/)**
+  - Comprehensive data visualization and linear regression analysis pipeline for predicting diabetes progression. Includes feature inspection, correlation heatmap analysis, and model evaluation using MSE and R^2 metrics.
+  - Technologies: Python, Pandas, Seaborn, Scikit-learn
+  - Key Features: Exploratory data analysis, correlation analysis, actual vs. predicted visualization
+- **[Logisitic Regression](Logisitic%20Regression/)**
+  - Logistic Regression implementation built entirely from scratch in R with gradient descent optimization. Generates synthetic data for binary classification and visualizes the learned decision boundary.
+  - Technology: R, ggplot2
+  - Key Features: Custom gradient descent, sigmoid function implementation, decision boundary plotting
 
 ### Mathematical Optimization
 - **[Simplex Method](Simplex%20Method/)** - Constraint linear programming slove in MATLAB
