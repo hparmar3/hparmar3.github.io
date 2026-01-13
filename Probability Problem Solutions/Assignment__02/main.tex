@@ -1,0 +1,538 @@
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment 02}
+
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+
+    \begin{itemize}
+        \item 5 culprits, 2 did it
+    \end{itemize}
+
+    \textbf{Send 3 to detention?}
+    \begin{itemize}
+        \item number of combinations of 3: $\begin{pmatrix}
+            5 \\
+            3
+        \end{pmatrix} = \frac{5!}{3!2!} = \frac{120}{12} = 10$
+
+        \item favorable outcome: 2 guilty, 1 innocent
+        
+        $\begin{pmatrix}
+            3 \\
+            1
+        \end{pmatrix} = \frac{3!}{2!1!} = \frac{6}{2} = 3$
+
+        $\frac{number of favorable outcomes}{number of outcomes} = \frac{3}{10} = 0.3$
+    \end{itemize}
+
+    \textbf{Send 2 to detention?}
+    \begin{itemize}
+        \item number of combinations of 2: $\begin{pmatrix}
+            5 \\
+            2
+        \end{pmatrix} = \frac{5!}{2!3!} = \frac{120}{12} = 10$
+
+        \item favorable outcome: 2 guilty $->$ only 1 favorable outcome: $\begin{pmatrix}
+            2 \\
+            2
+        \end{pmatrix} = 1$
+
+        $\frac{number of favorable outcomes}{number of outcomes} = \frac{1}{10} = 0.1$
+    \end{itemize}
+
+    \textbf{Send 4 to detention?}
+    \begin{itemize}
+        \item number of combinations of 4: $\begin{pmatrix}
+            5 \\
+            4
+        \end{pmatrix} = \frac{5!}{4!1!} = \frac{120}{24} = 5$
+
+        \item favorable outcomes 2 guilty, 2 innocent
+
+        At least 1 has to be guilty since there is only 1 child left that isn't chosen and 2 trouble makers.
+
+        $\begin{pmatrix}
+            3 \\
+            1
+        \end{pmatrix} = \frac{3!}{1!2!} = \frac{6}{2} = 3$
+
+        $\frac{number of favorable outcomes}{number of outcomes} = \frac{3}{5} = 0.6$
+    \end{itemize}
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{2}
+    \hfill 
+
+    \begin{itemize}
+        \item 4 packages and 10 different houses
+        \item each packages has an equal chance of belonging to each house
+        \item $| \Omega | = 10^4 = 10,000$
+        \item number of combinations a package goes to 1 house: $10 \times 9 \times 8 \times 7 = 5,040$
+
+        probability packages goes to 1 house = $\frac{5,040}{10,000} = 0.504$
+
+        probability that a house receives more than 1 package = $1 - 0.504 = 0.496$
+    \end{itemize}
+    \end{exercise}
+
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    \begin{itemize}
+        \item number of combos of letters to choose: $\begin{pmatrix}
+            11 \\
+            5
+        \end{pmatrix} = \frac{11!}{5!6!} = 462$
+        \item MISSISSIPPI: 4 vowels and 11 letters
+         
+        \item number of combos of 2 vowels: $\begin{pmatrix}
+            4 \\
+            2
+        \end{pmatrix}$
+
+        \item number of combos of 3 consonants: $\begin{pmatrix}
+            7 \\
+            3
+        \end{pmatrix}$
+
+        \item number of favorable outcomes: $\begin{pmatrix}
+            4 \\ 
+            2
+        \end{pmatrix} \times \begin{pmatrix}
+            7 \\
+            3
+        \end{pmatrix} = \frac{4!}{2!2!} \times \frac{7!}{3!4!} = 6 \times 35 = 210$
+    \end{itemize}   
+         probability exactly 2 vowels selected: $\frac{210}{462} = \frac{5}{11}$
+    \end{exercise}
+
+
+
+    \begin{exercise}{4}
+    \hfill
+
+    \begin{itemize}
+        \item number of ways to distribute 4 distinct aces to 4 people: 4! = 24
+        \item number of ways to distribute 4 distinct kings to 4 people: 4! = 24
+        \item number of ways to distribute the remaining 44 cards into 4 hands of 11 hands each: $\begin{pmatrix}
+            44 \\
+            11, 11, 11, 11
+        \end{pmatrix}$
+        \item total number of ways to distribute 4 distinct aces and kings: $4! \times 4! \begin{pmatrix}
+            44 \\
+            11, 11, 11, 11
+        \end{pmatrix}= 24 \times 24 \begin{pmatrix}
+            44 \\
+            11, 11, 11, 11
+        \end{pmatrix}= 576 \begin{pmatrix}
+            44 \\
+            11, 11, 11, 11
+        \end{pmatrix}$
+    \end{itemize}
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{5}
+    \hfill
+
+    \begin{itemize}
+        \item 12 distinct books
+        \item boxes hold 3, 4, and 5 books
+    \end{itemize}
+
+    $\begin{pmatrix}
+        12 \\
+        3, 4, 5
+    \end{pmatrix} = \frac{12!}{3!4!5!} = \frac{479,001,600}{17,280} = 27,720$
+
+    \textbf{4 books each?}
+    \begin{itemize}
+        \item the boxes are now indistinguishable
+    \end{itemize}
+
+    $\begin{pmatrix}
+        12 \\
+        4, 4, 4
+    \end{pmatrix} \times \frac{1}{3!} = \frac{12!}{4!4!4!3!} = \frac{12!}{(4!)^3 3!} = \frac{479,001,600}{82,944} = 5,775$   
+    \end{exercise}
+
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    \begin{itemize}
+        \item 16 people
+        \item 4 teams (not distinct, order doesn't matter)
+        \item 4 on each team
+    \end{itemize}
+
+    \textbf{(a)} $\begin{pmatrix}
+        16 \\
+        4, 4, 4, 4
+    \end{pmatrix} \times \frac{1}{4!}= \frac{16!}{4!4!4!4!} \frac{1}{24} = \frac{16!}{(4!)^4} \frac{1}{24}= 2,627,625$
+
+    \textbf{(b)} 
+    \begin{itemize}
+        \item ways of distributing players from high school 1: 4! = 24
+        \item ways of distributing players from high school 2: 4! = 24
+        \item ways of distributing players from high school 3: 4! = 24
+        \item ways of distributing players from high school 4: 4! = 24
+        \item teams indistinguishable
+    \end{itemize}
+
+    $(4!)^4 \times \frac{1}{4!}= (24)^4 \times \frac{1}{24} = 13,824$  
+    \end{exercise}
+
+
+
+
+    \begin{exercise}{7}
+    \hfill
+
+    \textbf{Probability that the sequence is descending}
+    \begin{itemize}
+        \item Balls 1 - 9
+        \item 4 are selected without replacement
+        \item $|\Omega| = (9)_5 = 9 \times 8 \times 7 \times 6 = 3,024$
+    \end{itemize}
+
+    $\frac{(9)_5}{4} = \begin{pmatrix}
+        9 \\
+        4
+    \end{pmatrix}$
+
+    Therefore,
+
+    $ = \frac{\begin{pmatrix}
+        9 \\
+        4
+    \end{pmatrix}}{3,024}$
+
+     $= \frac{\frac{9!}{4!5!}}{3,024}$
+
+    $= \frac{126}{3,024}$
+
+    $= \frac{1}{24}$
+
+    \textbf{Probability that the sequence follows the "up-down-up" pattern}
+    \begin{itemize}
+        \item 1st number is smaller than the 2nd
+        \item 2nd number is smaller than the 3rd
+        \item 3rd number is smaller than the 4th
+    \end{itemize}
+
+    Position 1 and 3 can be swapped and 2 and 4 can be swapped and the pattern still holds. Also a 5th pattern can be created where the number is positions in 1 and 2 can be larger than 3 and 4. So far every string of numbers there is 2!2! + 1 = 5 combinations were the pattern holds true.
+
+    ex. With the numbers 1, 2, 3, and 4, 5 patterns can be made: 
+    
+    {1, 3, 2, 4},
+    
+    {2, 3, 1, 4}, 
+    
+    {1, 4, 2, 3}, 
+    
+    {2, 4, 1, 3}, and 
+    
+    {3, 4, 1, 2}
+
+    $= 5 \times \begin{pmatrix}
+        9 \\
+        4
+    \end{pmatrix} \frac{1}{(9)_5}$
+
+    $= 5 \times\frac{126}{3,024}$
+
+    $= \frac{5}{24}$
+    \end{exercise}
+
+
+
+
+    \begin{exercise}{8}
+    \hfill
+
+    $2^m = \sum_{j=0}^{m} \begin{pmatrix}
+        m \\
+        j
+    \end{pmatrix}$
+
+    $$j = k - 1$$
+    $$k = j + 1$$
+    Therfore,
+    $$m = n - 1$$
+    $$n = m + 1$$
+
+    $2^{n - 1} = \sum_{k = 1}^{n} \begin{pmatrix}
+        n - 1 \\
+        k - 1
+    \end{pmatrix}$
+
+    $n2^{n - 1} = n \sum_{k = 1}^{n} \begin{pmatrix}
+        n - 1 \\
+        k - 1
+    \end{pmatrix}$
+
+    $n2^{n - 1} = \sum_{k = 1}^{n} n \begin{pmatrix}
+        n - 1 \\
+        k - 1
+    \end{pmatrix}$
+
+    $n2^{n - 1} = \sum_{k = 1}^{n} n \times \frac{(n - 1)!}{(k - 1)!(n - k)!}$
+
+    $n2^{n - 1} = \sum_{k = 1}^{n} \frac{n!}{(k - 1)!(n - k)!}$
+
+    $n2^{n - 1} = \sum_{k = 1}^{n} \frac{k}{k} \times \frac{n!}{(k - 1)!(n - k)!}$
+
+    $n2^{n - 1} = \sum_{k = 1}^{n} k \times \frac{n!}{k!(n - k)!}$
+
+    $n2^{n - 1} = \sum_{k = 1}^{n} k \begin{pmatrix}
+        n \\
+        k
+    \end{pmatrix}$
+    \end{exercise}
+
+
+
+    \begin{exercise}{9}
+    \hfill
+
+    \begin{itemize}
+        \item 4 entry level job openings
+        \item 37 female
+        \item 7 males
+
+        \item Total number of candidates: 37 + 7 = 4
+        \item chance of a candidate be chosen: $\begin{pmatrix}
+            44 \\
+            4
+        \end{pmatrix} = \frac{44!}{4!40!} = 135,751$ 
+        
+        \item chance 1 female is chosen out of 4: $\begin{pmatrix}
+            37 \\
+            1
+        \end{pmatrix} \times \begin{pmatrix}
+            7 \\
+            3
+        \end{pmatrix} = \frac{37!}{36!1!} \times \frac{7!}{3!4!} = 37 \times 35 = 1,295$
+        
+        \item chance 0 female is chosen out of 4: $\begin{pmatrix}
+            7 \\
+            4
+        \end{pmatrix} = \frac{7!}{4!3!} = 35$
+    \end{itemize}
+
+    At most 1 female is hired = $\frac{1,295 + 35}{135,751} = \frac{1,330}{135,751}$
+    \end{exercise}
+
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    \begin{itemize}
+        \item 12 long strings
+        \item entries can be 1, 2, 3, 4
+        \item $4^{12}$ = 16,777,216 sample points equally likely
+    \end{itemize}
+
+    \textbf{(a)} $\begin{pmatrix}
+        12 \\
+        3, 3, 3, 3
+    \end{pmatrix} = \frac{12!}{(3!)^4} = 369,600$
+
+    $\frac{369,600}{16,777,216} = 0.0220$
+
+    \textbf{(b)} 
+    \begin{itemize}
+        \item 3 1's
+        \item 9 of 2, 3, and  4s
+
+        $3^9 = 19,683$
+
+        \item orders of these combos: $\begin{pmatrix}
+            12 \\
+            3, 9
+        \end{pmatrix} = \frac{12!}{3!9!} = 220$
+    \end{itemize}
+
+    Therefore,
+
+    $19,683 \times 220 = 4,330,260$
+
+    probability of exactly 3 1's = $\frac{4,330,260}{16,777,216} = 0.2581$
+
+    \textbf{(c)}
+    \begin{itemize}
+        \item 3 1's
+        \item 3 2's
+        \item 6 3 and 4s
+
+        $2^6 = 64$
+
+        \item orders of these combos: $\begin{pmatrix}
+            12 \\
+            3, 3, 6
+        \end{pmatrix} = \frac{12!}{3!3!6!} = 18,480$
+
+        $64 \times 18,480 = 1,182,720$
+    \end{itemize}
+
+    probability of exactly 3 1's and 3 2's = $\frac{1,182,720}{16,777,216} = 0.0705$ 
+    \end{exercise}
+
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    \begin{enumerate}
+        \item $a, b, c, d, e, f$ are going to be assigned 3 distinct jobs
+        \item each person 1 job
+        \item job 1 = 3 people
+        \item job 2 = 2 people
+        \item job 3 = 1 person
+    \end{enumerate}
+
+    \textbf{(a)} $\begin{pmatrix}
+        6 \\
+        3, 2, 1
+    \end{pmatrix} = \frac{6!}{3!2!1!} = \frac{720}{12} = 60$
+
+    \textbf{(b)} $\frac{1}{2} \times 60 = 30$
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{12}
+    \hfill
+
+    \begin{itemize}
+        \item 8 marbles 1-8 distinguishable 
+        \item 1, 2 are red
+        \item 3, 4 are blue
+        \item 5, 6 are green
+        \item 7, 8 are yellow
+    \end{itemize}
+
+    \textbf{(a)} $4^8 = 65,536$
+
+    \textbf{(b)} $\begin{pmatrix}
+        8 \\
+        2, 2, 2, 2
+    \end{pmatrix} = \frac{8!}{(2!)^4} = \frac{40,320}{16} = 2,520$
+
+    \textbf{(c)} $\frac{8!}{(2!)^4 4!} = \frac{40,320}{16 \times 24} =\frac{40,320}{384} = 105$
+
+    \textbf{(d)} $4! = 24$
+
+    \textbf{(e)} $\begin{pmatrix}
+        4 \\
+        2
+    \end{pmatrix} \times \begin{pmatrix}
+        4 \\ 2
+    \end{pmatrix} = 6 \times 6 = 36$
+        
+    \end{exercise}
+
+
+
+    \begin{exercise}{13}
+    \hfill
+
+    $(a + b + c)^n = \sum_{n_1 + n_2 + n_3 = n, n_i \geq 0} \begin{pmatrix}
+        n \\
+        n_1, n_2, n_3
+    \end{pmatrix}a^{n_1} b^{n_2} c^{n_3}$
+
+    $(-1 + 2x - y)^5$
+
+    a = -1
+
+    b = 2x
+
+    c = -y
+
+    n = 5
+
+    $(-1 + 2x -y)^5 = \sum_{n_1 + n_2 + n_3 = 5, n_i \geq 0} \begin{pmatrix}
+        5 \\
+        n_1, n_2, n_3
+    \end{pmatrix}(-1)^{n_1} (2x)^{n_2} (-y)^{n_3}$
+
+    $n_1 + n_2 + n_3 = 5$
+
+    \begin{enumerate}
+        \item 5 + 0 + 0 = 5
+        \item 4 + 1 + 0 = 5
+        \item 4 + 0 + 1 = 5
+        \item 3 + 1 + 1 = 5
+        \item 3 + 2 + 0 = 5
+        \item 3 + 0 + 2 = 5
+        \item 2 + 3 + 0 = 5
+        \item 2 + 0 + 3 = 5
+        \item 2 + 2 + 1 = 5
+        \item 2 + 1 + 2 = 5
+        \item 1 + 4 + 0 = 5
+        \item 1 + 0 + 4 = 5
+        \item 1 + 3 + 1 = 5
+        \item 1 + 1 + 3 = 5
+        \item 1 + 2 + 2 = 5
+        \item 0 + 5 + 0 = 5
+        \item 0 + 0 + 5 = 5
+        \item 0 + 4 + 1 = 5
+        \item 0 + 1 + 4 = 5
+        \item 0 + 3 + 2 = 5 **
+        \item 0 + 2 + 3 = 5
+    \end{enumerate}
+
+    $n_1 = 0$
+    
+    $n_2 = 3$
+
+    $n_3 = 2$
+
+    $= \begin{pmatrix}
+        5 \\
+        0, 2, 3
+    \end{pmatrix}(-1)^0 (2x)^3 (-y)^2$
+
+    $= \begin{pmatrix}
+        5 \\
+        0, 2, 3
+    \end{pmatrix} 1 \times 8x^3 \times y^2$
+
+    $= \frac{5!}{0!2!3!} \times 8x^3 y^2$
+
+    $= \frac{120}{1 \times 2 \times 6} \times 8x^3 y^2$
+
+    $= \frac{120}{10} \times 8x^3 y^2$
+
+    $= 10 \times 8x^3 y^2$
+
+    $= 80x^3 y^2$
+
+    COEFFICIENT: 80  
+    \end{exercise}
+
+\end{document}
