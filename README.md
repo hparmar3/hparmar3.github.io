@@ -66,9 +66,18 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - **Key Features:** Time series analysis, technical indicators, deep learning for trading
 
 ### Web Development & Software Enginnering
-- **[Technical Documentation Page](Technical%20Documentation/)** - Responsive documentation website
-- **[Guide Effort Tool Website](Guide%20Effort%20Tool%20Website/)** - R-based web application
-- **[Maritime Signal Flags Visualizer](Project%201/)** - Interactive Java GUI application
+- **[Technical Documentation Page](Technical%20Documentation/)**
+  - Responsive technical documentation website demonstrating HTML, CSS, and web development fundamentals. Features a fixed navigation bar, semantic HTML structure, and anchor-based scrolling.
+  - **Technologies:** HTML, CSS, JavaScript
+  - **Key Features:** Responsive design, semnatic markup, navigation system, code snippets
+- **[Guide Effort Tool Website](Guide%20Effort%20Tool%20Website/)**
+  - Interactive Shiny Flexdashboard application for importing, processing, and visualizing clinical guide participation data across multiple studies. Including REDCap API integration and dynamic filtering.
+  - **Technologies:** R, Shiny, Flexdashboard, Tidyverse, DT
+  - **Key Features:** Data import from REDCap, interactive dashboard, summary statistics, participant tracking
+- **[Maritime Signal Flags Visualizer](Project%201/)**
+  - Interactive Java application for visualizing maritime signal flags (Alpha, India, and Victor). Uses StdDraw library for GUI programming with user-defined sizing and animation delays.
+  - **Technologies:** Java, StdDraw
+  - **Key Features:** GUI drawing, user input handling, geometric flag visualization, control flow demonstration
 
 
 ## Contact 
