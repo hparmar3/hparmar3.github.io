@@ -10,20 +10,26 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
 ### Machine Learning & Data Science
 - **[Machine Learning from Scratch](Machine%20Learning%20from%20Scratch/)** 
   - A hands-on implementation of Logistic Regression and K-Means Clustering alogrithms coded entirely from scratch using NumPy. Demonstrates gradient descent optimization, decision boundary visualization, and cluster assignments without using Scikit-learn or other ML libraries.
-  - Technologies: Python, NumPy, Matplotlib
-  - Key Features: Sigmoid function & cross entropy loss, iterative centroid updates, visual analysis
+  - **Technologies:** Python, NumPy, Matplotlib
+  - **Key Features:** Sigmoid function & cross entropy loss, iterative centroid updates, visual analysis
 - **[Diabetes Data Visualization](Diabetes%20Data%20Visualization/)**
   - Comprehensive data visualization and linear regression analysis pipeline for predicting diabetes progression. Includes feature inspection, correlation heatmap analysis, and model evaluation using MSE and R^2 metrics.
-  - Technologies: Python, Pandas, Seaborn, Scikit-learn
-  - Key Features: Exploratory data analysis, correlation analysis, actual vs. predicted visualization
+  - **Technologies:** Python, Pandas, Seaborn, Scikit-learn
+  - **Key Features:** Exploratory data analysis, correlation analysis, actual vs. predicted visualization
 - **[Logisitic Regression](Logisitic%20Regression/)**
   - Logistic Regression implementation built entirely from scratch in R with gradient descent optimization. Generates synthetic data for binary classification and visualizes the learned decision boundary.
-  - Technology: R, ggplot2
-  - Key Features: Custom gradient descent, sigmoid function implementation, decision boundary plotting
+  - **Technologies:** R, ggplot2
+  - **Key Features:** Custom gradient descent, sigmoid function implementation, decision boundary plotting
 
 ### Mathematical Optimization
-- **[Simplex Method](Simplex%20Method/)** - Constraint linear programming slove in MATLAB
-- **[Big M Method](Big%20M%20Method/)** - Constraint handling for linear programming
+- **[Simplex Method](Simplex%20Method/)**
+  - Standard Simplex Method implementation for solving linear programming problems in MATLAB. Uses Bland's Rule for pivoting slection to prevent cycling and provides verbose output in each iteration
+  - **Technologies:** MATLAB
+  - **Key Features:** Standard LP solver, Bland's Rule implementation, unbounded problem detection
+- **[Big M Method](Big%20M%20Method/)**
+  - MATLAB implementation of the Big M Method for solving linear programming problems involving equality constraints and artificial variables. Automatically handles infeasiblility with penalty terms.
+  - **Technologies:** MATLAB
+  - **Key Features:** Artifical variable handling, automatic M calculation, negative RHS correction
 - **[Dual Simplex Method](Dual%20Simplex%20Method/)** - Advanced LP solver for primal-infeasible problems
 - **[Two Phase Simplex Method](Two%20Phase%20Simplex%20Method/)** - Two-phase algorithm for artifical varaibles
 - **[Food Optimization in Python](Food%20Optimization%20in%20Python/)** - Dietary planning with nutritional constraints
