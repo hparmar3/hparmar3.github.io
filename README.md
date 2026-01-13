@@ -16,7 +16,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
 - **[Simplex Method](Simplex%20Method/)** - Constraint linear programming slove in MATLAB
 - **[Big M Method](Big%20M%20Method/)** - Constraint handling for linear programming
 - **[Dual Simplex Method](Dual%20Simplex%20Method/)** - Advanced LP solver for primal-infeasible problems
-- **[Two Phase Simplex Method](Two%20Phase%20Simplx%20Method/)** - Two-phase algorithm for artifical varaibles
+- **[Two Phase Simplex Method](Two%20Phase%20Simplex%20Method/)** - Two-phase algorithm for artifical varaibles
 - **[Food Optimization in Python](Food%20Optimization%20in%20Python/)** - Dietary planning with nutritional constraints
 - **[McDonald's Diet Optimization](Linear%20Programming%20for%20McDonald's%20Diet/)** - Linear programming for diet planning
 - **[Steepest Descent Method](Steepest%20Descent%20Method/)** - Gradient-based optimization
