@@ -1,0 +1,650 @@
+\documentclass[12 pt]{article}
+
+\input{preamble}
+\usepackage{quiver}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\chead{EN.553.420.01.FA24 Probability}
+\cfoot{\thepage}
+    \lhead{Henna Parmar}
+    \rhead{Assignment 10}
+
+
+\begin{document}
+
+    \begin{exercise}{1}
+    \hfill
+
+    $X$ and $Y$ are IID $exp(1)$
+
+    $U=X$
+
+    $V=X+Y$
+
+    \hfill
+
+    $f_{uv}(u,v) = f_{xy}(x,y) |J|$
+
+    $ J = | det\begin{pmatrix}
+        1 & 0 \\
+        -1 & 1
+    \end{pmatrix} |$
+
+    $J = |1 - 0|$
+
+    $J = 1$
+
+    \hfill
+
+    $f_{uv}(u,v) = f_{xy}(x,y) \times 1, \, x >0, y> 0$
+
+    $f_{uv}(u,v) = e^{-x}e^{-y}, \, x >0, y> 0$
+
+    $f_{uv}(u,v) = e^{-x-y}, \, x >0, y> 0$
+
+    \hfill
+
+    $U=X$
+
+    $V=U+Y \xrightarrow{} Y= V-U$
+
+    \hfill
+
+    $f_{uv}(u,v) = e^{-v}, \, 0 \leq u \leq v \leq \infty$
+
+    \hfill
+
+    $f_v(v) = \int_{0}^{v} = e^{-v} \, du$
+
+    $f_v(v) = ue^{-v} |_{0}^{v}$
+
+    $f_v(v) = ve^{-v}, \, 0 \leq v$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{2}
+    \hfill
+
+    $U=X$
+
+    $V = \frac{Y}{X}$
+
+    $Y = VU$
+
+    $J = |det \begin{pmatrix}
+        1 & 0 \\
+        v & u
+    \end{pmatrix}|$
+
+    $J = |u - 0|$
+
+    $J = |u| = u$
+
+    \hfill
+
+    $f_{uv}(u,v) = f_{xy}(x,y) |u|$
+
+    $f_{uv}(u,v) = e^{-u-vu} u, \, 0 \leq u, 0 \leq v$
+
+    $f_v(v) = \int_{0}^{\infty} ue^{-u(1+v)} \, du$
+
+    $$a = u(1+v)$$
+    $$u = \frac{a}{1+v}$$
+    $$du = \frac{da}{1+v}$$
+
+    $f_v(v) = \int_{0}^{\infty} \frac{a}{1+v}e^{-a} \times \frac{a}{1+v}$
+
+    $f_v(v) = \frac{1}{(1+v)^2} \int_{0}^{\infty} a e^{-a} \, da$
+
+    $f_v(v) = \frac{1}{(1+v)^2}[-a e^{-a} + \int_{0}^{\infty} e^{-a} \, da$
+
+    $f_v(v) = \frac{1}{(1+v)^2}[-a e^{-a} - e^{-a} |_{0}^{\infty}]$
+
+    $f_v(v) = \frac{1}{(1+v)^2}[-u(1+v)e^{-u(1+v)} - e^{-u(1+v)} |_{0}^{\infty}]$
+
+    $f_v(v) = \frac{1}{(1+v)^2}[e^{-0}]$
+
+    $f_v(v) = \frac{1}{(1+v)^2}, \, v \geq 0$
+
+    \hfill    
+    \end{exercise}
+
+
+
+    \begin{exercise}{3}
+    \hfill
+
+    $X - Gamma(\alpha, \beta)$
+
+    $Y = \frac{1}{X}$
+
+    $X = \frac{1}{Y}, \, y>0$
+
+    $f_y(y) = f_x(x) |\frac{dx}{dy}|$
+
+    $f_y(y) = \frac{(\frac{1}{y})^{\alpha - 1}e^{-\frac{1}{y \beta}}}{\beta^{\alpha} \Gamma(\alpha)} |-\frac{1}{y^2}|$
+
+    $f_y(y) = \frac{e^{-\frac{1}{y \beta}}}{\beta^{\alpha} \Gamma(\alpha)}(\frac{1}{y})^{\alpha - 1}(\frac{1}{y})^2$
+
+    $f_y(y) = \frac{e^{-\frac{1}{y \beta}}}{\beta^{\alpha} \Gamma(\alpha)}(\frac{1}{y})^{\alpha + 1}, \, y>0$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{4}
+    \hfill
+
+    $N - N(0,1)$
+
+    $Y - X_k^2$
+
+    $f(x,y) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2 \pi}} \times \frac{y^{\frac{k}{2}-1}e^{-\frac{y}{2}}}{2^{\frac{k}{2}}\Gamma(\frac{k}{2})}$
+
+    \hfill
+
+    $U = \frac{X}{\sqrt{\frac{Y}{k}}} \xrightarrow{} X = U\sqrt{\frac{V}{k}}$
+
+    $V=Y$
+
+    $J = |det\begin{pmatrix}
+       \sqrt{\frac{V}{k}} & 0 \\
+       \frac{U\sqrt{k}}{2k} & 1
+    \end{pmatrix}|$
+
+    $J = |\sqrt{\frac{V}{k}}-0|$
+
+    $J= \sqrt{\frac{V}{k}}$
+
+    \hfill
+
+    $f_{uv}(u,v) = \frac{1}{\sqrt{2 \pi k} 2^{k/2} \Gamma(\frac{k}{2})} e^{-v(\frac{u^2}{2k}+\frac{1}{2})} v^{\frac{k+1}{2}- 1}$
+
+    \hfill
+
+    $f_u(u) = \int_{0}^{\infty} \frac{1}{\sqrt{2 \pi k} 2^{k/2} \Gamma(\frac{k}{2})} e^{-v(\frac{u^2}{2k}+\frac{1}{2})} v^{\frac{k+1}{2}- 1} \, dv$
+
+    $f_u(u) = \frac{1}{\sqrt{2 \pi k} 2^{k/2} \Gamma(\frac{k}{2})} \int_{0}^{\infty} e^{-v(\frac{u^2}{2k}+\frac{1}{2})} v^{\frac{k+1}{2}- 1} \, dv$
+
+    $f_u(u) = \frac{1}{\sqrt{2 \pi} 2^{k/2} \Gamma(\frac{k}{2})} \int_{0}^{\infty} e^{-v(\frac{u^2+k}{2k})} v^{\frac{k+1}{2}-1} \, dv$
+
+    $f_u(u) = \frac{1}{\sqrt{2 \pi} 2^{k/2} \Gamma(\frac{k}{2})} (\frac{2k}{u^2+k})^{\frac{k+1}{2}} \Gamma(\frac{k+1}{2})$
+
+    $f_u(u) = \frac{2^{k/2}\sqrt{2}}{\sqrt{2}\sqrt{\pi k}2^{k/2} \Gamma{\frac{k}{2}}} (\frac{k}{u^2+k})^{\frac{k+1}{2}} \Gamma(\frac{k+1}{2})$
+
+    $f_u(u) = \frac{\Gamma(\frac{k+1}{2})}{\sqrt{\pi k} \Gamma(\frac{k}{2})}(\frac{k}{u^2 + k})^{\frac{k+1}{2}}$
+
+    \hfill   
+    \end{exercise}
+
+
+    \begin{exercise}{5}
+    \hfill
+
+    \textbf{(a)} $Z_1, Z_2$ IID standard normals
+
+    $W = y = Z_1 + Z_2$
+
+    $Z_2 = W - Z_1$
+
+    \hfill
+
+    $f_{z_1, w} (z_1, w) = f_{z_1, z_2}(z_1, w-z_1)$
+
+    $f_{z_1, w}(z_1, w) = f_{z_1}(z_1)f_{z_2}(w-z_1)$
+
+    $ = \frac{1}{\sqrt{2 \pi}}e^{-\frac{z_1^2}{2}} \times \frac{1}{\sqrt{2 \pi}}e^{-\frac{(w - z_1)^2}{2}}$
+
+    $= \frac{1}{2 \pi}e^{-\frac{z_1^2}{2}-\frac{(w-z_1)^2}{2}}$
+
+    \hfill
+
+    $N(0,2) - f_W(w) = \frac{1}{\sqrt{4 \pi}}e^{-\frac{w^2}{4}}$
+
+    \hfill
+
+    $f_{z_1 |w} (z_1|w) = \frac{f_{z_1,w}(z_1, w)}{f_w(w)} = \frac{\frac{1}{2 \pi}e^{-\frac{z_1^2}{2}-\frac{(w-z_1)^2}{2}}}{\frac{1}{\sqrt{4 \pi}}e^{-\frac{w^2}{4}}}$
+
+    $= \frac{2 {\pi}^{1/2}e^{\frac{-w^2+2wz_1-2z_1^2}{2}}}{2 \pi e^{-\frac{w^2}{4}}}$
+
+    $= \frac{1}{\sqrt{\pi}}e^{-w^2/4 + wz_1 - z_1^2}$
+
+    $= \frac{1}{\sqrt{\pi}}e^{-(z_1-w/2)^2}$
+
+    \hfill
+
+    \textbf{(b)} $Z_1, Z_2 - N(0,1)$
+
+    $U= \frac{z_1}{z_2} \xrightarrow{} z_1 = UV$
+
+    $V= z_2$
+
+    \hfill
+
+    $J = |det \begin{pmatrix}
+        V & U \\
+        0 & 1
+    \end{pmatrix}|$
+
+    $J = |V-0| = V$
+
+    \hfill
+
+    $f_{uv}(u,v) = f_{z_1, z_2}(x,y) |J|$
+
+    $f_{uv}(u,v) = \frac{v}{2 \pi} e^{-\frac{(u^2v^2 + v^2)}{2}}$
+
+    \hfill
+
+    $f_u(u) =  \int_{-\infty}^{\infty} \frac{v}{2 \pi} e^{-\frac{(u^2v^2 + v^2)}{2}} \, dv$
+
+    $f_u(u) =  \frac{1}{2 \pi} \int_{-\infty}^{\infty} v e^{-\frac{(u^2v^2 + v^2)}{2}} \, dv$
+
+    $$w = \frac{v^2(1+u^2)}{2}$$
+    $$dw = v(1+u^2) dv$$
+
+    $f_u(u) = \frac{1}{\pi (1+u^2)} \int_{0}^{\infty} e^{-w} \, dw$
+
+    $f_u(u) = \frac{1}{\pi (1+u^2)}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{6}
+    \hfill
+
+    $X_1, X_2, ..., X_n$ are IID $exp(\lambda)$
+
+    \hfill
+
+    $P(Y_1 > y) = P(X_1 > y, X_2, y, ..., X_n > y)$
+
+    $P(Y_1 > y) = P(X_1 > y) P(X_2 > y) ... P(X_n > y)$
+
+    $P(Y_1 > y) = P(X_1 > y) P(X_1 > y) ... P(X_1 > y)$
+
+    $P(Y_1 > y) = [P(X_1 > y)]^n$
+
+    $P(Y_1 > y) = [\lambda e^{-\lambda y}]^n = \lambda e^{-n \lambda y}, y \geq 0$
+
+    \hfill
+
+    $F_{Y_1}(y) = 1 - P(Y_1 > y) = 1 - \lambda e^{-n \lambda y}, y \geq 0$
+
+    $f_{y_1}(y) = \frac{d}{dy}(1 - \lambda e^{-n \lambda y} ) = n \lambda e^{-n \lambda y}, y \geq 0$
+
+    $Y_1 - exp(n \lambda)$
+
+    \hfill
+    \end{exercise}
+
+
+    \begin{exercise}{7}
+    \hfill
+
+    $X_1, X_2, ..., X_n$ are independent exponential, $X_i - exp(\lambda_i)$
+
+    $X_i - exp(\lambda_i) \xrightarrow{} \lambda_i e^{\lambda_i x}$
+
+    \hfill
+
+    $P(Y_1 > y) = P(X_1 > y, X_2 > y, ..., X_n > y)$
+
+    $P(Y_1 > y) = P(X_1 > y) P(X_2 > y) ... P(X_n > y)$
+
+    \hfill
+
+    $P(X_i > y) = \lambda_i e^{-\lambda_i y}, y \geq 0$
+
+    $P(Y_1 > y) = \prod_{i=1}^{n} P(X_i > y) = \prod_{i=1}^{n} e^{-\lambda_i y} = e^{y \sum_{i=1}^{n} \lambda_i}, y \geq 0$
+
+    \hfill
+
+    $F_{Y_1}(y) = 1 - e^{-y \sum_{i=1}^{n}\lambda_i}, y \geq 0$
+
+    $f_{y_i}(y) = \frac{d}{dy}(1-e^{-y \sum_{i=1}^{n}\lambda_i}), y \geq 0$
+
+    $f_{Y_1}(y) = \sum_{i=1}^{n} \lambda_i e^{-y \sum_{i=1}^{n} \lambda_i}, y \geq 0$
+
+    $Y_1 - exp(\sum_{i=1}^{n} \lambda_i)$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{8}
+    \hfill
+
+    $f(x) = 2x, 0 < x < 1$
+
+    $F(x) = x^2, 0< x < 1$
+
+    \hfill
+
+    \textbf{(a)} $f_{Y_2} = \frac{n!}{(j-1)!(n-j)!} \times (x^2)^{j-1} \times 2x \times (1-x^2)^{n-j}, 0 < y < 1$
+
+    $j=2, n=3$
+
+    $f_{Y_2} = \frac{3!}{(2-1)!(3-2)!} \times (x^2)^{2-1} \times 2x \times (1-x^2)^{3-2}, 0 < y < 1$
+
+    $f_{Y_2}(y_2) = \frac{3!}{1!1!}(x^2)^1 2x (1-x^2)^1, 0 < y < 1$
+
+    $f_{Y_2}(y_2) = 6 \times 2x^3 (1-x^2), 0 < y < 1$
+
+    $f_{Y_2}(y_2) = 12x^3 (1-x^2), 0 < y < 1$
+
+    $f_{Y_2}(y_2) = 12x^3 - 12x^5, 0 < y < 1$
+
+    $f_{Y_2}(y_2) = \begin{cases}
+        12y^3 - 12y^5, 0 < y < 1 \\
+        0, otherwise
+    \end{cases}$
+
+    \hfill
+
+    \textbf{(b)} $E(Y_2) = \int_{0}^{1} y (12y^3 - 12y^5) \, dy$
+
+    $E(Y_2) = \int_{0}^{1} 12y^4 - 12y^6 \, dy$
+
+    $E(Y_2) = \frac{12}{5}y^5 - \frac{12}{y}y^7 |_{0}^{1}$
+
+    $E(Y_2) = \frac{12}{5} - \frac{12}{7}$
+
+    $E(Y_2) = \frac{24}{35}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{9}
+    \hfill
+
+    $X_1, X_2, X_3, X_4$ are IID $unif(0,1)$
+
+    \textbf{Strategy 1:}
+
+    $W_1 = min(X_1, X_2)$
+
+    $P(W_1 \leq w) = 1 - P(W_1 > w) = 1 - P(X_1 > w, X_2 > w)$
+
+    $P(X_1 > w, X_2 > w) = P(X_1 > w) P(X_2 > w)$
+    $= (1-w)(1-w)$
+    $= (1-w)^2$
+
+    $P(W_1 \leq w) = 1 - (1-w)^2, 0 \leq w \leq 1$
+
+    $f_{W_1} = \frac{d}{dw}(1-(1-w)^2)$
+    $= 2(1-w), 0 \leq w \leq 1$
+
+    \hfill
+
+    $E(W_1) = \int_{0}^{1} w (2-2w) \, dw$
+
+    $ = \int_{0}^{1} 2w - 2w^2 \, dw$
+
+    = $w^2 = \frac{2}{3}w^3 |_{0}^{1}$
+
+    $= 1 - \frac{2}{3} = \frac{1}{3}$
+
+    \hfill
+
+    \textbf{Strategy 2:}
+
+    $Y_1 = max(X_1, X_2)$ and $Y_2 = max(X_3, X_4)$
+
+    $W_2 = max(Y_1, Y_2)$
+
+    \hfill
+
+    $P(Y_1 \leq y) = P(X_1 \leq y, X_2 \leq y) = P(X_1 \leq y)P(X_2 \leq y) = y^2$
+
+    $f_{Y_1}(y) = \frac{d}{dy}(y^2) = 2y, \, 0 \leq y \leq 1$
+
+    \hfill
+
+    $P(W_2 \leq w) = 1 - P(Y_1 > w)P(Y_2 > w)$
+    
+    $P(W_2 \leq w) = 1 - (1-w^2)^2$
+
+    $f_{W_2}(w) = \frac{d}{dw} (1-(1-w^2)^2) = \frac{d}{dw}(2w^2 - w^4) = 4w - 4w^3, \, 0 \leq w \leq 1$
+
+    \hfill
+
+    $E(w_2) = \int_{0}^{1} w(4w - 4w^3) \, dw$
+
+    $E(w_2) = \int_{0}^{1} 4w^2 - 4w^4 \, dw$
+
+    $ = \frac{4}{3} w^3 - \frac{4}{5}w^5 |_{0}^{1}$
+
+    $= \frac{4}{3} - \frac{4}{5}$
+
+    $= \frac{8}{15}$
+
+    \hfill
+
+    \textbf{Strategy 3:}
+
+    $Y_3 = second-largest \, of \, \{ X_1, X_2, X_3, X_4 \}$
+
+    $W_3 = Y_3$
+
+    \hfill
+
+    $f_{X_1, X_2, X_3, X_4} (x_1, x_2, x_3, x_4) = n! f_{X_1}(x_1) f_{X_2}(x_2) f_{X_3}(x_3) f_{X_4}(x_4) = 4! \times 1 = 24$
+
+    $f_{Y_3} (y) = n \begin{pmatrix}
+        n - 1 \\
+        2
+    \end{pmatrix} y^2 (1-y)$
+
+    $= 4 \begin{pmatrix}
+        3 \\
+        2
+    \end{pmatrix} y^2 (1-y)$
+
+    $= 4 \times 3 (y^2 - y^3)$
+
+    $12(y^2 - y^3)$
+
+    $= 12y^2 - 12y^3, \, 0 \leq y \leq 1$
+
+    $E(Y^3) = \int_{0}^{1} y(12y^2 - 12y^3) \, dy$
+
+    $= \int_{0}^{1} 12y^3 - 12y^4 \, dy$
+
+    $ = \frac{12}{4}y^4 - \frac{12}{5}y^5 |_{0}^{1}$
+
+    $ = 3 - \frac{12}{5}$
+
+    $ = \frac{3}{5}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{10}
+    \hfill
+
+    \textbf{(a)} $P(a < X_i < b) = b - a$
+    
+    $P(Y_1 > a, Y_n < b) = P(a < Y_i < b) = P(a < X_i < b)^n = (b-a)^n$
+
+    \hfill
+
+    \textbf{(b)} $P(Y_1 > a, Y_n > b) = P(a < Y_1 < 1, b < Y_n < 1) = P(a < Y_1) - P(Y_1 > a, Y_n < b) = (1 - a)^n - (b - a)^n$
+
+    \hfill
+
+    \textbf{(c)} $P(Y_1 < a, Y_n < b) = P() < Y_1 < a, 0 < Y_n < b) = P(Y_n < b) - P(Y_1 > a, Y_n < b) = b^n - (b - a)^n$
+
+    \hfill
+
+    \textbf{(d)} $P(Y_1 < a, Y_n > b) = P(0, Y_1 < a, b < Y_n < 1) = 1 - P(Y_1 < a, Y_n > b)^c = 1 - P(a \leq Y_1) - P(b \geq Y_n) + P(Y_1 \geq a, Y_n \leq b) = 1 - P(a < Y_1) - P(b > Y_n) + P(Y_1 > a, Y_n < b) = 1 - (1-a)^n - b^n +(b-a)^n$
+
+    \hfill
+
+    \textbf{(e)}
+    \begin{itemize}
+        \item exactly $k$ of $X_i$'s are $\leq a$
+        \item exactly $(n-k)$ of the $X_i$'s are $\geq b$
+        \item no $X_i$ is in (a, b)
+    \end{itemize}
+
+    $P(Y_k < a, Y_{k+1} > b) = \begin{pmatrix}
+        n \\
+        k
+    \end{pmatrix} a^k (1-b)^{n-k}, 1 \leq k \leq n-1$
+
+    \hfill
+
+    \textbf{(f)} case 1: $k+1$ between $a-b$: $\begin{pmatrix}
+        n \\
+        k, 1, n-k-1
+    \end{pmatrix} a^k (b-a)^1 b^{n-k-1}$
+
+    case 2: $k+1 < a$: $\begin{pmatrix}
+        n \\
+        k+1, n-k-1
+    \end{pmatrix} a^{k+1}(b-a)^0 b^{n-k-1}$
+    $= \begin{pmatrix}
+        n \\
+        k+1, n-k-1
+    \end{pmatrix} a^{k+1} b^{n-k-1}$
+
+    case 3: $k+1 > b$: $\begin{pmatrix}
+        n \\
+        k, n-k
+    \end{pmatrix} a^k (b-a)^0 b^{n-k}$
+    $= \begin{pmatrix}
+        n \\
+        k, n-k
+    \end{pmatrix} a^k b^{n-k}$
+
+    \hfill
+
+    $P(Y_k, Y_{k+2} > b) = \binom{n}{k, 1, n-k-1}a^k (b-a) b^{n-k-1} + \binom{n}{k+1, n-k-1} a^{k+1} b^{n-k-1} + \binom{n}{k, n-k} a^k b^{n-k}$
+
+    \hfill
+    \end{exercise}
+
+
+
+    \begin{exercise}{11}
+    \hfill
+
+    \textbf{(a)} $X_1, X_2, ..., X_n -$ IID $exp(\lambda)$
+
+    $Y_1 \leq Y_2 \leq ... \leq Y_n$
+
+    $W_1 = Y_1, W_2 = Y_2 - Y_1, W_3 = Y_3 - Y_2, ..., W_n = Y_n - Y_{n-1}$
+
+    $Y_1 = W_1, Y_2 = W_1 + W_2, Y_3 = W_1 + W_2 + W_3, ..., Y_n = W_1 + W_2 + ... + W_n$
+
+    \hfill
+
+    $f_{X_1, X_2, ..., X_n}(x_1, x_2, ..., x_n) = {\lambda}^n e^{- \lambda(x_1 + x_2 + ... + x_n)}$
+
+    $f_{Y_1, Y_2, ..., Y_n}(y_1, y_2, ..., y_n) = {\lambda}^n e^{- \lambda(y_1 + y_2 + ... + y_n)}$
+
+    $J = | det \begin{pmatrix}
+        1 & 0 & 0 & ... & 0 & 0 \\
+        1 & 1 & 0 & ... & 0 & 0 \\
+        1 & 1 & 1 & ... & 0 & 0 \\
+        : & : & : & ... & : & : \\
+        1 & 1 & 1 & ... & 1 & 1 \\
+    \end{pmatrix}|$
+
+    $J = 1$
+
+    \hfill
+
+    $f_{W_1, W_2, ..., W_n}(w_1, w_2, ..., w_n) = n!{\lambda}^n e^{-(w_1 + (w_1 + w_2) + ... + (w_1 + w_2 + ... + w_n))}$ for $0 < w_1 < w_1 + w_2 < ... < w_1 + w_2 + ... + w_n$
+
+    Exponential distribution for each of the spacings
+
+    \hfill
+
+    \textbf{(b)} The joint PDF of $W_1, W_2, ..., W_n$ is separable: $f_{W_1, W_2, ..., W_n}(w_1, w_2, ..., w_n) = f_{w_1}(w_1) f_{w_2}(w_2) ... f_{w_n}(w_n)$
+
+    \hfill
+
+    Marginal distribution: $W_1 = Y_1 \xrightarrow{} W_1 - Exp(n \lambda)$
+
+    $W_2 = Y_2 - Y_1 \xrightarrow{} W_2 - Exp((n-1) \lambda)$
+
+    $:$
+    
+    $:$
+
+    $W_i - Exp((n-i+1)\lambda)$
+
+    \hfill
+
+    \textbf{(c)} $n=2, X_1, X_2 - Exp(1)$
+
+    \hfill
+
+    $W_1 = Y_1, W_2, Y_2 - Y_1$
+
+    $Y_1 = W_1, Y_2 = W_1 + W_2$
+
+    \hfill
+
+    The random sample divides the real line into 3 pieces:
+    \begin{enumerate}
+        \item the interval $(0, Y_1)$ corresponding to $W_1$
+        \item the interval $(Y_1, Y_2)$ corresponding to $W_2$
+        \item the interval $Y_1, \infty$ for the rest
+    \end{enumerate}
+
+    Let the lengths of the two remaining pieces be $Y_1$ and $Y_2 - Y_1$
+
+    $X = max(Y_1, Y_2 - Y_1) = max(W_1, W_2)$
+
+    \hfill
+
+    $P(X \leq x) = P(max(W_1, W_2) \leq x) = P(W_1 \leq x, W_2 \leq x) = P(W_1 \leq x)P(W_1 \leq x)$
+
+    $f_{Y_1, Y_2}(y_1, y_2) = 2e^{-(y_1 + y_2)}, 0 \leq y_1 \leq y_2$
+
+    \hfill
+
+    $F_x(x) = \int_{0}^{x} \int_{y_1}^{y_1 + x} 2 e^{-(y_1+y_2)} \, dy_2 \, dy_1$
+
+    $= \int_{0}^{x} 2e^{-y_1} \int_{y_1}^{y_1 + x} e^{-y_2} \, dy_2 \, dy_1$
+
+    $= \int_{0}^{x} 2e^{-y_1} [-e^{-y_2} |_{y_1}^{y_1 + x}] \, dy_1$
+
+    $= \int_{0}^{x} 2e^{-y_1} [e^{-y_1} - e^{-(y_1+x)}] \, dy_1$
+
+    $= \int_{0}^{x} 2e^{-2y_1}(1-e^{-x}) \, dy_1$
+
+    $= (1-e^{-x}) \int_{0}^{x} 2e^{-2y_1} \, dy_1$
+
+    $= (1-e^{-x})[-e^{-2y_1} |_{0}^{x}]$
+
+    $=(1-e^{-x})(1-e^{-x})$
+
+    \hfill
+
+    $f_x(x) = \frac{d}{dx}((1-e^{-x})(1-e^{-2x}))$
+
+    $f_x(x) = \frac{d}{dx}(1 - e^{-2x} - e^{-x} + e^{-3x})$
+
+    $f_x(x) = 2e^{-2x}+e^{-x} - 3e^{-3x}$
+
+    \hfill
+    \end{exercise}
+
+   
+\end{document}
