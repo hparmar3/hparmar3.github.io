@@ -30,11 +30,26 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - MATLAB implementation of the Big M Method for solving linear programming problems involving equality constraints and artificial variables. Automatically handles infeasiblility with penalty terms.
   - **Technologies:** MATLAB
   - **Key Features:** Artifical variable handling, automatic M calculation, negative RHS correction
-- **[Dual Simplex Method](Dual%20Simplex%20Method/)** - Advanced LP solver for primal-infeasible problems
-- **[Two Phase Simplex Method](Two%20Phase%20Simplex%20Method/)** - Two-phase algorithm for artifical varaibles
-- **[Food Optimization in Python](Food%20Optimization%20in%20Python/)** - Dietary planning with nutritional constraints
-- **[McDonald's Diet Optimization](Linear%20Programming%20for%20McDonald's%20Diet/)** - Linear programming for diet planning
-- **[Steepest Descent Method](Steepest%20Descent%20Method/)** - Gradient-based optimization
+- **[Dual Simplex Method](Dual%20Simplex%20Method/)**
+  - Dual Simplex Method implementation for solving linear programs when the initial solution is dual feasible but not primal feasible. Particularly useful for problems with negative RHS values.
+  - **Technologies:** MATLAB
+  - **Key Features:** Dual feasibility maintenance, primal infeasibility handling, optimal solution guarantee
+- **[Two Phase Simplex Method](Two%20Phase%20Simplex%20Method/)** -
+  -  Two-Phase Simplex algorithm that first finds a basic feasible solution (Phase 1) then optimizes the objective function (Phase 2). Detects infeasible and unbounded problems.
+  -  **Technologies** MATLAB
+  -  **Key Features:** Modular designs, Bland's Rule, phase-by-phase tableau visualization
+- **[Food Optimization in Python](Food%20Optimization%20in%20Python/)**
+  - Linear programming application for creating a cost-effective daily diet that meets nutritional requirements. Uses PuLP to minimize cost while satisfying constraints for calories, protein, and fat.
+  - **Technologies:** Python, PuLP, Matplotlib, Pandas
+  - **Key Features:** Constraint optimization, nutritional planning, cost minimization
+- **[McDonald's Diet Optimization](Linear%20Programming%20for%20McDonald's%20Diet/)**
+  - MATLAB-based linear programming solution to determine the least expensive combination of McDonald's menu items that satisfies nutritional constraints including calories, protein, vitamins, and minerals.
+  - **Technologies:** MATLAB, linprog
+  - **Key Features:** Real-world constraint modeling, nutritional optimization, cost-effective meal planning
+- **[Steepest Descent Method](Steepest%20Descent%20Method/)**
+  - Implementation of the Steepest Descent optimization algorithm for solving quadratic minimization problems. Iteratively updates estimates by moving in the direction of the negative gradient with analytically computed optimal step sizes.
+  - **Technologies:** MATLAB
+  - **Key Features:** Gradient-based optimization, symmmetric positive definite matrices, convergence analysis
 
 ### Simulation & Statistical Modeling
 - **[Monte Carlo Simulation](Monte%20Carlo%20Simulation/)** - Statistical simulation for uncertainty modeling
