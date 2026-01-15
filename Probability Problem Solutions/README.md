@@ -6,3 +6,91 @@ This repository contains **9 assignments** with complete solutions written in La
 
 ## Assignment Contents
 ### Assignment 01
+- Combinatorics and counting principles
+- Basic probability calculations
+- Sample space analysis
+
+### Assignment 02
+- Discrete probability distributions
+- Conditional probability
+- Independence of events
+
+### Assignment 03
+- Random variables
+- Probability mass functions (PMF)
+- Cumulative distribution functions (CDF)
+
+### Assignment 04
+- Joint probability distributions
+- Marginal and conditional distributions
+- Independence of random variables
+
+### Assignment 06
+- Expectation and variance
+- Properties of expected values
+- Poisson distribution analysis
+
+### Assignment 07
+- Moment generating functions (MGF)
+- Probability density functions (PDF)
+- Continous random variables
+
+### Assignment 08
+- Advanced distribution theory
+- Transformations of random variables
+- Multiple random variable analysis
+
+### Assignment 10
+- Statistical inference foundations
+- Limit theorems
+- Convergence concepts
+
+### Assignment 11
+- Central Limit Theorem applications
+- Advanced probability theory
+- Comprehensive problem sets
+
+## Structure
+Each assignment folder contains:
+- `main.tex` - LaTeX source file with complete problem solutions
+- `preamble.tex` - LaTeX preamble with custom macros and packages
+- `quiver.sty` - Style file for commutative diagrams (if needed)
+- PDF file - Compiled solutions (filename may vary)
+
+## Technologies Used
+- **LaTeX** - Document preparation and mathematical typesetting
+- **Tex packages:**
+  - `fancyhdr` - Custom headers and footers
+  - `graphicx` - Graphics and figures
+  - `quiver` - Commutative diagrams
+  - Custom  `preamble.tex` with mathematical macros
+ 
+## Features
+- Professional mathematical typesetting using LaTeX
+- Detailed step-by-step solutions with explanations
+- Clear notation and formatting
+- Oraganized by assignment number for easy reference
+- Comprehensive coverage of proability theory fundamentals
+
+## Viewing Solutions
+Each assignment's PDF can be viewed directly in the respective folder. The PDFs contain:
+- Problem statements
+- Complete mathematical derivations
+- Clear explanations of probability concepts
+- Proper notation and formatting
+
+## Course Information
+- **Course:** EN.553.420.FA24 Probability
+- **Institution:** Johns Hopkins University
+- **Format:** Problem sets with detailed solutions
+- **Topics:** Probability theory, random variables, distributions, statistical inference
+
+## Requirements
+To compild the LaTeX source files (optional - PDFs are already provided):
+- LaTeX distribution (Tex Live, MiKTeX, or MacTeX)
+- Standard LaTeX packages listed in `preamble.tex`
+
+## Notes
+- All solutions are original work completed as part of coursework
+- PDFs are ready to view without needing to compile LaTeX
+- Solutions demonstrate rigorous mathematical reasoning and probability theory applications 
