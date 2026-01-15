@@ -56,7 +56,7 @@ Each assignment folder contains:
 - `main.tex` - LaTeX source file with complete problem solutions
 - `preamble.tex` - LaTeX preamble with custom macros and packages
 - `quiver.sty` - Style file for commutative diagrams (if needed)
-- `Assignment__XX.pdf` - Compiled PDF with formatted solutions
+- PDF file - Compiled solutions (filename may vary: e.g., `Assignment__01-2.pdf`, `Assignment__2.pdf`, `Assignment__XX.pdf`)
 
 ## Technologies Used
 - **LaTeX** - Document preparation and mathematical typesetting
