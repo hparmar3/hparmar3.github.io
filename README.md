@@ -34,7 +34,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - Dual Simplex Method implementation for solving linear programs when the initial solution is dual feasible but not primal feasible. Particularly useful for problems with negative RHS values.
   - **Technologies:** MATLAB
   - **Key Features:** Dual feasibility maintenance, primal infeasibility handling, optimal solution guarantee
-- **[Two Phase Simplex Method](Two%20Phase%20Simplex%20Method/)** -
+- **[Two Phase Simplex Method](Two%20Phase%20Simplex%20Method/)** 
   -  Two-Phase Simplex algorithm that first finds a basic feasible solution (Phase 1) then optimizes the objective function (Phase 2). Detects infeasible and unbounded problems.
   -  **Technologies** MATLAB
   -  **Key Features:** Modular designs, Bland's Rule, phase-by-phase tableau visualization
