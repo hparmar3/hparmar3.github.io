@@ -28,7 +28,11 @@ $$
 y_d(t) = G(q^{-1})x(t)
 $$
 
-where
+where $G(q^{-1}) is a transfer function in the background shift operator $q^{-1}$, and $x(t)$ is a nonlinear transformation of the input. The nonlinearity is introduced through a polynomial function:
+
+$$
+x(t) = /sum_{i=0}^{M} {/gamma}_i u^i(t)
+$$
 
 
 
