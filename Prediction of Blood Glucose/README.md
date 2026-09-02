@@ -67,11 +67,11 @@ Summary statistics of the dataset were computed to provide context for the model
 
 
 
-
+### Figure 2: Glucose Over time (Actual vs. Predicted)
 <img width="406" height="325" alt="Figure 2026-04-25 162405" src="https://github.com/user-attachments/assets/7e37044c-8f9f-4423-8df9-6560844872fc" />
 
 
-
+### Figure 3: Glucose, Insulin, and Carbohydrate Events
 <img width="405" height="325" alt="Figure 2026-04-25 162620" src="https://github.com/user-attachments/assets/eff3503a-7e7c-43f4-94a3-3b53d7effe24" />
 
 
