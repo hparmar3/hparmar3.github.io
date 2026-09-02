@@ -31,7 +31,7 @@ $$
 where $G(q^{-1}) is a transfer function in the background shift operator $q^{-1}$, and $x(t)$ is a nonlinear transformation of the input. The nonlinearity is introduced through a polynomial function:
 
 $$
-x(t) = /sum_{i=0}^{M} {/gamma}_i u^i(t)
+x(t) = \sum_{i=0}^{M} {\gamma}_i u^i(t)
 $$
 
 Where $u(t)$ resents insulin input and ${/gamma}_i$ are coefficients to be estimated. In this work, a simplified implementation of the structure was used, where lagged glucose values and polynomial transformation of insulin were included as features in the regression model.
