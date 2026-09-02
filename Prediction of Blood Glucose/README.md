@@ -21,3 +21,16 @@ The modeling approach is based on a Hammerstein Box-Jenkins (BJ) structure, whic
 $$
 y(t) = y_d(t) + v(t)
 $$
+
+where $y_d(t)$ represents the deterministic process output and $v(t)$ represents the noise component. The process output is modeled using a linear dynamic system:
+
+$$
+y_d(t) = G(q^{-1})x(t)
+$$
+
+where
+
+
+
+
+
