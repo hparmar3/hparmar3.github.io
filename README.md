@@ -20,7 +20,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - Logistic Regression implementation built entirely from scratch in R with gradient descent optimization. Generates synthetic data for binary classification and visualizes the learned decision boundary.
   - **Technologies:** R, ggplot2
   - **Key Features:** Custom gradient descent, sigmoid function implementation, decision boundary plotting
-- **[Prediction of Blood Glucose](Prediction%20of%20Blood%20Glucose))**
+- **[Prediction of Blood Glucose](Prediction%20of%20Blood%20Glucose/)**
 
 ### Mathematical Optimization
 - **[Simplex Method](Simplex%20Method/)**
