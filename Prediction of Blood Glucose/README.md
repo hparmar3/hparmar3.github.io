@@ -34,7 +34,19 @@ $$
 x(t) = /sum_{i=0}^{M} {/gamma}_i u^i(t)
 $$
 
+Where $u(t)$ resents insulin input and ${/gamma}_i$ are coefficients to be estimated. In this work, a simplified implementation of the structure was used, where lagged glucose values and polynomial transformation of insulin were included as features in the regression model.
 
+The general structure of the model that was used in my code is:
+
+$$
+y(t) = f(y(t-1), y(t-2), u(t), u(t-1), u(t-2))
+$$
+
+where:
+- $y(t)$ is glucose at time $t$
+- $u(t)$ is insulin input
+- paste glucose values capture temporal dependence
+- nonlinear powers of insulin capture physiological nonlinearity
 
 
 
