@@ -17,6 +17,7 @@ Glucose values were extracted from the CGM dataset and filtered to remove invali
 
 ### Model Description
 The modeling approach is based on a Hammerstein Box-Jenkins (BJ) structure, which incorporates both autoregressive glucose terms and nonlinear transformations of insulin input by incorporating both system dynamics and noise modeling. In this framework, the system output represented as:
+
 $$
-y(t) - y_d(t) + v(t)
+y(t) = y_d(t) + v(t)
 $$
