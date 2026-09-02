@@ -14,3 +14,9 @@ The dataset was obtained from a Dexcom Clarity CGM export file (“Clairty_Expor
 
 ### Data Processing
 Glucose values were extracted from the CGM dataset and filtered to remove invalid or non-positive readings. Insulin and carbohydrate values were estimated based on rapid changes in glucose levels using threshold-based detection of glucose rate-of-change. These estimates were further consolidated in discrete daily events to reduce noise and redundancy.
+
+### Model Description
+The modeling approach is based on a Hammerstein Box-Jenkins (BJ) structure, which incorporates both autoregressive glucose terms and nonlinear transformations of insulin input by incorporating both system dynamics and noise modeling. In this framework, the system output represented as:
+$$
+y(t) - y_d(t) + v(t)
+$$
