@@ -48,5 +48,16 @@ where:
 - paste glucose values capture temporal dependence
 - nonlinear powers of insulin capture physiological nonlinearity
 
+### Machine Learning Procedure
+The dataset was split into training (80%) and testing (20%) subsets. Missing values were handled using constant imputation (zero replacement), and features were standardized using z-score normalization. A linear regression model was trained on the transformed feature space.
+
+### Evaluation
+Model performance was evaluated using root mean squared error (RMSE), defined as:
+
+$$
+RMSE = /sqrt{/frac{1}{n} /sum ({y_i - y_i})^2}
+$$
+
+
 
 
