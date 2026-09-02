@@ -55,7 +55,7 @@ The dataset was split into training (80%) and testing (20%) subsets. Missing val
 Model performance was evaluated using root mean squared error (RMSE), defined as:
 
 $$
-RMSE = /sqrt{/frac{1}{n} /sum ({y_i - y_i})^2}
+RMSE = /sqrt{\frac{1}{n} /sum({y_i - y_i})^2}
 $$
 
 
