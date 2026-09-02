@@ -21,6 +21,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - **Technologies:** R, ggplot2
   - **Key Features:** Custom gradient descent, sigmoid function implementation, decision boundary plotting
 - **[Prediction of Blood Glucose](Prediction%20of%20Blood%20Glucose/)**
+- **[Monte Carlo Simulation]**
 
 ### Mathematical Optimization
 - **[Simplex Method](Simplex%20Method/)**
@@ -67,6 +68,7 @@ Hi, I'm Henna! This portfolio showcases my programming and data science projects
   - **Key Features:** Time series analysis, technical indicators, deep learning for trading
 - **[Probability Problem Solutions](Probability%20Problem%20Solutions/)**
 - **[Computational Math](Computational%20Math/)**
+- **[Moving Average]**
 
 ### Web Development & Software Enginnering
 - **[Technical Documentation Page](Technical%20Documentation/)**
