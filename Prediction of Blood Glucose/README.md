@@ -58,6 +58,24 @@ $$
 RMSE = \sqrt{\frac{1}{n} \sum({y_i - y_i})^2}
 $$
 
+## Analysis
+Summary statistics of the dataset were computed to provide context for the model inputs and outputs. The mean glucose level was approximately 185.8 mg/dL, indicating that the dataset includes a range of elevated glucose values. The average estimated carbohydrate intake per event was 69.9 grams, while the average estimated insulin dose was 31.27 units. These values reflect typical magnitudes of the physiological inputs and outputs used in the modeling process. Anecdotally, I have never given myself 31 units of insulin at one time ever, so the method of estimating carbs and insulin is not perfectly accurate.
+
+### Figure 1: Predicted vs. Actual Glucose
+<img width="391" height="287" alt="Figure 2026-04-25 161917" src="https://github.com/user-attachments/assets/528732c1-71cf-4347-8e81-ce27b89e7a30" />
+
+
+
+
+
+<img width="406" height="325" alt="Figure 2026-04-25 162405" src="https://github.com/user-attachments/assets/7e37044c-8f9f-4423-8df9-6560844872fc" />
+
+
+
+<img width="405" height="325" alt="Figure 2026-04-25 162620" src="https://github.com/user-attachments/assets/eff3503a-7e7c-43f4-94a3-3b53d7effe24" />
+
+
+
 
 
 
